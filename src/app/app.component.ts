@@ -1,19 +1,18 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterOutlet } from '@angular/router';
-import { LandingPageComponent } from './landing-page/landing-page.component';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports:
-    [CommonModule,
-      RouterOutlet,
-      LandingPageComponent,
-    ],
+  imports: [
+    CommonModule,
+    RouterModule
+  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent {
   title = 'typescript-tutorial';
+
 }

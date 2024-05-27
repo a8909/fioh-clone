@@ -2,3 +2,38 @@ body {
     min-height: 100vh;
     overflow-x: hidden;
 }
+
+nav ul {
+    width: 100%;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+/* nav ul li:hover {
+    border-bottom: 2px solid black;
+} */
+
+
+nav {
+    background-color: #ffffff;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+
+}
+
+nav li {
+    height: 50px;
+}
+
+nav a {
+    height: 100%;
+    padding: 0 30px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+
+}
