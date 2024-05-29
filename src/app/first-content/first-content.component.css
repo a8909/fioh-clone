@@ -14,6 +14,8 @@
     border-radius: 30px;
     margin-left: 5%;
     margin-right: 5%;
+    margin-top: 5px;
+    padding-bottom: 40px;
 }
 
 a :link {
@@ -24,6 +26,12 @@ a :link {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+    text-align: start;
+}
+
+
+.post-ref-containers {
+    overflow-x: hidden;
 }
 
 .next-prev {
@@ -34,16 +42,19 @@ a :link {
 }
 
 .prev {
-    background-color: red;
+    background-color: white;
     border-radius: 50px;
-    /* border-color: ; */
+    border-color: black;
     font-size: 25px;
     padding-left: 10px;
     padding-right: 10px;
+    margin-top: 15px;
 }
 
 body {
-    background-color: grey;
+    background-color: rgb(240, 237, 237);
+    padding: 0px;
+    margin: 0px;
 }
 
 .honor {
@@ -51,13 +62,13 @@ body {
     justify-content: space-evenly;
     flex-direction: row;
     background-color: rgba(157, 28, 185, 1);
-    height: 300px;
+    height: 500px;
     align-items: center;
     margin-top: 50px;
     border-radius: 10px;
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto;
+    /* width: 100%; */
+    margin-left: 5%;
+    margin-right: 5%;
 }
 
 #honor {
@@ -106,7 +117,7 @@ footer {
 
 .mail {
     padding: 20px;
-    width: 80%;
+    /* width: 100%; */
     border-radius: 30px;
     border-color: #ffffff;
 

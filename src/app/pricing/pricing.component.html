@@ -1,0 +1,63 @@
+<div>
+    <h2>Pricing Plans</h2>
+</div>
+<div>
+    <p>Start with free trial. No credit card needed. Cancel at anytime.</p>
+</div>
+<div class="subscription-container">
+    <div>
+        <ul>
+            <li [class.active]="Subscription == 'yearly'">
+                <a (click)="Subscription = 'yearly'">Yearly</a>
+            </li>
+            <li [class.active]="Subscription == 'lifeTime'">
+                <a (click)="Subscription = 'lifeTime'">LifeTime</a>
+            </li>
+        </ul>
+    </div>
+
+</div>
+<div [ngSwitch]="Subscription" class=" subscription">
+    <div *ngSwitchCase="'yearly'">yearly plan is good</div>
+    <div *ngSwitchCase="'lifeTime'">lifeTime</div>
+    <div *ngSwitchDefault></div>
+</div>
+<div class="package">
+    <div class="package-container" *ngFor="let package of Packages">
+        <div>{{package.level}}</div>
+        <div>{{package.card}}</div>
+        <div>{{package.price}}</div>
+    </div>
+</div>
+
+<div>
+    <table>
+        <thead>
+            <tr>
+                <th>Features</th>
+                <th>Basic ($0)</th>
+                <th>Standard ($40)</th>
+                <th>Premium ($80)</th>
+            </tr>
+
+        </thead>
+    </table>
+</div>
+<section>
+    <div *ngFor="let feature of Features">
+        <tbody>
+            <tr>
+                <td>
+                    <div>{{feature.heading}}</div>
+                    <div>{{feature.subHeading}}</div>
+                </td>
+                <td>
+                    <div>
+                        <!-- svg icon -->
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </div>
+
+</section>
