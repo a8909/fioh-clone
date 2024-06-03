@@ -1,3 +1,12 @@
+.pricing-plan {
+    text-align: center;
+}
+
+.h2-price {
+    font-size: 50px;
+    font-weight: bold;
+}
+
 ul li {
     list-style: none;
 
@@ -51,5 +60,15 @@ a {
     border: 7px solid #bac0d4b2;
     text-align: center;
     display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 250px;
+    width: 250px;
+}
 
+.fbsp {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: start;
 }

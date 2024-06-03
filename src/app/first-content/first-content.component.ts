@@ -50,7 +50,8 @@ export class FirstContentComponent {
     },
     {
       id: 5,
-      imagePath: "assets/images/boluwa.png",
+      imagePath: "assets/images/bol3.png",
+      // "assets/images/boluwa.png",
       titleText: 'John Di Doe',
       year: '(1983 - 2024)',
       link: 'john-di-doe.fioh.com',

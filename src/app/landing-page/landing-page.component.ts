@@ -4,14 +4,18 @@ import { NgSwitchCase } from '@angular/common';
 import { NgSwitchDefault } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { NgIf } from '@angular/common';
+import { HammerModule } from '@angular/platform-browser';
+import { Splide } from '@splidejs/splide';
 
 @Component({
   selector: 'app-landing-page',
   standalone: true,
-  imports: [NgSwitch, NgSwitchCase, NgSwitchDefault, FormsModule, NgIf, NgFor],
+  imports: [NgSwitch, NgSwitchCase, NgSwitchDefault, FormsModule, NgIf, NgFor, HammerModule, Splide],
   templateUrl: './landing-page.component.html',
   styleUrl: './landing-page.component.css'
 })
+
+
 export class LandingPageComponent {
   selectedId: any;
   questions = [
@@ -34,13 +38,26 @@ export class LandingPageComponent {
     { id: 6, imagePath: "assets/images/woman2.svg" },
     { id: 7, imagePath: "assets/images/man.svg" }
   ]
-  show = 1;
-  hide = 2;
 
-  shouldShowQuestion(questionId: number): boolean {
-    return questionId !== 6;
+
+  sliderImage() {
+    const readImage = document.getElementsByClassName('scrlImgs');
+    for (var i = 0; i < readImage.length; i++) {
+      this.selectedId = readImage[i];
+      new Splide(this.selectedId).mount();
+    }
   }
 
+
+  selectedIndex: number = 0;
+  // hide = 2;
+
+  showprev(imageId: number) {
+    if (this.selectedIndex < this.memoriaImage.length) {
+      this.selectedIndex = imageId - 1
+    }
+
+  }
 
 
   showContext(getId: any) {

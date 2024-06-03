@@ -1,6 +1,8 @@
 body {
     min-height: 100vh;
     overflow-x: hidden;
+    padding: 0px;
+    margin: 0px;
 }
 
 nav ul {
@@ -22,11 +24,10 @@ nav {
     box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
     display: flex;
     justify-content: center;
-
 }
 
 nav li {
-    height: 50px;
+    height: 70px;
 }
 
 nav a {
@@ -36,4 +37,12 @@ nav a {
     display: flex;
     align-items: center;
 
+}
+
+li {
+    font-size: 25px;
+}
+
+.navbar-navbar {
+    position: sticky;
 }

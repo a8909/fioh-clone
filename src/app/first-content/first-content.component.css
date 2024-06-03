@@ -22,12 +22,22 @@ a :link {
     color: rgba(157, 28, 185, 1);
 }
 
+
 .posts {
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    gap: 20px;
+    /* justify-content: space-evenly; */
     text-align: start;
+    align-items: center;
+    margin-left: 10px;
 }
+
+/* .mems-container {
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+} */
 
 
 .post-ref-containers {

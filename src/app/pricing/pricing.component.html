@@ -1,9 +1,15 @@
-<div>
-    <h2>Pricing Plans</h2>
-</div>
-<div>
-    <p>Start with free trial. No credit card needed. Cancel at anytime.</p>
-</div>
+<section>
+    <div class="pricing-plan">
+        <div>
+            <h2 class="h2-price">Pricing Plans</h2>
+        </div>
+        <div>
+            <p>Start with free trial. No credit card needed. Cancel at anytime.</p>
+        </div>
+    </div>
+
+</section>
+
 <div class="subscription-container">
     <div>
         <ul>
@@ -30,7 +36,7 @@
     </div>
 </div>
 
-<div>
+<div class="fbsp">
     <table>
         <thead>
             <tr>
@@ -44,12 +50,15 @@
     </table>
 </div>
 <section>
-    <div *ngFor="let feature of Features">
+    <div>
         <tbody>
             <tr>
                 <td>
-                    <div>{{feature.heading}}</div>
-                    <div>{{feature.subHeading}}</div>
+                    <div *ngFor="let feature of Features">
+                        <div>{{feature.heading}}</div>
+                        <div>{{feature.subHeading}}</div>
+                    </div>
+
                 </td>
                 <td>
                     <div>

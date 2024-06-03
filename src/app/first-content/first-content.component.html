@@ -15,18 +15,20 @@
         </div>
     </section>
     <div class="all-post">
-        <div class="mems-post" *ngFor="let memorial of memorials">
-            <div class="posts">
-                <img [src]="memorial.imagePath" alt="">
-                <div class="post-ref-containers">
-                    <h3>{{memorial.titleText}}</h3>
-                    <h3>{{memorial.year}}</h3>
-                    <a href="">{{memorial.link}}</a>
-                    <p>{{memorial.created}}</p>
-                    <p>{{memorial.context}}</p>
+        <div class="mems-container">
+            <div class="mems-post" *ngFor="let memorial of memorials">
+                <div class="posts">
+                    <img [src]="memorial.imagePath" alt="">
+                    <div class="post-ref-containers">
+                        <h3>{{memorial.titleText}}</h3>
+                        <h3>{{memorial.year}}</h3>
+                        <a href="">{{memorial.link}}</a>
+                        <p>{{memorial.created}}</p>
+                        <p>{{memorial.context}}</p>
+                    </div>
                 </div>
+                <hr>
             </div>
-            <hr>
         </div>
         <div class='next-prev'>
             <div>

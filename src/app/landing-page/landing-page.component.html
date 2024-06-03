@@ -21,27 +21,29 @@
 <div class="mem">
     <img src="assets/images/tri.svg" alt="memoria image">
 
-    <div class="mems">
-        <h2 style="color: rgba(255, 255, 255, 1); line-height: 1.2; font-size: 25px; font-weight: 700">
-            Create a Memorial Website
-        </h2>
-        <p style="color: rgba(255, 255, 255, 1);line-height: 2.5">
-            I want to share a memory of
-        </p>
-        <div>
-            <form action="">
-                <label for="fname">
-                    <input class="memorial-form" id="fname" type="FirstName" placeholder="First Name">
-                </label>
-                <label for="lname">
-                    <input class="memorial-form" id="lname" type="LastName" placeholder="Last Name">
-                </label>
-                <button class="mem-but">Create Memorial</button>
-            </form>
+    <div class="mem-container">
+        <div class="mems">
+            <h2 style="color: rgba(255, 255, 255, 1); line-height: 1.2; font-size: 25px; font-weight: 700">
+                Create a Memorial Website
+            </h2>
+            <p style="color: rgba(255, 255, 255, 1);line-height: 2.5">
+                I want to share a memory of
+            </p>
+            <div>
+                <form action="">
+                    <label for="fname">
+                        <input class="memorial-form" id="fname" type="FirstName" placeholder="First Name">
+                    </label>
+                    <label for="lname">
+                        <input class="memorial-form" id="lname" type="LastName" placeholder="Last Name">
+                    </label>
+                    <button class="mem-but">Create Memorial</button>
+                </form>
+            </div>
+
         </div>
 
     </div>
-
 </div>
 
 <div class="partners">
@@ -109,15 +111,28 @@
     </svg>
 </div>
 <div class="recent">
-    <h2>
+    <h2 style="font-size: 40px; font-weight:bolder">
         Recent online memorials
     </h2>
 </div>
-<div id="scrollable-object" *ngFor="let imageObject of memoriaImage">
-    <div class="scrl">
-        <!-- {{imageObject.text}} -->
-        <img class="scrlImgs" [src]="imageObject.imagePath" alt="memorialImages">
+<div class="scrl-container">
+    <div class="mem-text">
+        <div>
+            The memories of our loved ones shine forever. We ensure their legacy lives on by cherishing and
+            preserving those
+            precious moments that defined who they were.
+            <div></div>
+        </div>
     </div>
+
+    <div id="scrollable-object" *ngFor="let imageObject of memoriaImage">
+        <div class="scrl">
+
+            <!-- {{imageObject.text}} -->
+            <img class="scrlImgs" [src]="imageObject.imagePath" alt="memorialImages">
+        </div>
+    </div>
+
 </div>
 
 <div id="pass-away">

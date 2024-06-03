@@ -42,15 +42,9 @@
 
 img {
     width: 100%;
-    height: 600px;
-    margin-right: 10;
-    margin-left: 10;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-
-
+    height: 500px;
+    margin-left: 30px;
+    border-radius: 10px;
 }
 
 .partners {
@@ -75,6 +69,7 @@ form {
     text-align: center;
     margin-top: 50px;
     margin-bottom: 0px;
+    padding: 0px;
 }
 
 .mem-but {
@@ -86,23 +81,51 @@ form {
     background-color: rgba(23, 23, 23, 1);
 }
 
+.mem-text {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    text-align: center;
+    background-color: rgba(157, 28, 185, 1);
+    color: rgba(255, 255, 255, 1);
+    margin: 20px 20px;
+    height: 450px;
+    width: 700px;
+    border-radius: 30px;
+
+}
+
 .mems {
     height: 250px;
     width: 1000px;
     background-color: rgba(157, 28, 185, 0.85);
-    padding-top: 30px;
+    padding-top: 40px;
     padding-bottom: 0px;
-    padding-left: 30px;
-    padding-right: 30px;
+    padding-left: 40px;
+    padding-right: 40px;
     margin-left: 300px;
     margin-right: 300px;
     margin-bottom: 0px;
     position: absolute;
-    left: 0;
-    bottom: -350px;
+    left: 80px;
+    bottom: -200px;
     border-radius: 10px;
 }
 
+
+.scrl-container {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    margin-top: 0px;
+    padding: 0px;
+}
+
+
+.scrl {
+    margin: 0 10px;
+    padding: 0px;
+}
 
 .display {
     margin-right: 8px;
