@@ -19,7 +19,7 @@
 </section>
 
 <div class="mem">
-    <img src="assets/images/tri.svg" alt="memoria image">
+    <img class="mem-img-container" src="assets/images/tri.svg" alt="memoria image">
 
     <div class="mem-container">
         <div class="mems">
@@ -116,30 +116,32 @@
     </h2>
 </div>
 <div class="scrl-container">
-    <div class="mem-text">
+    <!-- <div class="mem-text">
         <div>
-            The memories of our loved ones shine forever. We ensure their legacy lives on by cherishing and
+            The memories of our loved ones shine forever. We ensure their legacy lives on by cherishing and <br>
             preserving those
             precious moments that defined who they were.
             <div></div>
         </div>
-    </div>
+    </div> -->
 
-    <div id="scrollable-object" *ngFor="let imageObject of memoriaImage">
-        <div class="scrl">
+    <!-- <div>
+        <owl-carousel-o [options]="customOptions">
+            <ng-container *ngFor="let slide of memoriaImage">
+                <ng-template carouselSlide>
+                    <img class="pass-img" [src]="slide.imagePath" alt="slideImages">
+                </ng-template>
+            </ng-container>
+        </owl-carousel-o>
 
-            <!-- {{imageObject.text}} -->
-            <img class="scrlImgs" [src]="imageObject.imagePath" alt="memorialImages">
-        </div>
-    </div>
-
+    </div> -->
 </div>
 
 <div id="pass-away">
-    <p class="away-text">Let us help you with the neccessary</p>
-    <p class="away-text">steps when a loved one passed away.</p>
-    <div>
-        <img src="assets/images/Frame.svg" alt="frame">
+    <h1 class="away-text">Let us help you with the neccessary</h1>
+    <h1 class="away-text">steps when a loved one <em>passed away.</em></h1>
+    <div class="img-container">
+        <img class="mem-img-container" src="assets/images/Frame.svg" alt="frame">
     </div>
 </div>
 <div style="text-align: center;">
@@ -162,14 +164,18 @@
         <span class="dot"></span>
     </div>
 </div>
-<h2 style="text-align: center;">Frequently asked <span>questions</span></h2>
+<h2 style="text-align: center; font-size: 40px; letter-spacing: -1px">Frequently asked questions</h2>
 <div id="faq">
     <div class="fandq" *ngFor="let question of questions">
-        <h2>{{question.title}}</h2>
+        <div class="faq-big-container">
+            <div class="faq-container">
+                <h2 style="font-size: 33px;">{{question.title}}</h2>
+                <button class="faq-btn" (click)="showContext(question.id)">
+                    <span>+</span>
+                </button>
+            </div>
+        </div>
         <div *ngIf="selectedId == question.id">{{question.answer}}</div>
-        <button class="faq-btn" (click)="showContext(question.id)">
-            <span>+</span>
-        </button>
     </div>
 
 

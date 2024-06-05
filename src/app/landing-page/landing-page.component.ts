@@ -4,13 +4,13 @@ import { NgSwitchCase } from '@angular/common';
 import { NgSwitchDefault } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { NgIf } from '@angular/common';
-import { HammerModule } from '@angular/platform-browser';
-import { Splide } from '@splidejs/splide';
+import { CarouselModule } from 'ngx-owl-carousel-o';
+import { OwlOptions } from 'ngx-owl-carousel-o';
 
 @Component({
   selector: 'app-landing-page',
   standalone: true,
-  imports: [NgSwitch, NgSwitchCase, NgSwitchDefault, FormsModule, NgIf, NgFor, HammerModule, Splide],
+  imports: [NgSwitch, NgSwitchCase, NgSwitchDefault, FormsModule, NgIf, NgFor, CarouselModule],
   templateUrl: './landing-page.component.html',
   styleUrl: './landing-page.component.css'
 })
@@ -24,6 +24,32 @@ export class LandingPageComponent {
     { id: 3, title: 'Lorem ipsum dolor sit amet', answer: 'feajneafon afiaeofiaen aefiamofiaen' },
     { id: 4, title: 'Lorem ipsum dolor sit amet', answer: 'feajneafon afiaeofiaen aefiamofiaen' },
   ]
+
+
+  customOptions: OwlOptions = {
+    loop: true,
+    mouseDrag: true,
+    touchDrag: true,
+    pullDrag: true,
+    dots: false,
+    navSpeed: 700,
+    navText: ['', ''],
+    responsive: {
+      0: {
+        items: 1
+      },
+      400: {
+        items: 2
+      },
+      740: {
+        items: 3
+      },
+      940: {
+        items: 4
+      }
+    },
+    nav: true
+  }
 
 
   memoriaImage = [
@@ -40,13 +66,6 @@ export class LandingPageComponent {
   ]
 
 
-  sliderImage() {
-    const readImage = document.getElementsByClassName('scrlImgs');
-    for (var i = 0; i < readImage.length; i++) {
-      this.selectedId = readImage[i];
-      new Splide(this.selectedId).mount();
-    }
-  }
 
 
   selectedIndex: number = 0;

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { HammerModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +9,6 @@ import { HammerModule } from '@angular/platform-browser';
   imports: [
     CommonModule,
     RouterModule,
-    HammerModule
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
