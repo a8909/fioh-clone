@@ -1,14 +1,20 @@
 import { NgFor } from '@angular/common';
 import { Component } from '@angular/core';
+import { FilterPipe } from '../filter.pipe';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-first-content',
   standalone: true,
-  imports: [NgFor],
+  imports: [NgFor, FilterPipe, FormsModule],
   templateUrl: './first-content.component.html',
-  styleUrl: './first-content.component.css'
+  styleUrl: './first-content.component.scss'
 })
 export class FirstContentComponent {
+  keyword = "";
+  get filteredMemorials() {
+    return this.memorials.filter(m => `${m.year}|${m.titleText}|${m.context}`.toLowerCase().includes(this.keyword.toLowerCase()))
+  }
 
   memorials = [
     {
@@ -58,7 +64,9 @@ export class FirstContentComponent {
       created: 'Created by Fioh on April 26, 2024',
       context: 'This memorial website was created in memory of our loved one, John di Doe, 83 years old, born on February 01, 1983, and passed away on April 25, 2024. We will remember him forever....'
     },
-  ]
+  ];
+
+
 
 
 }

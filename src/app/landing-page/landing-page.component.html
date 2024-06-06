@@ -125,16 +125,16 @@
         </div>
     </div> -->
 
-    <!-- <div>
+    <div>
         <owl-carousel-o [options]="customOptions">
             <ng-container *ngFor="let slide of memoriaImage">
                 <ng-template carouselSlide>
-                    <img class="pass-img" [src]="slide.imagePath" alt="slideImages">
+                    <img [src]="slide.imagePath" alt="slideImages">
                 </ng-template>
             </ng-container>
         </owl-carousel-o>
 
-    </div> -->
+    </div>
 </div>
 
 <div id="pass-away">
@@ -164,8 +164,9 @@
         <span class="dot"></span>
     </div>
 </div>
-<h2 style="text-align: center; font-size: 40px; letter-spacing: -1px">Frequently asked questions</h2>
+<h2 style="text-align: center; font-size: 40px; letter-spacing: -1px">Frequently asked <em>questions</em></h2>
 <div id="faq">
+    <!-- @for (question of questions; track question) -->
     <div class="fandq" *ngFor="let question of questions">
         <div class="faq-big-container">
             <div class="faq-container">

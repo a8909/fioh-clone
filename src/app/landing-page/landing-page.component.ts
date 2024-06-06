@@ -1,18 +1,16 @@
 import { Component } from '@angular/core';
-import { NgFor, NgSwitch } from '@angular/common';
-import { NgSwitchCase } from '@angular/common';
-import { NgSwitchDefault } from '@angular/common';
+import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { NgIf } from '@angular/common';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { OwlOptions } from 'ngx-owl-carousel-o';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @Component({
   selector: 'app-landing-page',
   standalone: true,
-  imports: [NgSwitch, NgSwitchCase, NgSwitchDefault, FormsModule, NgIf, NgFor, CarouselModule],
+  imports: [FormsModule, CommonModule, CarouselModule, BrowserAnimationsModule],
   templateUrl: './landing-page.component.html',
-  styleUrl: './landing-page.component.css'
+  styleUrl: './landing-page.component.scss'
 })
 
 
