@@ -1,0 +1,78 @@
+.honor {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
+  background-color: rgba(157, 28, 185, 1);
+  height: 387px;
+  align-items: center;
+  margin-top: 50px;
+  border-radius: 15px;
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#honor {
+  margin-left: -50px;
+  display: flex;
+}
+
+#forever {
+  display: flex;
+}
+
+#aside {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 30px;
+}
+
+#socials_images {
+  height: 25px;
+  width: 25px;
+}
+
+.page {
+  margin-top: 20px;
+}
+
+#footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  height: 60px;
+  background-color: #ffffff;
+  margin-top: 30px;
+}
+
+.mail {
+  padding: 20px;
+  width: 300px;
+  border-radius: 30px;
+  border-color: #ffffff;
+}
+
+.get_started {
+  padding: 20px;
+  width: 200px;
+  border-radius: 30px;
+  border-color: #000000;
+  margin-left: 8px;
+  background-color: #000000;
+  color: #ffffff;
+}
+
+.terms {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.term {
+  margin-right: 8px;
+}

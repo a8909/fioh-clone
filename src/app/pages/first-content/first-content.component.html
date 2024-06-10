@@ -1,0 +1,52 @@
+<section>
+  <div>
+    <h2 class="search-box" style="font-size: 25px">Recent Memorials</h2>
+  </div>
+  <div class="search-items-box">
+    <div class="search-box">
+      <input
+        class="search-container"
+        id="search-box"
+        for="search-box"
+        type="text"
+        placeholder="Search"
+        [(ngModel)]="keyword"
+        [ngModelOptions]="{ standalone: true }"
+      />
+
+      <div>
+        <p>Filters</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="all-post">
+    <div class="mems-container">
+      <div class="mems-post" *ngFor="let memorial of filteredMemorials">
+        <div class="posts">
+          <img [src]="memorial.imagePath" alt="" />
+          <div class="post-ref-containers">
+            <h3>{{ memorial.titleText }}</h3>
+            <h3>{{ memorial.year }}</h3>
+            <a href="">{{ memorial.link }}</a>
+            <p>{{ memorial.created }}</p>
+            <p>{{ memorial.context }}</p>
+          </div>
+        </div>
+        <hr />
+      </div>
+    </div>
+    <div class="next-prev">
+      <div>
+        <!-- icon -->
+        <button class="prev" (click)="prev()">
+          <a>Prev</a>
+        </button>
+      </div>
+      <div>
+        <!-- icon -->
+        <button class="prev" (click)="next()"><a>Next</a></button>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,63 @@
+.pricing-plan {
+  text-align: center;
+}
+
+.h2-price {
+  font-size: 50px;
+  font-weight: bold;
+}
+
+ul li {
+  list-style: none;
+}
+
+li a {
+  margin-left: 5px;
+  color: rgb(216, 204, 219);
+  background-color: rgb(187, 25, 236);
+  padding: 10px;
+  border-radius: 30px;
+}
+
+ul {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  padding: 18px;
+  background-color: white;
+  border-radius: 40px;
+  width: fit-content;
+  margin-right: hidden;
+}
+
+.subscription-container {
+  display: flex;
+  justify-content: center;
+}
+
+a {
+  cursor: pointer;
+}
+
+.package {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.package-container {
+  border: 7px solid #bac0d4b2;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 250px;
+  width: 250px;
+}
+
+.fbsp {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: start;
+}

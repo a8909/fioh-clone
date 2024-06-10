@@ -1,0 +1,133 @@
+.search-box {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  text-align: start;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.all-post {
+  background-color: rgba(255, 255, 255, 1);
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 30px;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-top: 5px;
+  padding-bottom: 40px;
+}
+
+a :link {
+  color: rgba(157, 28, 185, 1);
+}
+
+.posts {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  /* justify-content: space-evenly; */
+  text-align: start;
+  align-items: center;
+  margin-left: 10px;
+}
+
+/* .mems-container {
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+} */
+
+.post-ref-containers {
+  overflow-x: hidden;
+}
+
+.next-prev {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  padding: 10px;
+}
+
+.prev {
+  background-color: white;
+  border-radius: 50px;
+  border-color: black;
+  font-size: 25px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-top: 15px;
+}
+
+.honor {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
+  background-color: rgba(157, 28, 185, 1);
+  height: 500px;
+  align-items: center;
+  margin-top: 50px;
+  border-radius: 10px;
+  /* width: 100%; */
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+#honor {
+  margin-left: -50px;
+  display: flex;
+}
+
+#forever {
+  display: flex;
+}
+
+#aside {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.page {
+  margin-top: 20px;
+}
+
+#socials_images {
+  height: 25px;
+  width: 25px;
+}
+
+footer {
+  background-color: rgba(255, 255, 255, 1);
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+}
+
+#footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  height: 60px;
+  background-color: #ffffff;
+  margin-top: 30px;
+}
+
+.mail {
+  padding: 20px;
+  /* width: 100%; */
+  border-radius: 30px;
+  border-color: #ffffff;
+}
+
+.get_started {
+  padding: 20px;
+  width: 200px;
+  border-radius: 30px;
+  border-color: #000000;
+  margin-left: 8px;
+  background-color: #000000;
+  color: #ffffff;
+}
