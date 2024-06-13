@@ -39,13 +39,25 @@
     <div class="next-prev">
       <div>
         <!-- icon -->
-        <button class="prev" (click)="prev()">
+        <button class="prev" (click)="setPage(pageIndex - 1)">
           <a>Prev</a>
         </button>
       </div>
+      <div class="pagination">
+        <div
+          class="page"
+          *ngFor="let p of pages"
+          [class.activePage]="pageIndex == p"
+          (click)="setPage(p)"
+        >
+          {{ p }}
+        </div>
+      </div>
       <div>
         <!-- icon -->
-        <button class="prev" (click)="next()"><a>Next</a></button>
+        <button class="prev" (click)="setPage(pageIndex + 1)">
+          <a>Next</a>
+        </button>
       </div>
     </div>
   </div>

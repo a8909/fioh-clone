@@ -1,7 +1,58 @@
 /* You can add global styles to this file, and also import other style files */
 // @import '~'
+
+@font-face {
+  font-family: "GT Walsheim Pro";
+  src: url(assets/fonts/GTWalsheimProRegular.woff2);
+  font-display: swap;
+}
+@font-face {
+  font-family: "GT Walsheim Pro";
+  src: url(assets/fonts/GTWalsheimProMedium.woff2);
+  font-weight: 600;
+  font-display: swap;
+}
+@font-face {
+  font-family: "GT Walsheim Pro";
+  src: url(assets/fonts/GTWalsheimProBold.woff2);
+  font-weight: 700;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Tiempos Headline";
+  src: url(assets/fonts/TiemposHeadline-Regular.woff2);
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Tiempos Headline";
+  src: url(assets/fonts/TiemposHeadline-RegularItalic.woff2);
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Tiempos Headline";
+  src: url(assets/fonts/TiemposHeadline-Medium.woff2);
+  font-weight: 500;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Tiempos Headline";
+  src: url(assets/fonts/TiemposHeadline-Semibold.woff2);
+  font-weight: 600;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Tiempos Headline";
+  src: url(assets/fonts/TiemposHeadline-Bold.woff2);
+  font-weight: 700;
+  font-display: swap;
+}
+
 body {
-    background-color: rgb(240, 237, 237);
-    padding: 0px;
-    margin: 0px;
+  background-color: rgb(240, 237, 237);
+  padding: 0px;
+  margin: 0px;
+  font-family: "GT Walsheim Pro";
 }

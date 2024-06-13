@@ -131,3 +131,9 @@ footer {
   background-color: #000000;
   color: #ffffff;
 }
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+}

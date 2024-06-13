@@ -1,15 +1,23 @@
+import { style } from '@angular/animations';
 import {
-  NgFor,
+  CommonModule,
   NgSwitch,
   NgSwitchCase,
   NgSwitchDefault,
 } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { AlertComponent } from '../alert.component';
 
 @Component({
   selector: 'app-pricing',
   standalone: true,
-  imports: [NgSwitch, NgSwitchCase, NgSwitchDefault, NgFor],
+  imports: [
+    NgSwitch,
+    NgSwitchCase,
+    NgSwitchDefault,
+    CommonModule,
+    AlertComponent,
+  ],
   templateUrl: './pricing.component.html',
   styleUrl: './pricing.component.scss',
 })
@@ -20,6 +28,7 @@ export class PricingComponent {
     { level: 'Standard', card: 'Most popular', price: '$40' },
     { level: 'Basic', card: 'Access to all features', price: '$80' },
   ];
+  error: string = 'error';
 
   Features = [
     {

@@ -1,7 +1,6 @@
 import { NgFor } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { log } from 'console';
 
 @Component({
   selector: 'app-first-content',
@@ -19,7 +18,10 @@ export class FirstContentComponent {
           .toLowerCase()
           .includes(this.keyword.toLowerCase())
       )
-      .slice(this.currentPageIndex, this.pages);
+      .slice(
+        (this.pageIndex - 1) * this.perPage,
+        (this.pageIndex - 1) * this.perPage + this.perPage
+      );
   }
 
   memorials = [
@@ -79,24 +81,17 @@ export class FirstContentComponent {
     },
   ];
 
-  pages = 3;
+  pageIndex: number = 1;
+  totalPage = this.memorials.length; // or totalPage = 10;
+  perPage: number = 2;
+  pages = [];
 
-  currentPageIndex = 0;
-  get currentMemorials() {
-    return this.memorials.find((userId) => userId.id == this.currentPageIndex);
+  ngOnInit() {
+    this.pages = Array(Math.ceil(this.totalPage / this.perPage))
+      .fill(0)
+      .map((x, i) => i + 1);
   }
-  prev() {
-    console.log(this.currentPageIndex--);
-    return this.currentPageIndex > 1
-      ? this.currentPageIndex--
-      : this.currentPageIndex == this.memorials.length;
-  }
-
-  next() {
-    console.log(this.currentPageIndex++);
-    console.log(this.memorials.length);
-    return this.currentPageIndex < 0
-      ? this.currentPageIndex++
-      : (this.currentPageIndex = this.currentPageIndex);
+  setPage(page: number) {
+    this.pageIndex = page;
   }
 }

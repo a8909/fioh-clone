@@ -1,72 +1,59 @@
 <section>
-    <div class="pricing-plan">
-        <div>
-            <h2 class="h2-price">Pricing Plans</h2>
-        </div>
-        <div>
-            <p>Start with free trial. No credit card needed. Cancel at anytime.</p>
-        </div>
-    </div>
-
-</section>
-
-<div class="subscription-container">
+  <div class="pricing-plan">
     <div>
-        <ul>
-            <li [class.active]="Subscription == 'yearly'">
-                <a (click)="Subscription = 'yearly'">Yearly</a>
-            </li>
-            <li [class.active]="Subscription == 'lifeTime'">
-                <a (click)="Subscription = 'lifeTime'">LifeTime</a>
-            </li>
-        </ul>
+      <h2 class="h2-price">Pricing Plans</h2>
     </div>
+    <div>
+      <p>Start with free trial. No credit card needed. Cancel at anytime.</p>
+    </div>
+  </div>
+</section>
+<app-alert *ngIf="Subscription == 'yearly'" [message]="error"></app-alert>
 
-</div>
-<div [ngSwitch]="Subscription" class=" subscription">
-    <div *ngSwitchCase="'yearly'">yearly plan is good</div>
-    <div *ngSwitchCase="'lifeTime'">lifeTime</div>
-    <div *ngSwitchDefault></div>
-</div>
 <div class="package">
-    <div class="package-container" *ngFor="let package of Packages">
-        <div>{{package.level}}</div>
-        <div>{{package.card}}</div>
-        <div>{{package.price}}</div>
+  <div class="package-container" *ngFor="let package of Packages">
+    <div>
+      <label for="pricing"
+        ><input type="radio" for="pricing" id="pricing"
+      /></label>
     </div>
+    <div>{{ package.level }}</div>
+    <div>{{ package.card }}</div>
+    <div>{{ package.price }}</div>
+    <div class="submitBtn">
+      <button type="submit" class="pricing-btn">Get Started</button>
+    </div>
+  </div>
 </div>
 
 <div class="fbsp">
-    <table>
-        <thead>
-            <tr>
-                <th>Features</th>
-                <th>Basic ($0)</th>
-                <th>Standard ($40)</th>
-                <th>Premium ($80)</th>
-            </tr>
-
-        </thead>
-    </table>
+  <table>
+    <thead>
+      <tr>
+        <th>Features</th>
+        <th>Basic ($0)</th>
+        <th>Standard ($40)</th>
+        <th>Premium ($80)</th>
+      </tr>
+    </thead>
+  </table>
 </div>
 <section>
-    <div>
-        <tbody>
-            <tr>
-                <td>
-                    <div *ngFor="let feature of Features">
-                        <div>{{feature.heading}}</div>
-                        <div>{{feature.subHeading}}</div>
-                    </div>
-
-                </td>
-                <td>
-                    <div>
-                        <!-- svg icon -->
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </div>
-
+  <div>
+    <tbody>
+      <tr>
+        <td>
+          <div *ngFor="let feature of Features">
+            <div>{{ feature.heading }}</div>
+            <div>{{ feature.subHeading }}</div>
+          </div>
+        </td>
+        <td>
+          <div>
+            <!-- svg icon -->
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </div>
 </section>
