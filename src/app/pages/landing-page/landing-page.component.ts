@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { OwlOptions } from 'ngx-owl-carousel-o';
+import { setInterval } from 'timers';
 
 @Component({
   selector: 'app-landing-page',
@@ -13,6 +14,7 @@ import { OwlOptions } from 'ngx-owl-carousel-o';
 })
 export class LandingPageComponent {
   selectedId: any;
+  // componentStatus: boolean = true;
   questions = [
     {
       id: 1,
@@ -75,16 +77,27 @@ export class LandingPageComponent {
   ];
 
   selectedIndex: number = 0;
-  // hide = 2;
-
-  showprev(imageId: number) {
-    if (this.selectedIndex < this.memoriaImage.length) {
-      this.selectedIndex = imageId - 1;
-    }
-  }
 
   showContext(getId: any) {
     console.log(getId);
     this.selectedId = getId;
+  }
+
+  sliderIndex: number = 0;
+  flexSlider = [{ content: 'lorem ipsum', src: '' }];
+
+  slider() {
+    for (let f = 0; f < this.flexSlider.length; f++) {
+      console.log(this.flexSlider[f]); //dispay should be change to block here
+    }
+    this.sliderIndex++;
+    if (this.flexSlider.length < this.sliderIndex) {
+      this.sliderIndex = 1;
+    }
+    const dots = document.getElementsByClassName('dot');
+    for (let d = 0; d < dots.length; d++) {
+      dots[d].className = dots[d].className.replace('active', '');
+    }
+    setTimeout(this.slider, 2000);
   }
 }

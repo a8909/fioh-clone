@@ -82,14 +82,15 @@ export class FirstContentComponent {
   ];
 
   pageIndex: number = 1;
-  totalPage = this.memorials.length; // or totalPage = 10;
-  perPage: number = 2;
+  totalPage = this.memorials.length; // or totalPage = 5 from memorials array ;
+  perPage: number = 2; // no of items to be displayed on the screen
   pages = [];
 
   ngOnInit() {
     this.pages = Array(Math.ceil(this.totalPage / this.perPage))
       .fill(0)
       .map((x, i) => i + 1);
+    console.log(this.pages);
   }
   setPage(page: number) {
     this.pageIndex = page;

@@ -8,7 +8,24 @@
     </div>
   </div>
 </section>
-<app-alert *ngIf="Subscription == 'yearly'" [message]="error"></app-alert>
+<!-- <app-alert *ngIf="Subscription == 'yearly'" [message]="error"></app-alert> -->
+<div class="subscription-container">
+  <div>
+    <ul>
+      <li [class.active]="Subscription == 'yearly'">
+        <a (click)="Subscription = 'yearly'">Yearly</a>
+      </li>
+      <li [class.active]="Subscription == 'lifeTime'">
+        <a (click)="(Subscription == 'lifetime')">LifeTime</a>
+      </li>
+    </ul>
+  </div>
+</div>
+<div [ngSwitch]="Subscription" class="subscription">
+  <div *ngSwitchCase="'yearly'">yearly plan is good</div>
+  <div *ngSwitchCase="'lifeTime'">lifeTime</div>
+  <div *ngSwitchDefault></div>
+</div>
 
 <div class="package">
   <div class="package-container" *ngFor="let package of Packages">

@@ -7,7 +7,7 @@
         xmlns="http://www.w3.org/2000/svg"
         height="26"
         viewBox="0 -960 960 960"
-        width="26"
+        width="50"
       >
         <path
           d="M647-440H160v-80h487L423-744l57-56 320 320-320 320-57-56 224-224Z"
@@ -16,15 +16,15 @@
     </p>
   </div>
 
-  <h2 style="font-size: 70px">
+  <h2 class="fioh-beginning">
     We provide families with the <br />
     opportunity to heal, connect, <br />
     and find solace after
-    <em style="color: rgba(157, 28, 185, 1)"> experiencing a loss. </em>
+    <em> experiencing a loss. </em>
   </h2>
 </section>
 
-<div class="mem" style="padding: 0 30px">
+<div class="mem">
   <img
     class="mem-img-container"
     src="assets/images/tri.svg"
@@ -33,19 +33,8 @@
 
   <div class="mem-container">
     <div class="mems">
-      <h2
-        style="
-          color: rgba(255, 255, 255, 1);
-          line-height: 1.2;
-          font-size: 25px;
-          font-weight: 700;
-        "
-      >
-        Create a Memorial Website
-      </h2>
-      <p style="color: rgba(255, 255, 255, 1); line-height: 2.5">
-        I want to share a memory of
-      </p>
+      <h2 class="mems-content1">Create a Memorial Website</h2>
+      <p class="mems-content2">I want to share a memory of</p>
       <div>
         <form action="">
           <label for="fname">
@@ -72,7 +61,7 @@
 </div>
 
 <div class="partners">
-  <p style="font-size: 15px; color: rgba(67, 67, 69, 1)">Partnership with:</p>
+  <p class="partners-text">Partnership with:</p>
   <svg
     class="patner"
     width="105"
@@ -180,7 +169,7 @@
   </svg>
 </div>
 <div class="recent">
-  <h2 style="font-size: 40px; font-weight: bolder">Recent online memorials</h2>
+  <h2 class="recent-text">Recent online memorials</h2>
 </div>
 <div class="scrl-container">
   <div class="mem-text">
@@ -210,8 +199,8 @@
     <img class="mem-img-container" src="assets/images/Frame.svg" alt="frame" />
   </div>
 </div>
-<div style="text-align: center">
-  <h4 style="font-size: 30px; text-align: center">
+<div class="big-pass-conatiner">
+  <h4 class="big-pass-text">
     The comprehensive and intelligence tool you need to create a beautiful
     online memorial.
   </h4>
@@ -219,26 +208,27 @@
   <img src="assets/images/patricia.svg" alt="testimony" />
 </div>
 <div class="tribute">
-  <h2 style="color: white; text-align: center">
+  <h2 class="tribute-text">
     Your tribute and needs will always <br />
     be at the center of our service
   </h2>
-  <div class="tributee"></div>
-  <div>
+  <div class="tributee" *ngFor="let t of flexSlider" (click)="slider()">
+    <div>{{ t.content }}</div>
+    <div>{{ t.src }}</div>
+  </div>
+  <div class="three-dots">
     <span class="dot"></span>
     <span class="dot"></span>
     <span class="dot"></span>
   </div>
 </div>
-<h2 style="text-align: center; font-size: 40px; letter-spacing: -1px">
-  Frequently asked <em>questions</em>
-</h2>
+<h2 class="fioh-faq-text">Frequently asked <em>questions</em></h2>
 <div id="faq">
   <!-- @for (question of questions; track question) -->
   <div class="fandq" *ngFor="let question of questions">
     <div class="faq-big-container">
       <div class="faq-container">
-        <h2 style="font-size: 33px">{{ question.title }}</h2>
+        <h2 class="fioh-faq-title">{{ question.title }}</h2>
         <button class="faq-btn" (click)="showContext(question.id)">
           <span>+</span>
         </button>

@@ -1,0 +1,48 @@
+.fioh-signIn-container {
+  .fioh-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    #fioh-email {
+      padding: 20px;
+      width: 300px;
+      border-radius: 30px;
+      border-color: #ffffff;
+      border: none;
+    }
+  }
+  .checkBox-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .fioh-checkbox {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+  }
+  #fioh-btn {
+    padding: 20px;
+    width: 300px;
+    border-radius: 30px;
+    color: #ffffff;
+    background-color: rgb(157, 28, 185);
+    text-align: center;
+    border: none;
+  }
+  .fioh-signup-container {
+    display: flex;
+    gap: 5px;
+    .fioh-signup {
+      color: rgb(157, 28, 185);
+    }
+  }
+}
+
+.fieldset {
+  border: none;
+  border-top: 1px solid rgb(66, 64, 64);
+  .fioh-legend {
+    text-align: center;
+  }
+}

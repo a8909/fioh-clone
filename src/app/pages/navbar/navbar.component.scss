@@ -1,0 +1,53 @@
+nav {
+  background-color: #ffffff;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  padding: 0 30px;
+  height: 77px;
+  z-index: 2000;
+  .navLink {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+  }
+  .authLink {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    :first-child {
+      padding: 15px;
+    }
+  }
+  .primbtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    background: purple;
+    height: 42px;
+    padding: 0 25px;
+    border-radius: 100px;
+    color: #fff !important;
+    border: none;
+    outline: none;
+    white-space: nowrap;
+    cursor: pointer;
+    font-size: 15px;
+  }
+
+  a {
+    text-decoration: none;
+    padding: 0 8px;
+    display: flex;
+    align-items: center;
+    color: black;
+    font-size: 16px;
+    font-weight: 600;
+  }
+}
+
+.navbar-navbar {
+  position: sticky;
+  top: 0;
+}
