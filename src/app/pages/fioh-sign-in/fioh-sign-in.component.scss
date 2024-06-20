@@ -1,40 +1,55 @@
-.fioh-signIn-container {
-  .fioh-form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    #fioh-email {
-      padding: 20px;
-      width: 300px;
-      border-radius: 30px;
-      border-color: #ffffff;
-      border: none;
-    }
+.fioh-container {
+  width: 100%;
+  display: flex;
+  .fioh-image {
+    width: 30%;
   }
-  .checkBox-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    .fioh-checkbox {
+  .fioh-big-container {
+    margin-right: auto;
+    margin-left: auto;
+    .fioh-signIn-container {
       display: flex;
-      align-items: center;
-      gap: 5px;
-    }
-  }
-  #fioh-btn {
-    padding: 20px;
-    width: 300px;
-    border-radius: 30px;
-    color: #ffffff;
-    background-color: rgb(157, 28, 185);
-    text-align: center;
-    border: none;
-  }
-  .fioh-signup-container {
-    display: flex;
-    gap: 5px;
-    .fioh-signup {
-      color: rgb(157, 28, 185);
+      flex-direction: column;
+      .fioh-form {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        #fioh-email {
+          padding: 20px;
+          width: 300px;
+          border-radius: 30px;
+          border-color: #ffffff;
+          border: none;
+        }
+      }
+      .checkBox-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .fioh-checkbox {
+          display: flex;
+          align-items: center;
+          gap: 5px;
+        }
+      }
+      #fioh-btn {
+        padding: 20px;
+        width: 100%;
+        border-radius: 30px;
+        color: #ffffff;
+        background-color: rgb(157, 28, 185);
+        text-align: center;
+        border: none;
+      }
+      .fioh-signup-container {
+        display: flex;
+        justify-content: center;
+        gap: 5px;
+        margin-top: 8px;
+        .fioh-signup {
+          color: rgb(157, 28, 185);
+        }
+      }
     }
   }
 }
@@ -45,4 +60,15 @@
   .fioh-legend {
     text-align: center;
   }
+
+  button {
+    padding: 20px 0px;
+    width: 100%;
+    border-radius: 30px;
+    background-color: #ffffff;
+  }
+}
+a {
+  cursor: pointer;
+  text-decoration: none;
 }

@@ -1,9 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, OnInit, Renderer2 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import { setInterval } from 'timers';
+import { FiohService } from '../fioh.service';
+import { animate, style, transition, trigger } from '@angular/animations';
 
 @Component({
   selector: 'app-landing-page',
@@ -11,10 +13,19 @@ import { setInterval } from 'timers';
   imports: [FormsModule, CommonModule, CarouselModule],
   templateUrl: './landing-page.component.html',
   styleUrl: './landing-page.component.scss',
+  providers: [FiohService],
+  animations: [
+    trigger('fade', [
+      transition('void => *', [
+        style({ backgroundcolor: 'yellow', opacity: 0 }),
+        animate(2000),
+      ]),
+    ]),
+  ],
 })
-export class LandingPageComponent {
+export class LandingPageComponent implements OnInit {
+  constructor(private fiohService: FiohService) {}
   selectedId: any;
-  // componentStatus: boolean = true;
   questions = [
     {
       id: 1,
@@ -70,10 +81,10 @@ export class LandingPageComponent {
   memoriaImage = [
     { id: 2, imagePath: 'assets/images/woman1.svg' },
     { id: 3, imagePath: 'assets/images/woman2.svg' },
-    { id: 4, imagePath: 'assets/images/man.svg' },
-    { id: 5, imagePath: 'assets/images/woman1.svg' },
-    { id: 6, imagePath: 'assets/images/woman2.svg' },
-    { id: 7, imagePath: 'assets/images/man.svg' },
+    // { id: 4, imagePath: 'assets/images/man.svg' },
+    // { id: 5, imagePath: 'assets/images/woman1.svg' },
+    // { id: 6, imagePath: 'assets/images/woman2.svg' },
+    // { id: 7, imagePath: 'assets/images/man.svg' },
   ];
 
   selectedIndex: number = 0;
@@ -85,19 +96,7 @@ export class LandingPageComponent {
 
   sliderIndex: number = 0;
   flexSlider = [{ content: 'lorem ipsum', src: '' }];
-
-  slider() {
-    for (let f = 0; f < this.flexSlider.length; f++) {
-      console.log(this.flexSlider[f]); //dispay should be change to block here
-    }
-    this.sliderIndex++;
-    if (this.flexSlider.length < this.sliderIndex) {
-      this.sliderIndex = 1;
-    }
-    const dots = document.getElementsByClassName('dot');
-    for (let d = 0; d < dots.length; d++) {
-      dots[d].className = dots[d].className.replace('active', '');
-    }
-    setTimeout(this.slider, 2000);
+  ngOnInit(): void {
+    // this.fiohService.slider(this.memoriaImage);
   }
 }
