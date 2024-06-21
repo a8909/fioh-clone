@@ -1,0 +1,27 @@
+.cusCheck {
+  input + label {
+    display: flex;
+    gap: 10px;
+    .check {
+      display: flex;
+      border: 1px solid #cfd3e1;
+      border-radius: 2px;
+      width: 12.67px;
+      height: 12.67px;
+      align-items: center;
+      justify-content: center;
+      ::ng-deep svg {
+        visibility: hidden;
+      }
+    }
+    input:checked + label {
+      .check {
+        background: var(--primary);
+        border-color: var(--primary);
+        ::ng-deep svg {
+          visibility: visible;
+        }
+      }
+    }
+  }
+}

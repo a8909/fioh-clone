@@ -6,7 +6,7 @@ import {
   NgSwitchDefault,
 } from '@angular/common';
 import { Component, Input } from '@angular/core';
-import { AlertComponent } from '../alert.component';
+import { AlertComponent } from '../../components/alert.component';
 
 @Component({
   selector: 'app-pricing',

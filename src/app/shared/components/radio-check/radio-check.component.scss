@@ -1,0 +1,21 @@
+.radioCheck {
+  input + label {
+    .radCheck {
+      // border: ;
+      // height: ;
+      // width: ;
+      ::ng-deep svg {
+        visibility: hidden;
+      }
+    }
+  }
+}
+input:checked + label {
+  .radCheck {
+    background: var(--radBtn);
+    // border-color: var(--);
+    ::ng-deep svg {
+      visibility: visible;
+    }
+  }
+}

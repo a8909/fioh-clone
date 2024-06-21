@@ -1,0 +1,18 @@
+nav {
+  background-color: #ffffff;
+  border-bottom: var(--border);
+  padding: 0 30px;
+  height: 78px;
+}
+.fiohSignCont {
+  display: flex;
+  .fiohsSignimg {
+    width: 400px;
+    height: calc(100vh - 78px);
+    object-fit: cover;
+  }
+  .formPar {
+    display: flex;
+    background: #ffffff;
+  }
+}

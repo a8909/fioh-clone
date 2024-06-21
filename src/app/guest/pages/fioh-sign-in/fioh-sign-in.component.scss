@@ -1,6 +1,11 @@
 .fioh-container {
-  width: 100%;
+  margin: 60px auto 0;
   display: flex;
+  .signIn-text {
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 38.4px;
+  }
   .fioh-image {
     width: 30%;
   }
@@ -13,11 +18,11 @@
       .fioh-form {
         display: flex;
         flex-direction: column;
-        gap: 10px;
+        gap: 18px;
         #fioh-email {
           padding: 20px;
-          width: 300px;
-          border-radius: 30px;
+          width: 360px;
+          border-radius: 100px;
           border-color: #ffffff;
           border: none;
         }
@@ -26,6 +31,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+        margin-bottom: 40px;
         .fioh-checkbox {
           display: flex;
           align-items: center;
@@ -40,6 +46,7 @@
         background-color: rgb(157, 28, 185);
         text-align: center;
         border: none;
+        margin-bottom: 40px;
       }
       .fioh-signup-container {
         display: flex;

@@ -4,7 +4,6 @@ import { FormsModule } from '@angular/forms';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import { setInterval } from 'timers';
-import { FiohService } from '../fioh.service';
 import { animate, style, transition, trigger } from '@angular/animations';
 
 @Component({
@@ -13,7 +12,6 @@ import { animate, style, transition, trigger } from '@angular/animations';
   imports: [FormsModule, CommonModule, CarouselModule],
   templateUrl: './landing-page.component.html',
   styleUrl: './landing-page.component.scss',
-  providers: [FiohService],
   animations: [
     trigger('fade', [
       transition('void => *', [
@@ -24,7 +22,6 @@ import { animate, style, transition, trigger } from '@angular/animations';
   ],
 })
 export class LandingPageComponent implements OnInit {
-  constructor(private fiohService: FiohService) {}
   selectedId: any;
   questions = [
     {

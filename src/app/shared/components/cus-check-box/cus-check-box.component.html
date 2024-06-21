@@ -1,0 +1,15 @@
+<div class="cusCheck">
+  <input [type]="type" hidden [id]="idn || fcn" />
+  <label [for]="idn || fcn">
+    @if (type == 'checkbox') {
+    <div class="check">
+      <svg-icons name="check"></svg-icons>
+    </div>
+    }@else {
+    <div class="cusRadio"></div>
+    }
+    <div class="txt">
+      <ng-content></ng-content>
+    </div>
+  </label>
+</div>

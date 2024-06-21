@@ -1,6 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
 // @import '~'
 
+:root {
+  --primary: #9d1cb9;
+  --radBtn: blue;
+  --bodyTxt: #171717;
+  --greyTxt: #171717;
+  --border: 0.7px solid #bac0d4b3;
+}
+
 @font-face {
   font-family: "GT Walsheim Pro";
   src: url(assets/fonts/GTWalsheimProRegular.woff2);
