@@ -27,20 +27,15 @@
   <div *ngSwitchDefault></div>
 </div>
 
-<div class="package">
-  <div class="package-container" *ngFor="let package of Packages">
-    <div>
-      <label for="pricing">
-        <input type="radio" for="pricing" id="pricing" />
-      </label>
-    </div>
-    <div>{{ package.level }}</div>
-    <div>{{ package.card }}</div>
-    <div>{{ package.price }}</div>
-    <div class="submitBtn">
-      <button type="submit" class="pricing-btn">Get Started</button>
-    </div>
-  </div>
+<div class="packs">
+  <pricing-plans
+    *ngFor="let package of Packages"
+    [pack]="package"
+    #pricePlan
+    (priceEvent)="onNavigate($event)"
+  >
+    <radio-check></radio-check>
+  </pricing-plans>
 </div>
 
 <div class="fbsp">
@@ -55,7 +50,7 @@
     </thead>
   </table>
 </div>
-<section>
+<!-- <section>
   <div>
     <tbody>
       <tr>
@@ -67,10 +62,10 @@
         </td>
         <td>
           <div>
-            <!-- svg icon -->
-          </div>
+             svg icon -->
+<!-- </div>
         </td>
       </tr>
     </tbody>
   </div>
-</section>
+</section> -->

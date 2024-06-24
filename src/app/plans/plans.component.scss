@@ -1,0 +1,30 @@
+.package {
+  .submitBtn {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .pricing-btn {
+      background: var(--primary);
+      height: 42px;
+      padding: 0 25px;
+      font-weight: 600;
+      border-radius: 100px;
+      color: #fff;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      font-size: 15px;
+    }
+  }
+}
+
+.package-container {
+  border: 7px solid #bac0d4b2;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 250px;
+  width: 250px;
+}

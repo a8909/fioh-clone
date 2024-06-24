@@ -7,6 +7,8 @@ import {
 } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { AlertComponent } from '../../components/alert.component';
+import { PlansComponent } from '../../../plans/plans.component';
+import { RadioCheckComponent } from '../../../shared/components/radio-check/radio-check.component';
 
 @Component({
   selector: 'app-pricing',
@@ -17,6 +19,8 @@ import { AlertComponent } from '../../components/alert.component';
     NgSwitchDefault,
     CommonModule,
     AlertComponent,
+    PlansComponent,
+    RadioCheckComponent,
   ],
   templateUrl: './pricing.component.html',
   styleUrl: './pricing.component.scss',
@@ -28,7 +32,6 @@ export class PricingComponent {
     { level: 'Standard', card: 'Most popular', price: '$40' },
     { level: 'Basic', card: 'Access to all features', price: '$80' },
   ];
-  error: string = 'error';
 
   Features = [
     {
@@ -97,4 +100,6 @@ export class PricingComponent {
         'Control notifications for your guests. You can choose to notify them of new posts, remind them of special dates, or turn off notifications for more privacy.',
     },
   ];
+
+  onNavigate(plansGrade: string) {}
 }

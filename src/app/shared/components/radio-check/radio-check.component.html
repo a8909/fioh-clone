@@ -1,7 +1,8 @@
 <div class="radioCheck">
   <input [type]="radio" hidden [id]="rad" />
   <label [for]="rad"></label>
-  <div class="radCheck" *ngif="radio == 'radioButton'">
+  <div class="radCheck">
+    <span class="radio"></span>
     <svg-icons name="radio"></svg-icons>
     <!-- svg-icons svg of the radio button will be passed here -->
   </div>

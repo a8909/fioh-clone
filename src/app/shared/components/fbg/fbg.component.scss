@@ -1,0 +1,17 @@
+.fiohBtn {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-bottom: 10px;
+  button {
+    padding: 12px 0px;
+    width: 100%;
+    border-radius: 30px;
+    background-color: #ffffff;
+    border: 0.7px solid #181819b3;
+    gap: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

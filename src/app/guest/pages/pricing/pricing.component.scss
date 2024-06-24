@@ -14,7 +14,7 @@ ul li {
 li a {
   margin-left: 3px;
   color: rgb(216, 204, 219);
-  background-color: rgb(187, 25, 236);
+  background-color: var(--primary);
   padding: 10px;
   border-radius: 30px;
 }
@@ -38,39 +38,9 @@ a {
   cursor: pointer;
 }
 
-.package {
+.packs {
   display: flex;
-  flex-direction: row;
   justify-content: center;
-  margin: auto;
-  .submitBtn {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    .pricing-btn {
-      background: purple;
-      height: 42px;
-      padding: 0 25px;
-      font-weight: 600;
-      border-radius: 100px;
-      color: #fff;
-      border: none;
-      outline: none;
-      cursor: pointer;
-      font-size: 15px;
-    }
-  }
-}
-
-.package-container {
-  border: 7px solid #bac0d4b2;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  height: 250px;
-  width: 250px;
 }
 
 .fbsp {

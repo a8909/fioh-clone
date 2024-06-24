@@ -1,32 +1,43 @@
 <app-auth-layout>
   <h2 class="signIn-text">Login</h2>
-  <form action="">
+  <form action="" #form>
     <div class="formField">
-      <input placeholder="Enter your email" type="email" />
+      <input
+        placeholder="Enter your email"
+        id="fiohEmail"
+        type="email"
+        #emailInput
+      />
     </div>
     <div class="formField">
-      <input placeholder="Enter your password" type="password" />
+      <input
+        placeholder="Enter your password"
+        id="fiohPassword"
+        type="password"
+        #passwordInput
+      />
+      <!-- <div *ngIf="passwordInput.toched">Password is required.</div> -->
     </div>
 
-    <div class="checkBox-container">
+    <div class="checkBoxcontainer">
       <cus-check-box idn="remember"> Remember me </cus-check-box>
       <a href="" class="fioh-forgotPassword">Forgot password?</a>
     </div>
-    <div class="fioh-loginBtn">
-      <input type="submit" id="fioh-btn" value="Login" />
+    <div class="fiohLoginBtn">
+      <input
+        id="fiohBtn"
+        value="Login"
+        (click)="logIn()"
+        [disabled]="buttonStatus"
+      />
     </div>
   </form>
   <fieldset class="fieldset">
     <legend class="fioh-legend">OR</legend>
-    <div class="fioh-btn">
-      <button>
-        <!-- <svg class="display-img"></svg> -->
-        <span>Continue with Google</span>
-      </button>
-    </div>
-    <div class="fioh-signup-container">
+    <fbg></fbg>
+    <div class="fiohSignupContainer">
       <div class="acc">Don't have an account?</div>
-      <div class="fioh-signup">Sign up</div>
+      <a class="fiohSignup">Sign up</a>
     </div>
   </fieldset>
 </app-auth-layout>

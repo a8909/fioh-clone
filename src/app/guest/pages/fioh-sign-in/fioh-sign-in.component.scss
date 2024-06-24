@@ -19,60 +19,53 @@
         display: flex;
         flex-direction: column;
         gap: 18px;
-        #fioh-email {
-          padding: 20px;
-          width: 360px;
-          border-radius: 100px;
-          border-color: #ffffff;
-          border: none;
-        }
-      }
-      .checkBox-container {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 40px;
-        .fioh-checkbox {
-          display: flex;
-          align-items: center;
-          gap: 5px;
-        }
-      }
-      #fioh-btn {
-        padding: 20px;
-        width: 100%;
-        border-radius: 30px;
-        color: #ffffff;
-        background-color: rgb(157, 28, 185);
-        text-align: center;
-        border: none;
-        margin-bottom: 40px;
-      }
-      .fioh-signup-container {
-        display: flex;
-        justify-content: center;
-        gap: 5px;
-        margin-top: 8px;
-        .fioh-signup {
-          color: rgb(157, 28, 185);
-        }
       }
     }
   }
 }
 
+.fiohSignupContainer {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  margin-top: 8px;
+  .fiohSignup {
+    color: var(--primary);
+  }
+}
+
+#fiohBtn {
+  padding: 20px;
+  width: 90%;
+  border-radius: 30px;
+  color: #ffffff;
+  background-color: var(--primary);
+  text-align: center;
+  border: none;
+  margin-bottom: 10px;
+  font-size: 15px;
+}
+.checkBoxcontainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+#fiohEmail,
+#fiohPassword {
+  padding: 20px;
+  width: 360px;
+  border-radius: 100px;
+  margin-bottom: 10px;
+  border: 0.7px solid #bac0d4b3;
+}
+
 .fieldset {
   border: none;
-  border-top: 1px solid rgb(66, 64, 64);
+  border-top: 0.7px solid #bac0d4b3;
   .fioh-legend {
     text-align: center;
-  }
-
-  button {
-    padding: 20px 0px;
-    width: 100%;
-    border-radius: 30px;
-    background-color: #ffffff;
   }
 }
 a {
