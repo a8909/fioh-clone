@@ -10,4 +10,8 @@ import { RouterModule } from '@angular/router';
   templateUrl: './guest-layout.component.html',
   styleUrl: './guest-layout.component.scss',
 })
-export class GuestLayoutComponent {}
+export class GuestLayoutComponent {
+  selectF(event) {
+    console.log(event);
+  }
+}

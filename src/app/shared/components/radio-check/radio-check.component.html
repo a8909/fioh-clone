@@ -1,10 +1,8 @@
 <div class="radioCheck">
-  <input [type]="radio" hidden [id]="rad" />
+  <input [type]="type" hidden [id]="rad" />
   <label [for]="rad"></label>
-  <div class="radCheck">
+  <div class="radCheck" *ngIf="type == 'radio'">
     <span class="radio"></span>
-    <svg-icons name="radio"></svg-icons>
-    <!-- svg-icons svg of the radio button will be passed here -->
   </div>
-  <div class="radUncheck" *ngIf="radio != 'radioButton'"></div>
+  <div class="radUncheck" *ngIf="type != 'radio'"></div>
 </div>

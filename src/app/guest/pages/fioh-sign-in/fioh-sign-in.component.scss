@@ -36,7 +36,7 @@
 
 #fiohBtn {
   padding: 20px;
-  width: 90%;
+  width: 100%;
   border-radius: 30px;
   color: #ffffff;
   background-color: var(--primary);
@@ -44,7 +44,9 @@
   border: none;
   margin-bottom: 10px;
   font-size: 15px;
+  cursor: pointer;
 }
+
 .checkBoxcontainer {
   display: flex;
   justify-content: space-between;
@@ -71,4 +73,17 @@
 a {
   cursor: pointer;
   text-decoration: none;
+}
+
+button {
+  padding: 12px 0px;
+  width: 100%;
+  border-radius: 30px;
+  background-color: #ffffff;
+  border: 0.7px solid #181819b3;
+  gap: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
 }

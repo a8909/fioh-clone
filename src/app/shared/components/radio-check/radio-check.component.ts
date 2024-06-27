@@ -10,6 +10,6 @@ import { SvgIconsComponent } from '../svg-icons/svg-icons.component';
   styleUrl: './radio-check.component.scss',
 })
 export class RadioCheckComponent {
-  @Input() radio = 'radioButton';
+  @Input() type = 'radio';
   @Input() rad = 'radioButton';
 }

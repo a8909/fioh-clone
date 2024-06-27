@@ -101,5 +101,7 @@ export class PricingComponent {
     },
   ];
 
-  onNavigate(plansGrade: string) {}
+  onNavigate(ci: number) {
+    console.log(ci);
+  }
 }

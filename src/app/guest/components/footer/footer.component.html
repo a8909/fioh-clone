@@ -12,8 +12,14 @@
         type="email"
         placeholder="Enter email address"
         id="email"
+        #footerMail
     /></label>
-    <input class="get_started" type="submit" value="Get started" />
+    <input
+      class="get_started"
+      type="submit"
+      value="Get started"
+      (click)="onMsubmitted()"
+    />
   </form>
 </div>
 <div id="aside">

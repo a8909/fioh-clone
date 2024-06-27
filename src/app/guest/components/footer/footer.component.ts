@@ -1,4 +1,11 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  Output,
+  EventEmitter,
+  ViewChild,
+  ElementRef,
+} from '@angular/core';
 
 @Component({
   selector: 'app-footer',
@@ -8,13 +15,12 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
   styleUrl: './footer.component.scss',
 })
 export class FooterComponent implements OnInit {
+  @ViewChild('footerMail') ftMail: ElementRef;
   @Output() selectedFeature = new EventEmitter();
-  select;
-  ngOnInit() {
-    this.onSelected(this.select == 'true' ? 'false' : 'true');
-  }
 
-  onSelected(selected: string) {
-    this.selectedFeature.emit(selected);
+  ngOnInit() {}
+
+  onMsubmitted() {
+    console.log(this.ftMail.nativeElement.value);
   }
 }

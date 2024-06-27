@@ -1,14 +1,9 @@
-import {
-  Component,
-  ElementRef,
-  EventEmitter,
-  Output,
-  ViewChild,
-} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AuthLayoutComponent } from '../../components/auth-layout/auth-layout.component';
 import { CusCheckBoxComponent } from '../../../shared/components/cus-check-box/cus-check-box.component';
 import { CommonModule } from '@angular/common';
 import { FbgComponent } from '../../../shared/components/fbg/fbg.component';
+import { FormsModule, NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-fioh-sign-in',
@@ -20,33 +15,30 @@ import { FbgComponent } from '../../../shared/components/fbg/fbg.component';
     CusCheckBoxComponent,
     CommonModule,
     FbgComponent,
+    FormsModule,
   ],
 })
-export class FiohSignInComponent {
-  @ViewChild('emailInput') email: ElementRef;
-  @ViewChild('passwordInput') password: ElementRef;
-  @Output() logger = new EventEmitter<{ Email: any; Password: any }>();
+export class FiohSignInComponent implements OnInit {
   logs = [];
-  values;
-  buttonStatus: boolean; //this is used to check the disable button status
-
-  logIn() {
-    this.email.nativeElement.value != '' &&
-    this.password.nativeElement.value != ''
-      ? console.log((this.buttonStatus = false))
-      : console.log((this.buttonStatus = true)); // state should be triggered
-    //if inputs are empty
-    this.logger.emit(
-      (this.values = {
-        Email: this.email.nativeElement.value,
-        Password: this.password.nativeElement.value,
-      })
-    );
-
-    this.logs.push(this.values);
+  button: boolean = true;
+  onSubmit(form: NgForm) {
+    const value = form.value;
+    const l = { email: value.email, password: value.pwd };
+    this.logs.push(l);
     console.log(this.logs);
-    this.password.nativeElement.value = '';
-    this.email.nativeElement.value = '';
-    // this.email.nativeElement.clear and this.password.nativeElement.clear
+    form.reset();
   }
+
+  fiohBtns = [
+    { imageSrc: 'assets/images/facebook.svg', text: 'Continue with Facbeook' },
+    { imageSrc: 'assets/images/facebook.svg', text: 'Continue with Google' },
+  ];
+
+  signFbg(index: number) {
+    index == 0
+      ? console.log(this.fiohBtns[0].text)
+      : console.log(this.fiohBtns[1].text);
+  }
+
+  ngOnInit() {}
 }

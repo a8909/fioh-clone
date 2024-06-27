@@ -29,9 +29,9 @@
 
 <div class="packs">
   <pricing-plans
-    *ngFor="let package of Packages"
+    *ngFor="let package of Packages; let i = index"
     [pack]="package"
-    #pricePlan
+    [id]="i"
     (priceEvent)="onNavigate($event)"
   >
     <radio-check></radio-check>
