@@ -1,0 +1,41 @@
+.abtxt {
+  text-align: center;
+  padding-top: 120px;
+  font-weight: 600;
+  font-size: 50px;
+  color: #171717;
+  .fiohTxt {
+    padding-top: 21px;
+    padding-bottom: 115px;
+    font-size: 16px;
+    font-weight: 400;
+    color: #434345;
+  }
+}
+.abtStories {
+  background-color: #000000;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 24px;
+  border-radius: 15px;
+  padding: 30px;
+  .fiohAbt {
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 600;
+  }
+  .fiohArticle {
+    color: #cccccc;
+    font-size: 16px;
+    font-weight: 400;
+  }
+}
+
+.fiohIns {
+  font-size: 40px;
+  font-weight: 600;
+  color: #171717;
+  text-align: center;
+  margin: 150px 0px 0px 80px;
+}

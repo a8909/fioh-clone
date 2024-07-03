@@ -5,6 +5,7 @@ import { FiohSignInComponent } from './pages/fioh-sign-in/fioh-sign-in.component
 import { FirstContentComponent } from './pages/first-content/first-content.component';
 import { LandingPageComponent } from './pages/landing-page/landing-page.component';
 import { PricingComponent } from './pages/pricing/pricing.component';
+import { AboutComponent } from './pages/about/about.component';
 
 const routes: Routes = [
   {
@@ -14,6 +15,7 @@ const routes: Routes = [
       { path: '', component: LandingPageComponent },
       { path: 'memorial', component: FirstContentComponent },
       { path: 'pricing', component: PricingComponent },
+      { path: 'about', component: AboutComponent },
     ],
   },
   { path: 'signIn', component: FiohSignInComponent },

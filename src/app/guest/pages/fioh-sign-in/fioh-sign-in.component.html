@@ -1,32 +1,39 @@
 <app-auth-layout>
   <h2 class="signIn-text">Login</h2>
-  <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+  <form (ngSubmit)="onSubmit()" [formGroup]="signUpForm">
     <div class="formField">
       <input
         placeholder="Enter your email"
         id="fiohEmail"
         type="email"
         name="email"
-        ngModel
-        required
+        formControlName="email"
       />
     </div>
+    <span
+      *ngIf="!signUpForm.get('email').valid && signUpForm.get('email').touched"
+      >Enter a valid Email Address</span
+    >
     <div class="formField">
       <input
         placeholder="Enter your password"
         id="fiohPassword"
         type="password"
         name="pwd"
-        ngModel
-        required
+        formControlName="pwd"
       />
     </div>
+    <span *ngIf="!signUpForm.get('pwd').valid && signUpForm.get('pwd').touched"
+      >Enter a valid password</span
+    >
     <div class="checkBoxcontainer">
       <cus-check-box idn="remember"> Remember me </cus-check-box>
       <a href="" class="fioh-forgotPassword">Forgot password?</a>
     </div>
     <div class="fiohLoginBtn">
-      <button id="fiohBtn" type="submit" [disabled]="!f.valid">Login</button>
+      <button id="fiohBtn" type="submit" [disabled]="!signUpForm.valid">
+        Login
+      </button>
     </div>
   </form>
 

@@ -1,0 +1,17 @@
+.patner {
+  padding-right: 30px;
+  padding-left: 30px;
+}
+
+.partners {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+  margin-bottom: 0px;
+
+  .partners-text {
+    font-size: 15px;
+    color: rgba(67, 67, 69, 1);
+  }
+}

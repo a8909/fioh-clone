@@ -5,11 +5,11 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import { setInterval } from 'timers';
 import { animate, style, transition, trigger } from '@angular/animations';
+import { PatnershipComponent } from '../../../patnership/patnership.component';
 
 @Component({
   selector: 'app-landing-page',
   standalone: true,
-  imports: [FormsModule, CommonModule, CarouselModule],
   templateUrl: './landing-page.component.html',
   styleUrl: './landing-page.component.scss',
   animations: [
@@ -20,6 +20,7 @@ import { animate, style, transition, trigger } from '@angular/animations';
       ]),
     ]),
   ],
+  imports: [FormsModule, CommonModule, CarouselModule, PatnershipComponent],
 })
 export class LandingPageComponent implements OnInit {
   selectedId: any;
