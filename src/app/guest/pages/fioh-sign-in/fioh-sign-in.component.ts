@@ -53,8 +53,8 @@ export class FiohSignInComponent implements OnInit {
 
   ngOnInit() {
     this.signUpForm = new FormGroup({
-      pwd: new FormControl(null, Validators.required),
       email: new FormControl(null, [Validators.required, Validators.email]),
+      pwd: new FormControl(null, Validators.required),
     });
   }
   // reactive form approach

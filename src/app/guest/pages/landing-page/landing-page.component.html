@@ -123,11 +123,12 @@
       <div class="faq-container">
         <h2 class="fioh-faq-title">{{ question.title }}</h2>
         <button class="faq-btn" (click)="showContext(question.id)">
-          <span>+</span>
+          <span *ngIf="selectedId == question.id">-</span>
+          <span *ngIf="selectedId != question.id">+</span>
         </button>
       </div>
     </div>
-    <div @fade *ngIf="selectedId == question.id">
+    <div *ngIf="selectedId == question.id">
       {{ question.answer }}
     </div>
   </div>

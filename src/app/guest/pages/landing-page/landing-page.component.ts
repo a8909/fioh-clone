@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { OwlOptions } from 'ngx-owl-carousel-o';
-import { setInterval } from 'timers';
 import { animate, style, transition, trigger } from '@angular/animations';
 import { PatnershipComponent } from '../../../patnership/patnership.component';
 
@@ -88,7 +87,6 @@ export class LandingPageComponent implements OnInit {
   selectedIndex: number = 0;
 
   showContext(getId: any) {
-    console.log(getId);
     this.selectedId = getId;
   }
 

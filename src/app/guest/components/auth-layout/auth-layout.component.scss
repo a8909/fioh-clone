@@ -6,6 +6,7 @@ nav {
 }
 .fiohSignCont {
   display: flex;
+
   .fiohsSignimg {
     width: 400px;
     height: calc(100vh - 78px);
@@ -15,5 +16,6 @@ nav {
     display: flex;
     background: #ffffff;
     flex-direction: column;
+    margin-left: 50px;
   }
 }

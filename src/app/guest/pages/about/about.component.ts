@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { PatnershipComponent } from '../../../patnership/patnership.component';
-
 @Component({
   selector: 'app-about',
   standalone: true,

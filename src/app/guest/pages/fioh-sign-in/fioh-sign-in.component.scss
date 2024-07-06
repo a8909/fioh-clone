@@ -1,26 +1,12 @@
-.fioh-container {
-  margin: 60px auto 0;
+.signIntxt {
+  font-size: 50px;
+  font-weight: 700;
+}
+.formField {
   display: flex;
-  .signIn-text {
-    font-weight: 700;
-    font-size: 30px;
-    line-height: 38.4px;
-  }
-  .fioh-image {
-    width: 30%;
-  }
-  .fioh-big-container {
-    margin-right: auto;
-    margin-left: auto;
-    .fioh-signIn-container {
-      display: flex;
-      flex-direction: column;
-      .fioh-form {
-        display: flex;
-        flex-direction: column;
-        gap: 18px;
-      }
-    }
+  flex-direction: column;
+  span {
+    font-size: 15px;
   }
 }
 
@@ -36,7 +22,7 @@
 
 #fiohBtn {
   padding: 20px;
-  width: 100%;
+  // width: 100%;
   border-radius: 30px;
   color: #ffffff;
   background-color: var(--primary);
@@ -57,7 +43,7 @@
 #fiohEmail,
 #fiohPassword {
   padding: 20px;
-  width: 360px;
+  width: 300px;
   border-radius: 100px;
   margin-bottom: 10px;
   border: 0.7px solid #bac0d4b3;
@@ -86,4 +72,7 @@ button {
   align-items: center;
   justify-content: center;
   cursor: pointer;
+}
+:disabled {
+  opacity: 0.5;
 }

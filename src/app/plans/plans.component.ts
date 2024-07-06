@@ -1,13 +1,11 @@
 import {
   Component,
   Input,
-  OnInit,
   Output,
   ViewChild,
   EventEmitter,
   ElementRef,
 } from '@angular/core';
-import { RadioCheckComponent } from '../shared/components/radio-check/radio-check.component';
 
 @Component({
   selector: 'pricing-plans',
