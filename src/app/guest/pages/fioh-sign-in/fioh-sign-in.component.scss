@@ -42,8 +42,9 @@
 
 #fiohEmail,
 #fiohPassword {
-  padding: 20px;
-  width: 300px;
+  padding-left: 10px;
+  width: 360px;
+  height: 50px;
   border-radius: 100px;
   margin-bottom: 10px;
   border: 0.7px solid #bac0d4b3;
@@ -75,4 +76,12 @@ button {
 }
 :disabled {
   opacity: 0.5;
+}
+.caution {
+  background: #cc2125;
+  height: 50px;
+  width: 300px;
+  border: #cc2125;
+  color: #ffff;
+  border-radius: 100px;
 }

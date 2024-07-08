@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import { animate, style, transition, trigger } from '@angular/animations';
-import { PatnershipComponent } from '../../../patnership/patnership.component';
+import { PatnershipComponent } from '../../../shared/components/patnership/patnership.component';
 
 @Component({
   selector: 'app-landing-page',

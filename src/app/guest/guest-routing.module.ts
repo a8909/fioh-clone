@@ -6,6 +6,8 @@ import { FirstContentComponent } from './pages/first-content/first-content.compo
 import { LandingPageComponent } from './pages/landing-page/landing-page.component';
 import { PricingComponent } from './pages/pricing/pricing.component';
 import { AboutComponent } from './pages/about/about.component';
+import { ContactUsComponent } from './pages/contact-us/contact-us.component';
+import { DashboardComponent } from '../dashboard/dashboard.component';
 
 const routes: Routes = [
   {
@@ -16,9 +18,14 @@ const routes: Routes = [
       { path: 'memorial', component: FirstContentComponent },
       { path: 'pricing', component: PricingComponent },
       { path: 'about', component: AboutComponent },
+      { path: 'contact-Us', component: ContactUsComponent },
     ],
   },
-  { path: 'signIn', component: FiohSignInComponent },
+  {
+    path: 'signIn',
+    component: FiohSignInComponent,
+    children: [{ path: 'users', component: DashboardComponent }],
+  },
 ];
 
 @NgModule({

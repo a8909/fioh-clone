@@ -1,0 +1,85 @@
+.contContainer {
+  background: #ddb3e7;
+  border-radius: 10px;
+  margin: 20px 20px 0px 20px;
+  padding: 20px;
+  .contTxt {
+    text-align: center;
+    margin-bottom: 30px;
+    .txt {
+      font-weight: 600;
+      font-size: 50px;
+      line-height: 61.5px;
+      padding: 0;
+    }
+    .txtP {
+      font-size: 16px;
+      line-height: 19.78px;
+      font-weight: 400;
+    }
+  }
+  .formControls {
+    display: flex;
+    justify-content: center;
+    height: 468px;
+    align-items: center;
+    margin-bottom: 40px;
+  }
+  .controls {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .formControl {
+    height: 50px;
+    width: 360px;
+    border-radius: 100px;
+    border: 1px;
+    padding-left: 10px;
+  }
+  .txtControl {
+    height: 136px;
+    width: 360px;
+    border-radius: 20px;
+    border: 1px;
+    padding: 10px;
+  }
+  .contBtn {
+    height: 50px;
+    width: 360px;
+    border-radius: 7992px;
+    background-color: var(--primary);
+    color: #fff;
+    padding: 13.95px, 195.86px, 15.05px, 194.93px;
+  }
+  :disabled {
+    opacity: 0.5;
+  }
+  ::ng-deep cus-check-box {
+    margin-bottom: 40px;
+  }
+}
+.contInfotxt {
+  text-align: center;
+}
+.infos {
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 40px;
+  .conInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .infoP {
+      line-height: 0.5px;
+    }
+  }
+}
+.modal {
+  background-color: #fff;
+}
+
+ng-invalid,
+ng-touched {
+  border: red;
+}

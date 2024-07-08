@@ -7,10 +7,11 @@ import {
   FormControl,
   FormGroup,
   FormsModule,
-  NgForm,
   Validators,
   ReactiveFormsModule,
 } from '@angular/forms';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-fioh-sign-in',
@@ -24,12 +25,15 @@ import {
     FbgComponent,
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule,
   ],
 })
 export class FiohSignInComponent implements OnInit {
   signUpForm: FormGroup;
   logs = [];
   submitted: boolean = false;
+  result;
+  constructor(private http: HttpClient, private route: Router) {}
 
   // This is a template driven approach
   // onSubmit(form: NgForm) {
@@ -41,14 +45,12 @@ export class FiohSignInComponent implements OnInit {
   // }
 
   fiohBtns = [
-    { imageSrc: 'assets/images/facebook.svg', text: 'Continue with Facbeook' },
+    { imageSrc: 'assets/images/google.png', text: 'Continue with Facbeook' },
     { imageSrc: 'assets/images/facebook.svg', text: 'Continue with Google' },
   ];
 
   signFbg(index: number) {
-    index == 0
-      ? console.log(this.fiohBtns[0].text)
-      : console.log(this.fiohBtns[1].text);
+    index == 0 ? this.route.navigateByUrl('') : this.route.navigateByUrl('');
   }
 
   ngOnInit() {
@@ -60,11 +62,24 @@ export class FiohSignInComponent implements OnInit {
   // reactive form approach
   onSubmit() {
     this.submitted = true;
-    this.logs.push({
+    const body = {
       emails: this.signUpForm.get('email').value,
       passwords: this.signUpForm.get('pwd').value,
-    });
-    console.log(this.logs);
+    };
+    this.http
+      .post(
+        'https://oxide-endpoint-default-rtdb.firebaseio.com/posts.json',
+        body
+      )
+      .subscribe((response) => {
+        if (response) {
+          response;
+          this.route.navigateByUrl('/users');
+        }
+      });
     this.signUpForm.reset();
+    setInterval(() => {
+      this.submitted = false;
+    }, 2000);
   }
 }

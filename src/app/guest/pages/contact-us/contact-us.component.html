@@ -1,1 +1,60 @@
-<p>contact-us works!</p>
+<div class="contContainer">
+  <div class="contTxt">
+    <h2 class="txt">Contact us</h2>
+    <p class="txtP">We’d love to hear from you. Please fill out this form.</p>
+  </div>
+  <div class="formControls">
+    <form (ngSubmit)="onContinue()">
+      <div class="controls" [formGroup]="formField">
+        <input
+          type="text"
+          [placeholder]="placeholder"
+          class="formControl"
+          formControlName="firstName"
+          name="firstName"
+        />
+        <input
+          type="text"
+          [placeholder]="lastholder"
+          class="formControl"
+          formControlName="firstName"
+          name="firstName"
+        />
+        <input
+          type="email"
+          [placeholder]="emailholder"
+          class="formControl"
+          formControlName="email"
+          name="email"
+        />
+        <textarea
+          name="txtarea"
+          rows="5"
+          class="txtControl"
+          fornControlName="txtarea"
+          [placeholder]="txtholder"
+        ></textarea>
+        <cus-check-box idn="remember">
+          You agree to our friendly <a href="">privacy policy</a>
+        </cus-check-box>
+        <button class="contBtn" type="submit" [disabled]="!formField.valid">
+          {{ submit ? "..." : "Continue" }}
+        </button>
+      </div>
+      <!-- <span *ngIf="formField.invalid && formField.touched"
+        >These fields are required</span
+      > -->
+    </form>
+  </div>
+</div>
+<div class="contInfotxt">
+  <h2>Chat to our frendly team</h2>
+  <p>We’d love to hear from you! Please get in touch.</p>
+</div>
+<div class="infos">
+  <div *ngFor="let info of infos" class="conInfo">
+    <img src="assets/images/location.png" alt="locationImage" />
+    <h2>{{ info.tag }}</h2>
+    <p class="infoP">{{ info.content }}</p>
+  </div>
+</div>
