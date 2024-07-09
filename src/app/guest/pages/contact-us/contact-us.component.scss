@@ -51,6 +51,8 @@
     background-color: var(--primary);
     color: #fff;
     padding: 13.95px, 195.86px, 15.05px, 194.93px;
+    border-color: var(--primary);
+    cursor: pointer;
   }
   :disabled {
     opacity: 0.5;

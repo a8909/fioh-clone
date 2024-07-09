@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { OwlOptions } from 'ngx-owl-carousel-o';
-import { animate, style, transition, trigger } from '@angular/animations';
 import { PatnershipComponent } from '../../../shared/components/patnership/patnership.component';
 
 @Component({
@@ -11,14 +10,6 @@ import { PatnershipComponent } from '../../../shared/components/patnership/patne
   standalone: true,
   templateUrl: './landing-page.component.html',
   styleUrl: './landing-page.component.scss',
-  animations: [
-    trigger('fade', [
-      transition('void => *', [
-        style({ backgroundcolor: 'yellow', opacity: 0 }),
-        animate(2000),
-      ]),
-    ]),
-  ],
   imports: [FormsModule, CommonModule, CarouselModule, PatnershipComponent],
 })
 export class LandingPageComponent implements OnInit {
@@ -78,10 +69,10 @@ export class LandingPageComponent implements OnInit {
   memoriaImage = [
     { id: 2, imagePath: 'assets/images/woman1.svg' },
     { id: 3, imagePath: 'assets/images/woman2.svg' },
-    // { id: 4, imagePath: 'assets/images/man.svg' },
-    // { id: 5, imagePath: 'assets/images/woman1.svg' },
-    // { id: 6, imagePath: 'assets/images/woman2.svg' },
-    // { id: 7, imagePath: 'assets/images/man.svg' },
+    { id: 4, imagePath: 'assets/images/man.svg' },
+    { id: 5, imagePath: 'assets/images/woman1.svg' },
+    { id: 6, imagePath: 'assets/images/woman2.svg' },
+    { id: 7, imagePath: 'assets/images/man.svg' },
   ];
 
   selectedIndex: number = 0;

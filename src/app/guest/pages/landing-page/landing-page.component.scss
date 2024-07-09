@@ -305,6 +305,7 @@ form {
     background-color: #ffffff;
     box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
   }
+
   .faq-btn {
     border-radius: 50%;
     background-color: #ffffff;
@@ -329,4 +330,17 @@ form {
   display: inline-block;
   justify-content: flex-start;
   flex-direction: row;
+}
+
+@keyframes bottom {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.questionAnswer {
+  animation: bottom 3s;
 }

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-memoral-modal',
@@ -7,4 +7,6 @@ import { Component } from '@angular/core';
   templateUrl: './memoral-modal.component.html',
   styleUrl: './memoral-modal.component.scss',
 })
-export class MemoralModalComponent {}
+export class MemoralModalComponent {
+  @ViewChild('ModalParent') ModalParent: ElementRef;
+}

@@ -17,8 +17,8 @@
           type="text"
           [placeholder]="lastholder"
           class="formControl"
-          formControlName="firstName"
-          name="firstName"
+          formControlName="lastName"
+          name="lastName"
         />
         <input
           type="email"
@@ -31,7 +31,6 @@
           name="txtarea"
           rows="5"
           class="txtControl"
-          fornControlName="txtarea"
           [placeholder]="txtholder"
         ></textarea>
         <cus-check-box idn="remember">
@@ -41,9 +40,9 @@
           {{ submit ? "..." : "Continue" }}
         </button>
       </div>
-      <!-- <span *ngIf="formField.invalid && formField.touched"
+      <span *ngIf="formField.invalid && formField.touched"
         >These fields are required</span
-      > -->
+      >
     </form>
   </div>
 </div>

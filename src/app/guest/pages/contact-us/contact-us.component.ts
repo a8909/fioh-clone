@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, AfterViewInit } from '@angular/core';
 import {
   FormControl,
   FormGroup,
@@ -20,7 +20,9 @@ export class ContactUsComponent implements OnInit {
   @Input() lastholder = ' last Name';
   @Input() emailholder = 'Email address';
   @Input() txtholder = 'leave us a message...';
+  disable: boolean = true;
   submit: boolean = false;
+  forms = [];
   formField: FormGroup;
 
   infos = [
@@ -29,13 +31,27 @@ export class ContactUsComponent implements OnInit {
     { tag: 'Our Office', content: '3, Park Lane, Wembley, London' },
   ];
   ngOnInit() {
-    this.formField = new FormGroup({
-      firstName: new FormControl(null, Validators.required),
-      lastName: new FormControl(null, Validators.required),
-      email: new FormControl(null, [Validators.required, Validators.email]),
-      txtarea: new FormControl(null, Validators.required),
-    });
+    this.forms.push(
+      (this.formField = new FormGroup({
+        firstName: new FormControl(null, Validators.required),
+        lastName: new FormControl(null, Validators.required),
+        email: new FormControl('', [Validators.required, Validators.email]),
+        // txtarea: new FormControl('', Validators.required),
+      }))
+    );
+    // console.log(this.forms);
   }
+  // ngAfterViewInit() {
+  //   for (let k of this.forms) {
+  //     console.log(k.controls);
+  //     k.controls != null ? (this.disable = true) : (this.disable = false);
+  //   }
+  // }
 
-  onContinue() {}
+  onContinue() {
+    this.submit = true;
+
+    this.formField.reset();
+    this.submit = false;
+  }
 }

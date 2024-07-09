@@ -1,11 +1,14 @@
-import { Directive, HostBinding } from '@angular/core';
+import { Directive, HostBinding, Input } from '@angular/core';
 
 @Directive({
-  selector: '[appModal]',
+  selector: '[Modal]',
   standalone: true,
 })
 export class ModalDirective {
-  @HostBinding('click') notRegistered() {}
+  @Input() Modal;
+  @HostBinding('click') notRegistered() {
+    this.Modal.ModalParent.nativeElement.classList.add('mShw');
+  }
 
   constructor() {}
 }

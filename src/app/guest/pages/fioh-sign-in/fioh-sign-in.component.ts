@@ -12,6 +12,7 @@ import {
 } from '@angular/forms';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { RequestService } from '../../../services.service';
 
 @Component({
   selector: 'app-fioh-sign-in',
@@ -32,8 +33,11 @@ export class FiohSignInComponent implements OnInit {
   signUpForm: FormGroup;
   logs = [];
   submitted: boolean = false;
-  result;
-  constructor(private http: HttpClient, private route: Router) {}
+  constructor(
+    private route: Router,
+    private http: HttpClient,
+    private request: RequestService
+  ) {}
 
   // This is a template driven approach
   // onSubmit(form: NgForm) {
@@ -66,17 +70,15 @@ export class FiohSignInComponent implements OnInit {
       emails: this.signUpForm.get('email').value,
       passwords: this.signUpForm.get('pwd').value,
     };
-    this.http
-      .post(
-        'https://oxide-endpoint-default-rtdb.firebaseio.com/posts.json',
-        body
-      )
-      .subscribe((response) => {
-        if (response) {
-          response;
-          this.route.navigateByUrl('/users');
-        }
-      });
+    this.request.onLogin(body);
+    // this.http
+    //   .post(
+    //     'https://oxide-endpoint-default-rtdb.firebaseio.com/posts.json',
+    //     body
+    //   )
+    //   .subscribe((response) => {
+    //     console.log(response);
+    //   });
     this.signUpForm.reset();
     setInterval(() => {
       this.submitted = false;

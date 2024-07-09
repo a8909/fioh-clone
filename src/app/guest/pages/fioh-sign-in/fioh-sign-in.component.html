@@ -58,7 +58,7 @@
     </div>
   </fieldset>
 
-  <!-- <div class="caution" *ngIf="signUpForm.invalid && signUpForm.touched">
-    Wrong email and password combination
-  </div> -->
+  <div @fade class="caution" *ngIf="signUpForm.invalid && signUpForm.touched">
+    <span>Wrong email and password combination</span>
+  </div>
 </app-auth-layout>

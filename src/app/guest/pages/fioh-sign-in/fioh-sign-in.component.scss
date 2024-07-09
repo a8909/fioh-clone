@@ -80,8 +80,14 @@ button {
 .caution {
   background: #cc2125;
   height: 50px;
-  width: 300px;
+  width: 354px;
   border: #cc2125;
   color: #ffff;
   border-radius: 100px;
+  animation: forwards;
+  span {
+    position: relative;
+    top: 10px;
+    left: 37px;
+  }
 }
