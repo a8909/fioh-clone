@@ -10,6 +10,9 @@
   width: 95%;
   margin-left: auto;
   margin-right: auto;
+  .h2 {
+    word-wrap: normal;
+  }
   em {
     font-family: "Tiempos Headline";
     font-weight: normal;
@@ -29,6 +32,7 @@
   display: flex;
   justify-content: space-evenly;
   margin-top: 30px;
+  word-wrap: normal;
 }
 
 #socials_images {
@@ -78,4 +82,23 @@
 
 .term {
   margin-right: 8px;
+}
+
+@media (max-width: 800px) {
+  .honor {
+    width: 100%;
+    h2 {
+      font-size: 40px !important;
+    }
+  }
+
+  .formFooter {
+    width: 50%;
+    .mail {
+      max-width: 56px !important;
+    }
+    .get_started {
+      margin-right: 5px;
+    }
+  }
 }

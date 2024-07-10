@@ -1,3 +1,9 @@
+.abtxt,
+.fiohTxt,
+.fiohAbt,
+.fiohArticle {
+  word-wrap: normal;
+}
 .abtxt {
   text-align: center;
   padding-top: 120px;
@@ -38,4 +44,13 @@
   color: #171717;
   text-align: center;
   margin: 150px 0px 0px 80px;
+}
+
+@media (min-width: 1020px) {
+  .img {
+    width: 50%;
+    img {
+      width: 90%;
+    }
+  }
 }

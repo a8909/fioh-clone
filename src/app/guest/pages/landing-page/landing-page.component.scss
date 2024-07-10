@@ -5,6 +5,7 @@
 
 .fioh-beginning {
   font-size: 70px;
+  word-wrap: nomal;
   em {
     font-family: "Tiempos Headline";
     font-style: italic;
@@ -26,7 +27,6 @@
   border-radius: 30px;
   background-color: rgba(157, 28, 185, 0.08);
   color: rgba(157, 28, 185, 1);
-  font-size: 25px;
   margin-bottom: 15px;
   align-items: center;
   .side-arrow {
@@ -80,6 +80,7 @@ form {
   .recent-text {
     font-size: 40px;
     font-weight: bolder;
+    word-wrap: nomal;
   }
 }
 
@@ -215,6 +216,8 @@ form {
 
   .big-pass-text {
     font-size: 30px;
+    word-break: normal;
+    margin: 0 10px 0px;
   }
 }
 
@@ -222,6 +225,7 @@ form {
   color: #ffffff;
   text-align: center;
   font-size: 50px;
+  word-wrap: nomal;
 }
 
 .get-started {
@@ -247,6 +251,7 @@ form {
   .tribute-text {
     color: white;
     text-align: center;
+    word-wrap: normal;
   }
   // .tributee {
   //   background-color: rgba(34, 34, 34, 1);
@@ -343,4 +348,33 @@ form {
 
 .questionAnswer {
   animation: bottom 3s;
+}
+
+@media (max-width: 800px) {
+  ::ng-deep patnership {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+    svg {
+      height: 26px;
+      width: 26px;
+    }
+  }
+}
+@media (min-width: 1020px) {
+  .mems {
+    height: 200px;
+    width: 75%;
+    position: absolute;
+    bottom: -230px;
+    margin-left: 0;
+    margin-left: 0;
+    padding-bottom: 10px;
+  }
+  .memorial-form {
+    gap: 10px;
+  }
+}
+::ng-deep patnership {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
 }
