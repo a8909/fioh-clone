@@ -41,6 +41,13 @@ a {
 .packs {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+::ng-deep pricing-plans {
+  flex: 1 250px;
+  width: 250px;
 }
 
 .fbsp {
@@ -54,4 +61,14 @@ table {
   width: 100%;
   border-collapse: collapse;
   caption-side: bottom;
+}
+
+::ng-deep pricing-plans :hover {
+  background: #ea95ea;
+  color: #ffff;
+  border-color: var(--primary) !important;
+  & button {
+    background: #ffff !important;
+    color: black !important;
+  }
 }

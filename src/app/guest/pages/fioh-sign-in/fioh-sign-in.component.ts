@@ -33,11 +33,7 @@ export class FiohSignInComponent implements OnInit {
   signUpForm: FormGroup;
   logs = [];
   submitted: boolean = false;
-  constructor(
-    private route: Router,
-    private http: HttpClient,
-    private request: RequestService
-  ) {}
+  constructor(private route: Router, private request: RequestService) {}
 
   // This is a template driven approach
   // onSubmit(form: NgForm) {
@@ -70,7 +66,7 @@ export class FiohSignInComponent implements OnInit {
       emails: this.signUpForm.get('email').value,
       passwords: this.signUpForm.get('pwd').value,
     };
-    this.request.onLogin(body);
+    this.request.onLogin(body).subscribe();
     // this.http
     //   .post(
     //     'https://oxide-endpoint-default-rtdb.firebaseio.com/posts.json',

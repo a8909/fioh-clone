@@ -10,6 +10,7 @@
   width: 95%;
   margin-left: auto;
   margin-right: auto;
+  flex-wrap: wrap;
   .h2 {
     word-wrap: normal;
   }
@@ -33,6 +34,7 @@
   justify-content: space-evenly;
   margin-top: 30px;
   word-wrap: normal;
+  flex-wrap: wrap;
 }
 
 #socials_images {

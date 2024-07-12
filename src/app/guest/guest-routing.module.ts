@@ -7,7 +7,8 @@ import { LandingPageComponent } from './pages/landing-page/landing-page.componen
 import { PricingComponent } from './pages/pricing/pricing.component';
 import { AboutComponent } from './pages/about/about.component';
 import { ContactUsComponent } from './pages/contact-us/contact-us.component';
-import { DashboardComponent } from '../dashboard/dashboard.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { UserLayoutComponent } from '../user-layout/user-layout.component';
 
 const routes: Routes = [
   {
@@ -21,10 +22,11 @@ const routes: Routes = [
       { path: 'contact-Us', component: ContactUsComponent },
     ],
   },
+  { path: 'signIn', component: FiohSignInComponent },
   {
-    path: 'signIn',
-    component: FiohSignInComponent,
-    children: [{ path: 'users', component: DashboardComponent }],
+    path: 'users',
+    component: UserLayoutComponent,
+    children: [{ path: 'dashboard', component: DashboardComponent }],
   },
 ];
 

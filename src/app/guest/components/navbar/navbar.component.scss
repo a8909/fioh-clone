@@ -50,6 +50,19 @@ nav {
   position: sticky;
   top: 0;
   z-index: 2000;
+  flex-wrap: wrap;
+}
+#menuBar {
+  position: fixed;
+  top: 26px;
+  right: 3px;
+  display: none;
+}
+
+.menuBar {
+  height: 100vh;
+  width: 250px;
+  background: #fff;
 }
 
 @media (max-width: 800px) {
@@ -58,9 +71,14 @@ nav {
       width: 26;
       height: 26;
     }
+    #menuBar {
+      display: flex;
+    }
     .navLink,
     .authLink {
-      display: none;
+      display: flex;
+      flex-direction: column;
+      position: relative;
     }
   }
 }

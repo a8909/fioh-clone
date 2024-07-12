@@ -100,30 +100,31 @@
       />
     </svg>
 
-    <!-- <ul class="side-bar">
-    
-    
-            <li><a href=""> Home</a></li>
-            <li><a href="">Memorials </a></li>
-            <li><a href="">Pricing</a></li>
-            <li><a href="">About</a></li>
-            <li><a href="">Contact us</a></li>
-        </ul> -->
     <div class="navLink">
       <a routerLink="/" href="/"> Home</a>
       <a rouuterLink="/memorial" href="/memorial">Memorials </a>
       <a href="/pricing" routerLink="/pricing">Pricing</a>
       <a href="/about" routerLink="/about">About</a>
       <a href="/contact-Us" routerLink="/contact-Us">Contact us</a>
-      <!-- <li class="menu-bar"><a href="">
-                <svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 -960 960 960"
-                        width="26">
-                        <path d="M120-120v-80h720v80H120Zm0-320v-80h720v80H120Zm0-320v-80h720v80H120Z" />
-                    </svg></a></li> -->
     </div>
     <div class="authLink">
-      <a D routerLink="/signIn" target="_blank" href="/signIn">Sign in</a>
+      <a routerLink="/signIn" target="_blank" href="/signIn">Sign in</a>
       <a class="primbtn" href="">Create memorials</a>
+    </div>
+    <span (click)="showSideBar()" id="menuBar">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        height="26"
+        viewBox="0 -960 960 960"
+        width="26"
+      >
+        <path
+          d="M120-120v-80h720v80H120Zm0-320v-80h720v80H120Zm0-320v-80h720v80H120Z"
+        />
+      </svg>
+    </span>
+    <div *ngIf="display == true" (click)="showSideBar()" id="menuBar">
+      <img src="assets/images/close-bar.svg" alt="close" />
     </div>
   </nav>
 </div>
