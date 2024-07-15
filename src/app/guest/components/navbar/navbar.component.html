@@ -100,7 +100,7 @@
       />
     </svg>
 
-    <div class="navLink">
+    <div class="navLink" [class.opened]="open">
       <a routerLink="/" href="/"> Home</a>
       <a rouuterLink="/memorial" href="/memorial">Memorials </a>
       <a href="/pricing" routerLink="/pricing">Pricing</a>
@@ -109,22 +109,17 @@
     </div>
     <div class="authLink">
       <a routerLink="/signIn" target="_blank" href="/signIn">Sign in</a>
-      <a class="primbtn" href="">Create memorials</a>
-    </div>
-    <span (click)="showSideBar()" id="menuBar">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        height="26"
-        viewBox="0 -960 960 960"
-        width="26"
+      <a (click)="validate()" class="primbtn" target="_blank"
+        >Create memorials</a
       >
-        <path
-          d="M120-120v-80h720v80H120Zm0-320v-80h720v80H120Zm0-320v-80h720v80H120Z"
-        />
-      </svg>
-    </span>
-    <div *ngIf="display == true" (click)="showSideBar()" id="menuBar">
-      <img src="assets/images/close-bar.svg" alt="close" />
+      <div (click)="open = !open" class="toggle">
+        <div [class.opened]="open" class="innerToggle">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
     </div>
   </nav>
 </div>
+<app-memoral-modal />

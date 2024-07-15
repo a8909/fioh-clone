@@ -1,2 +1,24 @@
-<p>dashboard works!</p>
+<section id="fiohDashBoard">
+  <div class="dash">
+    <div class="left">
+      <h2>Welcome, {{ users }}</h2>
+      <p>Manage and share Memorial of love ones</p>
+    </div>
+    <div class="right">
+      <a class="primbtn" href="/" routerLink="">Create memorials</a>
+    </div>
+  </div>
+</section>
+
+<section id="catloges">
+  <div *ngFor="let c of categories" class="cart">
+    <div class="carts">
+      <span class="cat">{{ c.cat }}</span>
+      <div class="price">
+        <span *ngIf="c.cat == 'Donations'">$</span>
+        <span class="prices">{{ +c.price }}</span>
+      </div>
+    </div>
+  </div>
+</section>
 <!-- <div #wlcmodalOpener>{{Modal}}</div> -->

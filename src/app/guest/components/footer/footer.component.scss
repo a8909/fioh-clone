@@ -3,7 +3,6 @@
   justify-content: space-evenly;
   flex-direction: row;
   background-color: rgba(157, 28, 185, 1);
-  height: 387px;
   align-items: center;
   margin-top: 50px;
   border-radius: 15px;
@@ -86,21 +85,21 @@
   margin-right: 8px;
 }
 
-@media (max-width: 800px) {
-  .honor {
-    width: 100%;
-    h2 {
-      font-size: 40px !important;
-    }
-  }
+// @media (max-width: 800px) {
+//   .honor {
+//     width: 100%;
+//     h2 {
+//       font-size: 40px !important;
+//     }
+//   }
 
-  .formFooter {
-    width: 50%;
-    .mail {
-      max-width: 56px !important;
-    }
-    .get_started {
-      margin-right: 5px;
-    }
-  }
-}
+//   .formFooter {
+//     width: 50%;
+//     .mail {
+//       max-width: 56px !important;
+//     }
+//     .get_started {
+//       margin-right: 5px;
+//     }
+//   }
+// }

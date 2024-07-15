@@ -5,14 +5,12 @@
 
 .fioh-beginning {
   font-size: 70px;
-  word-wrap: nomal;
   em {
     font-family: "Tiempos Headline";
     font-style: italic;
-    color: rgba(157, 28, 185, 1);
+    color: rgba(157, 28, 185, 1) !important;
   }
 }
-
 .sub {
   display: flex;
   justify-content: center;
@@ -92,9 +90,11 @@ form {
   background-color: rgba(157, 28, 185, 1);
   color: rgba(255, 255, 255, 1);
   margin: 20px 20px;
-  height: 271px;
-  width: 318px;
+  max-width: 318px;
+  width: 200px;
   border-radius: 30px;
+  flex: 1 200px;
+  padding: 10px;
 }
 
 .mem {
@@ -102,19 +102,13 @@ form {
 }
 
 .mems {
-  height: 250px;
-  width: 1000px;
+  width: 70%;
   background-color: rgba(157, 28, 185, 0.85);
-  padding-top: 40px;
-  padding-bottom: 0px;
-  padding-left: 40px;
-  padding-right: 40px;
-  margin-left: 300px;
-  margin-right: 300px;
+  padding: 40px;
   margin-bottom: 0px;
   position: absolute;
-  left: 80px;
-  bottom: -400px;
+  top: 100%;
+  left: 200px;
   border-radius: 10px;
 }
 
@@ -153,6 +147,7 @@ form {
   flex-direction: row;
   margin-top: 0px;
   padding: 0px;
+  flex-wrap: wrap;
 }
 
 .scrl {
@@ -360,21 +355,21 @@ form {
     }
   }
 }
-@media (min-width: 1020px) {
-  .mems {
-    height: 200px;
-    width: 75%;
-    position: absolute;
-    bottom: -230px;
-    margin-left: 0;
-    margin-left: 0;
-    padding-bottom: 10px;
-  }
-  .memorial-form {
-    gap: 10px;
-  }
-}
-::ng-deep patnership {
-  margin-top: 0 !important;
-  padding-top: 0 !important;
-}
+// @media (min-width: 1020px) {
+//   .mems {
+//     height: 200px;
+//     width: 75%;
+//     position: absolute;
+//     bottom: -230px;
+//     margin-left: 0;
+//     margin-left: 0;
+//     padding-bottom: 10px;
+//   }
+//   .memorial-form {
+//     gap: 10px;
+//   }
+// }
+// ::ng-deep patnership {
+//   margin-top: 0 !important;
+//   padding-top: 0 !important;
+// }

@@ -1,0 +1,32 @@
+#navNav {
+  background: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  z-index: 300;
+  height: 77px;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+  flex-wrap: wrap;
+  padding: 0 30px;
+  .right {
+    display: flex;
+    gap: 8px;
+    span {
+      border: 0.7px solid #bac0d4b3;
+      border-radius: 100px;
+      padding: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}
+
+a {
+  text-decoration: none;
+  gap: 10px;
+  color: #171717;
+  font-size: 16px;
+  font-weight: 400;
+}

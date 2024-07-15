@@ -1,0 +1,75 @@
+#fiohDashBoard {
+  flex-wrap: wrap;
+  margin-top: 60px;
+  margin-bottom: 40px;
+}
+
+p,
+.cat {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.dash {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1280px;
+  margin-left: 20px;
+  .left {
+    h2 {
+      font-size: 18px;
+      font-weight: 600;
+    }
+  }
+
+  .right {
+    a {
+      text-decoration: none;
+    }
+    .primbtn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+      background: purple;
+      height: 42px;
+      padding: 0 25px;
+      border-radius: 100px;
+      color: #fff !important;
+      border: none;
+      outline: none;
+      white-space: nowrap;
+      cursor: pointer;
+      font-size: 15px;
+    }
+  }
+}
+#catloges {
+  display: flex;
+  gap: 20px;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  margin-left: 20px;
+  .carts {
+    background: #fff;
+    flex: 1 242px;
+    width: 242px;
+    padding: 24px;
+    border-radius: 12px;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    .cat {
+      color: #9197a2;
+    }
+    .price {
+      .prices {
+        color: #171717;
+        font-size: 40px;
+        font-weight: 700;
+      }
+    }
+  }
+}

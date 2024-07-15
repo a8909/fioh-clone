@@ -61,23 +61,18 @@ export class FiohSignInComponent implements OnInit {
   }
   // reactive form approach
   onSubmit() {
+    if (this.signUpForm.invalid) return;
     this.submitted = true;
     const body = {
-      emails: this.signUpForm.get('email').value,
-      passwords: this.signUpForm.get('pwd').value,
+      email: this.signUpForm.get('email').value,
+      password: this.signUpForm.get('pwd').value,
     };
-    this.request.onLogin(body).subscribe();
-    // this.http
-    //   .post(
-    //     'https://oxide-endpoint-default-rtdb.firebaseio.com/posts.json',
-    //     body
-    //   )
-    //   .subscribe((response) => {
-    //     console.log(response);
-    //   });
-    this.signUpForm.reset();
-    setInterval(() => {
-      this.submitted = false;
-    }, 2000);
+    this.request
+      .onLogin(body)
+      .subscribe()
+      .add(() => {
+        this.signUpForm.reset();
+        this.submitted = false;
+      });
   }
 }

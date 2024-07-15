@@ -9,4 +9,7 @@ import { Component, ElementRef, ViewChild } from '@angular/core';
 })
 export class MemoralModalComponent {
   @ViewChild('ModalParent') ModalParent: ElementRef;
+  showModal() {
+    console.log('modal is showing');
+  }
 }
