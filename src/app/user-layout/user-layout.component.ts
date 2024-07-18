@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { RequestService } from '../services.service';
 
 @Component({
@@ -12,11 +12,15 @@ import { RequestService } from '../services.service';
 export class UserLayoutComponent implements OnInit {
   @Input() fname;
   @Input() lname;
-  constructor(private service: RequestService) {}
+  constructor(private service: RequestService, private route: Router) {}
   ngOnInit() {
     this.service.Users().subscribe((user: any) => {
       this.fname = user.data.first_name;
       this.lname = user.data.last_name;
     });
+  }
+  LogOut() {
+    const storage = localStorage.removeItem('authData');
+    this.route.navigateByUrl('/signIn');
   }
 }

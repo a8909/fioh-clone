@@ -1,7 +1,5 @@
 #fiohDashBoard {
-  flex-wrap: wrap;
-  margin-top: 60px;
-  margin-bottom: 40px;
+  margin: 60px 40px;
 }
 
 p,
@@ -16,6 +14,8 @@ p,
   align-items: center;
   max-width: 1280px;
   margin-left: 20px;
+  flex-wrap: wrap;
+  padding: 20px;
   .left {
     h2 {
       font-size: 18px;
@@ -39,7 +39,6 @@ p,
       color: #fff !important;
       border: none;
       outline: none;
-      white-space: nowrap;
       cursor: pointer;
       font-size: 15px;
     }
@@ -72,4 +71,23 @@ p,
       }
     }
   }
+}
+#fiohUsr {
+  padding: 20px;
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 40px;
+  }
+
+  td,
+  th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
 }

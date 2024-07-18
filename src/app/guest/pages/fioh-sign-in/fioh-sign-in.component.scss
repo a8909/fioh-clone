@@ -83,7 +83,8 @@ button {
   border: #cc2125;
   color: #ffff;
   border-radius: 100px;
-  animation: forwards;
+  transform-origin: 50% 100%;
+  transform: 0.3s ease;
   span {
     position: relative;
     top: 10px;

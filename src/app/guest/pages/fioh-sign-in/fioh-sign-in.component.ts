@@ -33,6 +33,7 @@ export class FiohSignInComponent implements OnInit {
   signUpForm: FormGroup;
   logs = [];
   submitted: boolean = false;
+  error: string;
   constructor(private route: Router, private request: RequestService) {}
 
   // This is a template driven approach
@@ -58,6 +59,7 @@ export class FiohSignInComponent implements OnInit {
       email: new FormControl(null, [Validators.required, Validators.email]),
       pwd: new FormControl(null, Validators.required),
     });
+    this.error = 'Email or password incorrect';
   }
   // reactive form approach
   onSubmit() {

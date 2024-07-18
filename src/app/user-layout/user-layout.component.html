@@ -3,15 +3,21 @@
     <img src="assets/images/fiohLogo.png" alt="fiohLogo" />
   </div>
   <div class="authLink">
-    <a href="">OverView</a>
-    <a href="">Memorials</a>
-    <a href="">Online Memorials</a>
+    <div><a class="each" href="">Overview</a></div>
+    <div><a class="each" href="">Memorials</a></div>
+    <div><a class="each" href="">Online Memorials</a></div>
   </div>
   <div class="right">
     <span><img src="assets/images/notification.png" alt="notification" /></span>
     <div class="person">
-      <!-- <img src="" alt=""> -->
-      <span>{{ fname }} {{ lname }} </span>
+      <span class="drop"
+        >{{ fname }} {{ lname }}
+        <img src="assets/images/drop.png" alt="" />
+        <div class="logout" (click)="LogOut()">
+          <div><img src="assets/images/setting.png" alt="" /> settings</div>
+          <div><img src="assets/images/logout.png" alt="" /> logout</div>
+        </div>
+      </span>
     </div>
   </div>
 </section>

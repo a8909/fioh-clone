@@ -1,5 +1,6 @@
 <app-auth-layout>
   <h2 class="signIntxt">Login</h2>
+
   <form (ngSubmit)="onSubmit()" [formGroup]="signUpForm">
     <div class="formField">
       <input
@@ -40,6 +41,7 @@
         {{ submitted ? "updating..." : "Login" }}
       </button>
     </div>
+    <span *ngIf="signUpForm.invalid">{{ error }}</span>
   </form>
 
   <fieldset class="fieldset">

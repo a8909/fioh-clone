@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input, ViewChild } from '@angular/core';
+import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { ModalDirective } from '../../../shared/modal.directive';
 import { MemoralModalComponent } from '../../../shared/memoral-modal/memoral-modal.component';
 import { RequestService } from '../../../services.service';
@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
   styleUrl: './navbar.component.scss',
   imports: [CommonModule, ModalDirective, MemoralModalComponent],
 })
-export class NavbarComponent {
+export class NavbarComponent implements OnInit {
   @ViewChild(MemoralModalComponent) m: MemoralModalComponent;
   constructor(private route: Router) {}
   open: boolean = false;
@@ -22,5 +22,9 @@ export class NavbarComponent {
       return;
     }
     this.m.showModal();
+  }
+
+  ngOnInit() {
+    localStorage.getItem('authData');
   }
 }
