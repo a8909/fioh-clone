@@ -6,4 +6,8 @@ export const routes: Routes = [
     loadChildren: () =>
       import('./guest/guest.module').then((m) => m.GuestModule),
   },
+  {
+    path: 'user',
+    loadChildren: () => import('./user/user.module').then((m) => m.UserModule),
+  },
 ];

@@ -12,19 +12,47 @@ import { HttpClientModule } from '@angular/common/http';
 })
 export class DashboardComponent implements OnInit {
   constructor(private service: RequestService) {}
-  @Input() users: {};
+  @Input() users;
+  @Input() persons;
   categories = [
     { cat: 'Memorials', price: '0' },
     { cat: 'Memorial Visitors', price: '0' },
     { cat: 'Donations', price: '0.00' },
     { cat: 'Collaborators', price: '0' },
   ];
+  year(date: Date) {
+    return date.getFullYear();
+  }
+
+  userGroup = [
+    {
+      details: {
+        profileImg: 'assets/images/wadepng.png',
+        name: 'Wade warren',
+        from: this.year(new Date(1996, 0, 1)),
+        to: this.year(new Date(2023, 0, 1)),
+      },
+      status: 'Active',
+      createdAt: new Date(2024, 1, 10).getFullYear(),
+      visitor: '100k',
+      link: '',
+      icon: '',
+    },
+  ];
+
+  getPersons() {
+    for (let p of this.userGroup) {
+      this.persons = this.userGroup[0];
+    }
+    return this.persons;
+  }
 
   ngOnInit(): void {
     console.log(this.service.getAuth());
     this.service.Users().subscribe((user: any) => {
-      this.users = user.data.first_name;
+      this.users = user.data;
       console.log(this.users);
     });
+    this.getPersons();
   }
 }

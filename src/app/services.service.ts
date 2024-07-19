@@ -14,7 +14,7 @@ export class RequestService {
     return this.http.post('https://reqres.in/api/register', body).pipe(
       tap((res) => {
         this.storeAuth(res);
-        this.route.navigateByUrl('/users/dashboard');
+        this.route.navigateByUrl('/user/dashboard');
       })
     );
   }
@@ -27,6 +27,6 @@ export class RequestService {
     return JSON.parse(localStorage.getItem('authData'));
   }
   Users() {
-    return this.http.get('https://reqres.in/api/users/2');
+    return this.http.get('https://reqres.in/api/users?page=2');
   }
 }

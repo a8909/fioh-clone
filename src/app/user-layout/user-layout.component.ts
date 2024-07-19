@@ -11,12 +11,10 @@ import { RequestService } from '../services.service';
 })
 export class UserLayoutComponent implements OnInit {
   @Input() fname;
-  @Input() lname;
   constructor(private service: RequestService, private route: Router) {}
   ngOnInit() {
     this.service.Users().subscribe((user: any) => {
-      this.fname = user.data.first_name;
-      this.lname = user.data.last_name;
+      this.fname = user.data;
     });
   }
   LogOut() {

@@ -9,6 +9,7 @@ import { AboutComponent } from './pages/about/about.component';
 import { ContactUsComponent } from './pages/contact-us/contact-us.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { UserLayoutComponent } from '../user-layout/user-layout.component';
+import { FiohMemorialComponent } from './components/fioh-memorial/fioh-memorial.component';
 
 const routes: Routes = [
   {
@@ -23,11 +24,6 @@ const routes: Routes = [
     ],
   },
   { path: 'signIn', component: FiohSignInComponent },
-  {
-    path: 'users',
-    component: UserLayoutComponent,
-    children: [{ path: 'dashboard', component: DashboardComponent }],
-  },
 ];
 
 @NgModule({
