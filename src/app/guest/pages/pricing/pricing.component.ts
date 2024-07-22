@@ -8,7 +8,7 @@ import {
 import { Component, Input } from '@angular/core';
 import { AlertComponent } from '../../components/alert.component';
 import { RadioCheckComponent } from '../../../shared/components/radio-check/radio-check.component';
-import { PlansComponent } from '../../../plans/plans.component';
+import { PlansComponent } from '../../../shared/components/plans/plans.component';
 
 @Component({
   selector: 'app-pricing',

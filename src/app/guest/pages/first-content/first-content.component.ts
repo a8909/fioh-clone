@@ -1,15 +1,16 @@
-import { NgFor } from '@angular/common';
+import { CommonModule, NgFor } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-first-content',
   standalone: true,
-  imports: [NgFor, FormsModule],
+  imports: [FormsModule, CommonModule],
   templateUrl: './first-content.component.html',
   styleUrl: './first-content.component.scss',
 })
 export class FirstContentComponent {
+  filter: boolean = false;
   keyword = '';
   get filteredMemorials() {
     return this.memorials
@@ -90,7 +91,6 @@ export class FirstContentComponent {
     this.pages = Array(Math.ceil(this.totalPage / this.perPage))
       .fill(0)
       .map((x, i) => i + 1);
-    console.log(this.pages);
   }
   setPage(page: number) {
     this.pageIndex = page;

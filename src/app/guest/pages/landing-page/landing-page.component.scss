@@ -14,6 +14,9 @@
 .sub {
   display: flex;
   justify-content: center;
+  @media (max-width: 1021px) {
+    margin-top: 170px;
+  }
 }
 
 .sub-text {
@@ -101,7 +104,7 @@ form {
   padding: 0 30px;
 }
 
-.mems {
+.mem-container {
   width: 70%;
   background-color: rgba(157, 28, 185, 0.85);
   padding: 40px;
@@ -110,6 +113,9 @@ form {
   top: 100%;
   left: 200px;
   border-radius: 10px;
+  flex-wrap: wrap;
+  display: flex;
+  flex-direction: column;
 }
 
 .memorial-form {
@@ -345,16 +351,6 @@ form {
   animation: bottom 3s;
 }
 
-@media (max-width: 800px) {
-  ::ng-deep patnership {
-    margin-top: 0 !important;
-    padding-top: 0 !important;
-    svg {
-      height: 26px;
-      width: 26px;
-    }
-  }
-}
 // @media (min-width: 1020px) {
 //   .mems {
 //     height: 200px;

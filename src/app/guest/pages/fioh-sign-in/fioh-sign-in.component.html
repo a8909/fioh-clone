@@ -41,7 +41,7 @@
         {{ submitted ? "updating..." : "Login" }}
       </button>
     </div>
-    <span *ngIf="signUpForm.invalid">{{ error }}</span>
+    <span *ngIf="signUpForm.invalid && signUpForm.touched">{{ error }}</span>
   </form>
 
   <fieldset class="fieldset">
@@ -60,7 +60,7 @@
     </div>
   </fieldset>
 
-  <div class="caution" *ngIf="signUpForm.invalid && signUpForm.touched">
+  <!-- <div class="caution" *ngIf="signUpForm.invalid && signUpForm.touched">
     <span>Wrong email and password combination</span>
-  </div>
+  </div> -->
 </app-auth-layout>

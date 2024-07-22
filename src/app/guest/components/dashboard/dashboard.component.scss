@@ -50,7 +50,6 @@ p,
   flex-wrap: wrap;
   .carts {
     background: #fff;
-    flex: 1 242px;
     width: 242px;
     padding: 24px;
     border-radius: 12px;
@@ -76,7 +75,6 @@ p,
     border-collapse: collapse;
     width: 100%;
     margin-top: 40px;
-    border-radius: 12px;
     #recent {
       font-size: 14px;
       font-weight: 400;
@@ -88,7 +86,7 @@ p,
   th {
     border: 1px solid #dddddd;
     text-align: left;
-    padding: 8px;
+    padding: 19px;
   }
 }
 
@@ -96,9 +94,6 @@ tr:nth-child(even) {
   background-color: #dddddd;
 }
 
-tr:has(td + .status) {
-  text-align: center !important;
-}
 .details {
   display: flex !important;
   align-items: center !important;
@@ -117,11 +112,12 @@ tr:has(td + .status) {
 }
 tr {
   .status {
+    text-align: center !important;
     span {
       color: #027a48 !important;
       background: #ecfdf3 !important;
-      border-radius: 16px;
-      padding: 8px;
+      border-radius: 22px;
+      padding: 5px;
     }
   }
 }

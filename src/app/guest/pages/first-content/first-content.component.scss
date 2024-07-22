@@ -5,16 +5,29 @@
   text-align: start;
   margin-left: 5%;
   margin-right: 5%;
-}
-
-.searchContainer {
-  border-radius: 300px;
-  width: 40%;
-  background: #ffffff;
-  border: 0.7px solid #bac0d4b3;
-  color: #000000;
-  // outline-color: 0.7px solid #bac0d4b3;
-  padding: 10px;
+  position: relative;
+  .searchContainer {
+    border-radius: 300px;
+    width: 40%;
+    background: #ffffff;
+    border: 0.7px solid #bac0d4b3;
+    color: #000000;
+    padding: 10px;
+  }
+  .fills {
+    cursor: pointer;
+  }
+  .filter {
+    position: absolute;
+    width: 100%;
+    background: #ffffff;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+    height: 200px;
+    left: 0;
+    top: 100%;
+    z-index: 100;
+    border-radius: 8px;
+  }
 }
 
 .all-post {
@@ -25,6 +38,7 @@
   margin-right: 5%;
   margin-top: 5px;
   padding-bottom: 40px;
+  margin-bottom: 40px;
 }
 
 a :link {
@@ -146,12 +160,13 @@ footer {
   display: flex;
   justify-content: center;
   gap: 5px;
+  align-items: center;
 }
 
 .activePage {
   color: white;
   background: purple;
-  border-radius: 50%;
-  padding: 12px;
+  border-radius: 57%;
+  padding: 5px 10px 5px;
   cursor: pointer;
 }

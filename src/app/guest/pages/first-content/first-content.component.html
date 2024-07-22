@@ -14,8 +14,9 @@
         [ngModelOptions]="{ standalone: true }"
       />
 
-      <div>
+      <div (click)="filter = !filter" class="fills">
         <p>Filters</p>
+        <div [class.filter]="filter" class="fil"></div>
       </div>
     </div>
   </div>
@@ -37,7 +38,7 @@
       </div>
     </div>
     <div class="next-prev">
-      <div>
+      <div *ngIf="pageIndex >= 2">
         <!-- icon -->
         <button class="prev" (click)="setPage(pageIndex - 1)">
           <a>Previous</a>
@@ -53,7 +54,7 @@
           {{ p }}
         </div>
       </div>
-      <div>
+      <div *ngIf="pageIndex <= pageIndex">
         <!-- icon -->
         <button class="prev" (click)="setPage(pageIndex + 1)">
           <a>Next</a>

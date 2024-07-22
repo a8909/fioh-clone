@@ -34,6 +34,7 @@ export class FiohSignInComponent implements OnInit {
   logs = [];
   submitted: boolean = false;
   error: string;
+  endPointError = null;
   constructor(private route: Router, private request: RequestService) {}
 
   // This is a template driven approach
@@ -71,7 +72,12 @@ export class FiohSignInComponent implements OnInit {
     };
     this.request
       .onLogin(body)
-      .subscribe()
+      .subscribe({
+        error: (err) => {
+          this.endPointError = err.message;
+          console.log(err.message);
+        },
+      })
       .add(() => {
         this.signUpForm.reset();
         this.submitted = false;

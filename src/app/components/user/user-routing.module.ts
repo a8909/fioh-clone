@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { UserLayoutComponent } from '../user-layout/user-layout.component';
-import { DashboardComponent } from '../guest/components/dashboard/dashboard.component';
-import { FiohMemorialComponent } from '../guest/components/fioh-memorial/fioh-memorial.component';
+import { DashboardComponent } from '../../guest/components/dashboard/dashboard.component';
+import { FiohMemorialComponent } from '../../guest/components/fioh-memorial/fioh-memorial.component';
 
 const routes: Routes = [
   {
@@ -10,7 +10,7 @@ const routes: Routes = [
     component: UserLayoutComponent,
     children: [
       { path: 'dashboard', component: DashboardComponent },
-      { path: 'memo', component: FiohMemorialComponent },
+      { path: 'online-memorial', component: FiohMemorialComponent },
     ],
   },
 ];

@@ -47,7 +47,9 @@
       <th class="status">
         <span>{{ persons.status }}</span>
       </th>
-      <th class="status">{{ persons.createdAt }}</th>
+      <th class="status">
+        {{ persons.createdAt | date : "fullDate" }}
+      </th>
       <th class="status">{{ persons.visitor }}</th>
       <th class="status">{{ persons.link }}</th>
       <th class="status">{{ persons.icon }}</th>

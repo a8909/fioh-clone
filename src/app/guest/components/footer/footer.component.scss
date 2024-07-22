@@ -1,18 +1,15 @@
 .honor {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   flex-direction: row;
   background-color: rgba(157, 28, 185, 1);
   align-items: center;
   margin-top: 50px;
   border-radius: 15px;
-  width: 95%;
-  margin-left: auto;
-  margin-right: auto;
   flex-wrap: wrap;
-  .h2 {
-    word-wrap: normal;
-  }
+  padding: 10px;
+  margin: 0 30px 0;
+
   em {
     font-family: "Tiempos Headline";
     font-weight: normal;
@@ -26,13 +23,13 @@
 
 #forever {
   display: flex;
+  flex-direction: column;
 }
 
 #aside {
   display: flex;
   justify-content: space-evenly;
   margin-top: 30px;
-  word-wrap: normal;
   flex-wrap: wrap;
 }
 
@@ -84,22 +81,16 @@
 .term {
   margin-right: 8px;
 }
-
-// @media (max-width: 800px) {
-//   .honor {
-//     width: 100%;
-//     h2 {
-//       font-size: 40px !important;
-//     }
-//   }
-
-//   .formFooter {
-//     width: 50%;
-//     .mail {
-//       max-width: 56px !important;
-//     }
-//     .get_started {
-//       margin-right: 5px;
-//     }
-//   }
-// }
+.left {
+  display: flex;
+  flex-direction: column;
+}
+.right {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  .each {
+    flex: 1 200px;
+    width: 200px;
+  }
+}

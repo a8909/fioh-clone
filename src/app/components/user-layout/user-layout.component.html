@@ -5,17 +5,19 @@
   <div class="authLink">
     <div><a class="each" href="">Overview</a></div>
     <div>
-      <a class="each" routerLink="/dashboard/memo" href="">Memorials</a>
+      <a class="each" routerLink="" href="">Memorials</a>
     </div>
     <div>
-      <a class="each" href="">Online Memorials</a>
+      <a class="each" routerLink="/dashboard/online-memorial">
+        Online Memorials
+      </a>
     </div>
   </div>
   <div class="right">
     <span><img src="assets/images/notification.png" alt="notification" /></span>
     <div class="person">
       <span class="drop"
-        >Micheal<img src="assets/images/drop.png" alt="" />
+        >{{ fname[0].first_name }}<img src="assets/images/drop.png" alt="" />
         <div class="logout" (click)="LogOut()">
           <div><img src="assets/images/setting.png" alt="" /> settings</div>
           <div><img src="assets/images/logout.png" alt="" /> logout</div>
