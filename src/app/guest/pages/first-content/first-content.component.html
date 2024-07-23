@@ -54,7 +54,7 @@
           {{ p }}
         </div>
       </div>
-      <div *ngIf="pageIndex <= pageIndex">
+      <div *ngIf="pageIndex <= pages.length - 1">
         <!-- icon -->
         <button class="prev" (click)="setPage(pageIndex + 1)">
           <a>Next</a>

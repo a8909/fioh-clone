@@ -17,8 +17,15 @@
 }
 
 #honor {
-  margin-left: -50px;
   display: flex;
+  @media (max-width: 580px) {
+    .mail {
+      max-width: 130px;
+    }
+    .get_started {
+      max-width: 113px;
+    }
+  }
 }
 
 #forever {
@@ -27,10 +34,7 @@
 }
 
 #aside {
-  display: flex;
-  justify-content: space-evenly;
-  margin-top: 30px;
-  flex-wrap: wrap;
+  max-width: 300px;
 }
 
 #socials_images {
@@ -46,10 +50,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 80%;
-  margin-left: auto;
-  margin-right: auto;
-  height: 60px;
+  padding: 10px;
+  flex-wrap: wrap;
   background-color: #ffffff;
   margin-top: 30px;
 }
@@ -63,8 +65,7 @@
 }
 
 .get_started {
-  padding: 20px;
-  width: 200px;
+  width: 130px;
   border-radius: 30px;
   border-color: #000000;
   margin-left: 8px;
@@ -83,12 +84,16 @@
 }
 .left {
   display: flex;
-  flex-direction: column;
+  gap: 20px;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  padding: 20px;
 }
 .right {
   display: flex;
   flex-direction: row;
-  gap: 20px;
+  flex-wrap: wrap;
+  padding: 10px;
   .each {
     flex: 1 200px;
     width: 200px;

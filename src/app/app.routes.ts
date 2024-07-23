@@ -8,8 +8,7 @@ export const routes: Routes = [
   },
   {
     path: 'user',
-    loadChildren: () =>
-      import('./components/user/user.module').then((m) => m.UserModule),
+    loadChildren: () => import('./user/user.module').then((m) => m.UserModule),
   },
   {
     path: 'admin',

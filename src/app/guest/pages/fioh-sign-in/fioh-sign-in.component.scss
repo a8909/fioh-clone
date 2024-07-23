@@ -5,9 +5,6 @@
 .formField {
   display: flex;
   flex-direction: column;
-  span {
-    font-size: 15px;
-  }
 }
 
 .fiohSignupContainer {
@@ -47,6 +44,16 @@
   border-radius: 100px;
   margin-bottom: 10px;
   border: 0.7px solid #bac0d4b3;
+}
+#fiohEmail.ng-touched.ng-invalid,
+#fiohPassword.ng-touched.ng-invalid {
+  border: 1px solid red;
+}
+form,
+fieldset {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
 .fieldset {

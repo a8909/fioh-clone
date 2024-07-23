@@ -11,13 +11,15 @@ nav {
     align-items: center;
 
     @media (max-width: 980px) {
+      display: none;
       &.opened {
+        display: flex;
+        flex-direction: column;
         transform: scaleY(1);
-        transform-origin: 50% 50%;
+        transform-origin: 50% 0;
         transition: 0.3s ease;
         position: absolute;
         top: 100%;
-        flex-direction: column;
         left: 0;
         justify-content: flex-start;
         padding: 10px;

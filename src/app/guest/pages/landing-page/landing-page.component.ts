@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { OwlOptions } from 'ngx-owl-carousel-o';
-import { PatnershipComponent } from '../../../shared/components/patnership/patnership.component';
+import { PatnershipComponent } from '../../../patnership/patnership.component';
 
 @Component({
   selector: 'app-landing-page',

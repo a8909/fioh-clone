@@ -10,12 +10,6 @@
         name="email"
         formControlName="email"
       />
-      <span
-        *ngIf="
-          !signUpForm.get('email').valid && signUpForm.get('email').touched
-        "
-        >Enter a valid Email Address</span
-      >
     </div>
 
     <div class="formField">
@@ -26,10 +20,6 @@
         name="pwd"
         formControlName="pwd"
       />
-      <span
-        *ngIf="!signUpForm.get('pwd').valid && signUpForm.get('pwd').touched"
-        >Enter a valid password</span
-      >
     </div>
 
     <div class="checkBoxcontainer">
@@ -41,7 +31,6 @@
         {{ submitted ? "updating..." : "Login" }}
       </button>
     </div>
-    <span *ngIf="signUpForm.invalid && signUpForm.touched">{{ error }}</span>
   </form>
 
   <fieldset class="fieldset">

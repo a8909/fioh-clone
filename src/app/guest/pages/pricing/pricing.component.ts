@@ -7,12 +7,13 @@ import {
 } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { AlertComponent } from '../../components/alert.component';
-import { RadioCheckComponent } from '../../../shared/components/radio-check/radio-check.component';
 import { PlansComponent } from '../../../shared/components/plans/plans.component';
-
+import { RadioCheckComponent } from '../../../shared/components/radio-check/radio-check.component';
 @Component({
   selector: 'app-pricing',
   standalone: true,
+  templateUrl: './pricing.component.html',
+  styleUrl: './pricing.component.scss',
   imports: [
     NgSwitch,
     NgSwitchCase,
@@ -22,8 +23,6 @@ import { PlansComponent } from '../../../shared/components/plans/plans.component
     PlansComponent,
     RadioCheckComponent,
   ],
-  templateUrl: './pricing.component.html',
-  styleUrl: './pricing.component.scss',
 })
 export class PricingComponent {
   Subscription = 'yearly';

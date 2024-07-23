@@ -14,16 +14,10 @@ export class RequestService {
 
   onLogin(body: {}) {
     return this.http.post('https://reqres.in/api/register', body).pipe(
-      tap(
-        (res) => {
-          this.storeAuth(res);
-          this.route.navigateByUrl('/user/dashboard');
-        }
-
-        // (err) => {
-        //   this.error = err.message;
-        // }
-      ),
+      tap((res) => {
+        this.storeAuth(res);
+        this.route.navigateByUrl('/user/dashboard');
+      }),
       catchError((errRes) => {
         return throwError(() => {
           new Error(errRes);

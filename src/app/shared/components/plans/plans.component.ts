@@ -22,7 +22,7 @@ export class PlansComponent {
 
   onPressed() {
     this.priceEvent.emit(this.id);
-    // this.priceEvent.emit(this.plans);
+    // this.priceEvenst.emit(this.plans);
 
     // At first the button is disabled tranform the button from disable = enable.
   }
