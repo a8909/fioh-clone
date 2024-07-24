@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, Renderer2 } from '@angular/core';
+import { Component, ElementRef, Input, OnInit, Renderer2 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { CarouselModule } from 'ngx-owl-carousel-o';
@@ -81,7 +81,11 @@ export class LandingPageComponent implements OnInit {
     this.selectedId = getId;
   }
 
+  @Input() slides = ['assets/images/tri.svg'];
+
   sliderIndex: number = 0;
+  slider() {}
+
   flexSlider = [{ content: 'lorem ipsum', src: '' }];
   ngOnInit(): void {
     // this.fiohService.slider(this.memoriaImage);

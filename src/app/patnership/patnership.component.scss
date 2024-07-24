@@ -1,20 +1,19 @@
-.patner {
-  padding-right: 30px;
-  padding-left: 30px;
-}
-
 .partners {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 50px;
-  margin-bottom: 0px;
+  margin: 50px auto 0px;
+  max-width: 1200px;
   flex-wrap: wrap;
   .svgs {
-    // flex: 2 300px;
-    // width: 300px;
+    flex-wrap: wrap;
     display: flex;
     align-items: center;
+    gap: 20px;
+    .patner {
+      flex: 1 200px;
+      width: 200px;
+    }
   }
 
   .partners-text {

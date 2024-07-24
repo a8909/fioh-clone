@@ -23,11 +23,13 @@
   </div>
 </section>
 <div class="mem">
-  <img
-    class="mem-img-container"
-    src="assets/images/tri.svg"
-    alt="memoria image"
-  />
+  <div
+    class="slide"
+    *ngFor="let s of slides; let i = index"
+    [class.active]="i == sliderIndex"
+  >
+    <img class="mem-img-container" [src]="s" alt="memoria image" />
+  </div>
 
   <div class="mem-container">
     <div class="mems">
