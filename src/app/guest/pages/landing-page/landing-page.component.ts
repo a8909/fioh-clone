@@ -80,14 +80,13 @@ export class LandingPageComponent implements OnInit {
   showContext(getId: any) {
     this.selectedId = getId;
   }
-
-  @Input() slides = ['assets/images/tri.svg'];
+  slides = ['assets/images/tri.svg'];
 
   sliderIndex: number = 0;
-  slider() {}
+  prev(i: number) {
+    this.sliderIndex = i;
+  }
 
   flexSlider = [{ content: 'lorem ipsum', src: '' }];
-  ngOnInit(): void {
-    // this.fiohService.slider(this.memoriaImage);
-  }
+  ngOnInit(): void {}
 }

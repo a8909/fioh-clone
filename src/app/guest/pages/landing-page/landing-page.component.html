@@ -23,13 +23,18 @@
   </div>
 </section>
 <div class="mem">
-  <div
-    class="slide"
-    *ngFor="let s of slides; let i = index"
-    [class.active]="i == sliderIndex"
-  >
-    <img class="mem-img-container" [src]="s" alt="memoria image" />
+  <div class="slideParent">
+    <div
+      class="slide"
+      *ngFor="let s of slides; let i = index"
+      [class.active]="sliderIndex == i"
+    >
+      <img class="mem-img-container" [src]="s" alt="memoria image" />
+    </div>
   </div>
+  <div class="indicators"></div>
+  <div class="previous"></div>
+  <div class="next"></div>
 
   <div class="mem-container">
     <div class="mems">
