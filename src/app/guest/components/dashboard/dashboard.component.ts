@@ -1,7 +1,8 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input, OnInit, input } from '@angular/core';
+import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { RequestService } from '../../../services.service';
 import { HttpClientModule } from '@angular/common/http';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-dashboard',
@@ -10,10 +11,12 @@ import { HttpClientModule } from '@angular/common/http';
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.scss',
 })
-export class DashboardComponent implements OnInit {
+export class DashboardComponent implements OnInit, OnDestroy {
   constructor(private service: RequestService) {}
   @Input() users;
   @Input() persons;
+  private userSub: Subscription;
+  isAuthenticated: boolean = false;
   error = null;
   categories = [
     { cat: 'Memorials', price: '0' },
@@ -49,10 +52,17 @@ export class DashboardComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.userSub = this.service.user.subscribe((usr) => {
+      this.isAuthenticated = !usr; // this means !usr ? false : true;
+    });
     this.service.Users().subscribe((user: any) => {
       this.users = user.data;
       console.log(this.users);
     });
     this.getPersons();
+  }
+
+  ngOnDestroy(): void {
+    this.userSub.unsubscribe();
   }
 }

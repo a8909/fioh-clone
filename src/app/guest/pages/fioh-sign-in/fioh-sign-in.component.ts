@@ -33,6 +33,7 @@ export class FiohSignInComponent implements OnInit {
   signUpForm: FormGroup;
   logs = [];
   submitted: boolean = false;
+  isLoggedIn: boolean = false;
   error: string;
   constructor(private route: Router, private request: RequestService) {}
 
@@ -54,6 +55,10 @@ export class FiohSignInComponent implements OnInit {
     index == 0 ? this.route.navigateByUrl('') : this.route.navigateByUrl('');
   }
 
+  onSwitch() {
+    this.isLoggedIn = !this.isLoggedIn;
+  }
+
   ngOnInit() {
     this.signUpForm = new FormGroup({
       email: new FormControl(null, [Validators.required, Validators.email]),
@@ -63,22 +68,43 @@ export class FiohSignInComponent implements OnInit {
   // reactive form approach
   onSubmit() {
     if (this.signUpForm.invalid) return;
-    this.submitted = true;
-    const body = {
-      email: this.signUpForm.get('email').value,
-      password: this.signUpForm.get('pwd').value,
-    };
-    this.request
-      .onLogin(body)
-      .subscribe({
-        error: (err) => {
+    const email = this.signUpForm.get('email').value;
+    const password = this.signUpForm.get('pwd').value;
+    if (this.isLoggedIn) {
+      this.request
+        .onSignUp(email, password)
+        .subscribe()
+        .add(() => {
+          this.signUpForm.reset();
+          this.isLoggedIn = false;
+        });
+    } else {
+      this.request
+        .onLogin(email, password)
+        .subscribe((error) => {
+          console.log(error);
           this.submitted = false;
-          this.error = err.message;
-        },
-      })
-      .add(() => {
-        this.signUpForm.reset();
-        this.submitted = false;
-      });
+
+          // if (!err || !err.message) {
+          //   this.error = 'An unknown error occured';
+          // }
+          // switch (err.error.messae) {
+          //   case 'EMAIL_NOT_FOUND':
+          //     this.error = 'Email not found';
+          //     break;
+          //   case 'INVALID_PASSWORD':
+          //     this.error = 'Invalid password';
+          //     break;
+          //   case 'USER_DISABLED':
+          //     this.error = 'user is disabled';
+          //     break;
+          // }
+        })
+        .add(() => {
+          this.signUpForm.reset();
+          this.submitted = false;
+          this.isLoggedIn = true;
+        });
+    }
   }
 }

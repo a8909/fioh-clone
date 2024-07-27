@@ -28,7 +28,7 @@
     </div>
     <div class="fiohLoginBtn">
       <button id="fiohBtn" type="submit" [disabled]="!signUpForm.valid">
-        {{ submitted ? "updating..." : "Login" }}
+        {{ isLoggedIn ? "Sign Up" : "Login" }}
       </button>
     </div>
   </form>
@@ -45,11 +45,13 @@
     </fbg>
     <div class="fiohSignupContainer">
       <div class="acc">Don't have an account?</div>
-      <a class="fiohSignup">Sign up</a>
+      <a class="fiohSignup" (click)="onSwitch()">{{
+        isLoggedIn ? "Log in" : "Sign up"
+      }}</a>
     </div>
   </fieldset>
 
-  <!-- <div class="caution" *ngIf="signUpForm.invalid && signUpForm.touched">
-    <span>Wrong email and password combination</span>
-  </div> -->
+  <div class="caution" *ngIf="error">
+    <span>{{ error }}</span>
+  </div>
 </app-auth-layout>
