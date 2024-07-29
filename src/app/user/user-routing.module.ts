@@ -2,14 +2,16 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { UserLayoutComponent } from '../user-layout/user-layout.component';
 import { DashboardComponent } from '../guest/components/dashboard/dashboard.component';
-import { FiohMemorialComponent } from '../guest/components/fioh-memorial/fioh-memorial.component';
+import { activate } from '../guest/pages/fioh-sign-in/auth.guard';
+import { FiohMemorialComponent } from './pages/fioh-memorial/fioh-memorial.component';
 const routes: Routes = [
   {
+    canActivate: [activate()],
     path: '',
     component: UserLayoutComponent,
     children: [
       { path: 'dashboard', component: DashboardComponent },
-      { path: 'dashboard/online-memorial', component: FiohMemorialComponent },
+      { path: 'online-memorial', component: FiohMemorialComponent },
     ],
   },
 ];

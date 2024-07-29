@@ -1,6 +1,7 @@
 import { CommonModule, NgFor } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-first-content',
@@ -10,7 +11,18 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './first-content.component.scss',
 })
 export class FirstContentComponent {
+  @Output() posts = new EventEmitter();
   filter: boolean = false;
+  constructor(private route: Router) {}
+
+  eachPost() {
+    if (localStorage.getItem('authData') == null) {
+      this.route.navigateByUrl('/signIn');
+    } else {
+      this.route.navigateByUrl('user/online-memorial');
+    }
+  }
+
   keyword = '';
   get filteredMemorials() {
     return this.memorials

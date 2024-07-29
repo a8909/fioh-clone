@@ -22,7 +22,7 @@
   </div>
 
   <div class="all-post">
-    <div class="mems-container">
+    <div class="mems-container" (click)="eachPost()">
       <div class="mems-post" *ngFor="let memorial of filteredMemorials">
         <div class="posts">
           <img [src]="memorial.imagePath" alt="" />

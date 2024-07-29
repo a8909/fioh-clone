@@ -13,6 +13,7 @@ import {
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { RequestService } from '../../../services.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-fioh-sign-in',
@@ -34,7 +35,9 @@ export class FiohSignInComponent implements OnInit {
   logs = [];
   submitted: boolean = false;
   isLoggedIn: boolean = false;
-  error: string;
+  error: string = null;
+  sub: Subscription;
+
   constructor(private route: Router, private request: RequestService) {}
 
   // This is a template driven approach
@@ -73,7 +76,11 @@ export class FiohSignInComponent implements OnInit {
     if (this.isLoggedIn) {
       this.request
         .onSignUp(email, password)
-        .subscribe()
+        .subscribe({
+          error: (err) => {
+            this.error = err;
+          },
+        })
         .add(() => {
           this.signUpForm.reset();
           this.isLoggedIn = false;
@@ -81,24 +88,13 @@ export class FiohSignInComponent implements OnInit {
     } else {
       this.request
         .onLogin(email, password)
-        .subscribe((error) => {
-          console.log(error);
-          this.submitted = false;
-
-          // if (!err || !err.message) {
-          //   this.error = 'An unknown error occured';
-          // }
-          // switch (err.error.messae) {
-          //   case 'EMAIL_NOT_FOUND':
-          //     this.error = 'Email not found';
-          //     break;
-          //   case 'INVALID_PASSWORD':
-          //     this.error = 'Invalid password';
-          //     break;
-          //   case 'USER_DISABLED':
-          //     this.error = 'user is disabled';
-          //     break;
-          // }
+        .subscribe({
+          complete: () => {
+            this.error = null;
+          },
+          error: (err) => {
+            this.error = err;
+          },
         })
         .add(() => {
           this.signUpForm.reset();

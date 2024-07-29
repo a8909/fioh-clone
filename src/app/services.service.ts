@@ -39,7 +39,7 @@ export class RequestService {
       )
       .pipe(
         tap((res) => {
-          const response = this.handleAuthentication(
+          this.handleAuthentication(
             res.email,
             res.localId,
             res.idtoken,
@@ -94,27 +94,33 @@ export class RequestService {
 
   private handleError(errorRes: HttpErrorResponse) {
     let err = 'An unknown error occured';
-    if (!errorRes.error || !errorRes.error.error) {
-      return throwError(() => {
-        new Error(err);
-      });
+    if (errorRes.status == 0) {
+      console.log(errorRes.error); //network issues
     }
     switch (errorRes.error.error.message) {
       case 'EMAIL_EXISTS':
+        err = 'Email already exist';
         break;
       case 'OPERATION_NOT_ALLOWED':
+        err = 'Operation not allowed';
         break;
       case 'TOO_MANY_ATTEMPTS_TRY_LATER':
+        err = 'Too many attempt, try again later!';
         break;
       case 'EMAIL_NOT_FOUND':
+        err = 'Email not found';
         break;
       case 'INVALID_PASSWORD':
+        err = 'Invalid password';
         break;
       case 'USER_DISABLED':
+        err = 'User disabled;';
         break;
     }
     return throwError(() => {
-      new Error(err);
+      const errors = new Error(err);
+      console.log(errors);
+      return errors;
     });
   }
 
@@ -125,6 +131,11 @@ export class RequestService {
   getAuth() {
     return JSON.parse(localStorage.getItem('authData'));
   }
+  // currentUser() {
+  //   return this.http.get(
+  //     'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyDx8h2UbViCKOTIJGNzFefatv_GlwrawrE'
+  //   );
+  // }
   Users() {
     return this.http.get('https://reqres.in/api/users?page=2');
   }

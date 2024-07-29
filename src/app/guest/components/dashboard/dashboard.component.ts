@@ -53,8 +53,9 @@ export class DashboardComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.userSub = this.service.user.subscribe((usr) => {
-      this.isAuthenticated = !usr; // this means !usr ? false : true;
+      this.isAuthenticated = !!usr; // if usr ? true : false;
     });
+
     this.service.Users().subscribe((user: any) => {
       this.users = user.data;
       console.log(this.users);
