@@ -15,11 +15,10 @@ export class FirstContentComponent {
   filter: boolean = false;
   constructor(private route: Router) {}
 
-  eachPost() {
-    if (localStorage.getItem('authData') == null) {
-      this.route.navigateByUrl('/signIn');
-    } else {
-      this.route.navigateByUrl('user/online-memorial');
+  eachPost(id: number) {
+    for (let i of this.memorials) {
+      id = i.id;
+      this.route.navigateByUrl('/signIn'); // this will navigate to the same id of thr person clicked
     }
   }
 
@@ -37,14 +36,23 @@ export class FirstContentComponent {
       );
   }
 
+  getCurrentDate(nd: Date, md: Date) {
+    let birthDate = nd;
+    let deathDate = md;
+    if (deathDate.getFullYear() < birthDate.getFullYear()) {
+      return false;
+    } else {
+      let currentDate = `(${birthDate.getFullYear()} - ${deathDate.getFullYear()})`;
+      return currentDate;
+    }
+  }
+
   memorials = [
     {
       id: 1,
       imagePath: 'assets/images/bol4.png',
       titleText: 'Final Middle Testing',
-      // mortality: new Date(),
-      // natality: new Date(),
-      year: '(1935 - 2024)',
+      year: this.getCurrentDate(new Date(1935, 1, 1), new Date(2024, 1, 1)),
       link: 'final-middle-testing.fioh.com',
       created: 'Created by Fioh on May 14, 2024',
       context:
@@ -55,7 +63,7 @@ export class FirstContentComponent {
       id: 2,
       imagePath: 'assets/images/bol1.png',
       titleText: 'Newest Middle Memorial',
-      year: '(1935 - 2024)',
+      year: this.getCurrentDate(new Date(1925, 1, 1), new Date(2002, 1, 1)),
       link: 'newest-middle -memorial.fioh.com',
       created: 'Created by Fioh on May 14, 2024',
       context:
@@ -65,7 +73,7 @@ export class FirstContentComponent {
       id: 3,
       imagePath: 'assets/images/bol2.png',
       titleText: 'Test Middle Memorial',
-      year: '(1951 - 2024)',
+      year: this.getCurrentDate(new Date(1951, 1, 1), new Date(1999, 1, 1)),
       link: 'test-middle-memorial.fioh.com',
       created: 'Created by Fioh on May 14, 2024',
       context:
@@ -75,7 +83,7 @@ export class FirstContentComponent {
       id: 4,
       imagePath: 'assets/images/bol3.png',
       titleText: 'Another Middle Memorial',
-      year: '(1935 - 2024)',
+      year: this.getCurrentDate(new Date(1735, 1, 1), new Date(1884, 1, 1)),
       link: 'another-middle-memorial.fioh.com',
       created: 'Created by Fioh on May 03, 2024',
       context:
@@ -83,10 +91,9 @@ export class FirstContentComponent {
     },
     {
       id: 5,
-      imagePath: 'assets/images/bol3.png',
-      // "assets/images/boluwa.png",
+      imagePath: 'assets/images/boluwa.png',
       titleText: 'John Di Doe',
-      year: '(1983 - 2024)',
+      year: this.getCurrentDate(new Date(1535, 1, 1), new Date(1624, 1, 1)),
       link: 'john-di-doe.fioh.com',
       created: 'Created by Fioh on April 26, 2024',
       context:
@@ -104,6 +111,7 @@ export class FirstContentComponent {
       .fill(0)
       .map((x, i) => i + 1);
   }
+
   setPage(page: number) {
     this.pageIndex = page;
   }

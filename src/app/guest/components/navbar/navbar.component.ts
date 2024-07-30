@@ -18,7 +18,7 @@ export class NavbarComponent implements OnInit {
   open: boolean = false;
   validate() {
     if (localStorage.getItem('authData')) {
-      this.route.navigateByUrl('/users/dashboard');
+      this.route.navigateByUrl('/signIn');
       return;
     }
     this.m.showModal();

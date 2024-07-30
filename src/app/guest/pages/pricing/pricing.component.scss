@@ -20,6 +20,7 @@ ul li {
     justify-content: center;
     flex-direction: row;
     padding: 7px;
+    height: 30px;
     background-color: white;
     border-radius: 40px;
     width: fit-content;
@@ -48,7 +49,6 @@ a {
   flex-wrap: wrap;
   align-items: center;
   max-width: 900px;
-  gap: 20px;
   margin-left: auto;
   margin-right: auto;
   padding: 20px;
@@ -73,11 +73,5 @@ table {
 }
 
 ::ng-deep pricing-plans :hover {
-  background: #ea95ea;
-  color: #ffff;
-  border-color: var(--primary) !important;
-  & button {
-    background: #ffff !important;
-    color: black !important;
-  }
+  background: #f5edf5;
 }

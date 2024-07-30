@@ -71,6 +71,9 @@ p,
 }
 #fiohUsr {
   padding: 20px;
+  @media (max-width: 698px) {
+    overflow: auto;
+  }
   table {
     border-collapse: collapse;
     width: 100%;

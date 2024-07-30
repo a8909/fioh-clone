@@ -26,11 +26,32 @@ import { RadioCheckComponent } from '../../../shared/components/radio-check/radi
 })
 export class PricingComponent {
   Subscription = 'yearly';
-  Packages = [
-    { level: 'Basic', card: 'No credit card required', price: '$0' },
-    { level: 'Standard', card: 'Most popular', price: '$40' },
-    { level: 'Basic', card: 'Access to all features', price: '$80' },
-  ];
+  Packages: any[] = [];
+
+  constructor() {
+    this.setPackages();
+  }
+
+  setPackages() {
+    this.Packages = [
+      { level: 'Basic', card: 'No credit card required', price: '$0' },
+      {
+        level: 'Standard',
+        card: 'Most popular',
+        price: this.Subscription === 'yearly' ? '$40' : '$100',
+      },
+      {
+        level: 'Premium',
+        card: 'Access to all features',
+        price: this.Subscription === 'yearly' ? '$80' : '$200',
+      },
+    ];
+  }
+
+  onSubscriptionChange(newSubscription: string) {
+    this.Subscription = newSubscription;
+    this.setPackages();
+  }
 
   Features = [
     {

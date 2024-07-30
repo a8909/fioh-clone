@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import {
   Component,
   Input,
@@ -10,7 +11,7 @@ import {
 @Component({
   selector: 'pricing-plans',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './plans.component.html',
   styleUrl: './plans.component.scss',
 })
@@ -19,6 +20,11 @@ export class PlansComponent {
   @Input() id: number;
   @ViewChild('pricePlan') plans: ElementRef;
   @Output() priceEvent = new EventEmitter();
+  enable: boolean = true;
+
+  checked() {
+    this.enable = !this.enable;
+  }
 
   onPressed() {
     this.priceEvent.emit(this.id);

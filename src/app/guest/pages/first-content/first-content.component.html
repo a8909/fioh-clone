@@ -22,8 +22,12 @@
   </div>
 
   <div class="all-post">
-    <div class="mems-container" (click)="eachPost()">
-      <div class="mems-post" *ngFor="let memorial of filteredMemorials">
+    <div class="mems-container">
+      <div
+        class="mems-post"
+        *ngFor="let memorial of filteredMemorials; let id = index"
+        (click)="eachPost(id)"
+      >
         <div class="posts">
           <img [src]="memorial.imagePath" alt="" />
           <div class="post-ref-containers">
@@ -62,4 +66,5 @@
       </div>
     </div>
   </div>
+  <footer></footer>
 </section>

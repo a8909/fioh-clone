@@ -8,32 +8,40 @@
     </div>
   </div>
 </section>
-<!-- <app-alert *ngIf="Subscription == 'yearly'" [message]="error"></app-alert> -->
 <div class="subscriptionContainer">
   <ul>
     <li [class.active]="Subscription == 'yearly'" class="yearly">
-      <a (click)="Subscription = 'yearly'">Yearly</a>
+      <a (click)="onSubscriptionChange('yearly')">Yearly</a>
     </li>
     <li [class.active]="Subscription == 'lifeTime'" class="lifetime">
-      <a (click)="Subscription = 'lifeTime'">LifeTime</a>
+      <a (click)="onSubscriptionChange('lifeTime')">LifeTime</a>
     </li>
   </ul>
 </div>
 <div [ngSwitch]="Subscription" class="subscription">
-  <div *ngSwitchCase="'yearly'">yearly plan is good</div>
-  <div *ngSwitchCase="'lifeTime'">LifeTime</div>
+  <div *ngSwitchCase="'yearly'">
+    <div class="packs">
+      <pricing-plans
+        *ngFor="let package of Packages; let i = index"
+        [pack]="package"
+        [id]="i"
+        (priceEvent)="onNavigate($event)"
+        ><radio-check></radio-check>
+      </pricing-plans>
+    </div>
+  </div>
+  <div *ngSwitchCase="'lifeTime'">
+    <div class="packs">
+      <pricing-plans
+        *ngFor="let package of Packages; let i = index"
+        [pack]="package"
+        [id]="i"
+        (priceEvent)="onNavigate($event)"
+        ><radio-check></radio-check>
+      </pricing-plans>
+    </div>
+  </div>
   <div *ngSwitchDefault></div>
-</div>
-
-<div class="packs">
-  <pricing-plans
-    *ngFor="let package of Packages; let i = index"
-    [pack]="package"
-    [id]="i"
-    (priceEvent)="onNavigate($event)"
-  >
-    <radio-check></radio-check>
-  </pricing-plans>
 </div>
 
 <div class="fbsp">
@@ -48,7 +56,8 @@
     </thead>
   </table>
 </div>
-<!-- <section>
+<!-- 
+<section>
   <div>
     <tbody>
       <tr>
@@ -59,9 +68,7 @@
           </div>
         </td>
         <td>
-          <div>
-             svg icon -->
-<!-- </div>
+          <div>svg icon></div>
         </td>
       </tr>
     </tbody>

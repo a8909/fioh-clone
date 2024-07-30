@@ -1,13 +1,18 @@
 <div class="package">
-  <div class="package-container">
+  <div class="package-container" (click)="checked()">
     <div>
       <ng-content></ng-content>
     </div>
-    <div>{{ pack.level }}</div>
-    <div>{{ pack.card }}</div>
-    <div>{{ pack.price }}</div>
+    <div class="level">{{ pack.level }}</div>
+    <div class="card">{{ pack.card }}</div>
+    <div class="price">{{ pack.price }}</div>
     <div class="submitBtn">
-      <button type="submit" class="pricing-btn" (click)="onPressed()">
+      <button
+        type="submit"
+        class="pricing-btn"
+        [disabled]="enable"
+        (click)="onPressed()"
+      >
         Get Started
       </button>
     </div>

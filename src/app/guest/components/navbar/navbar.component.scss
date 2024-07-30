@@ -5,12 +5,27 @@ nav {
   justify-content: space-between;
   padding: 0 30px;
   height: 79px;
+  @media (max-width: 375px) {
+    svg {
+      width: 150px;
+      height: 80px;
+    }
+  }
   .navLink {
     display: flex;
     gap: 15px;
     align-items: center;
+    :nth-child(6) {
+      visibility: hidden;
+    }
 
-    @media (max-width: 980px) {
+    @media (max-width: 557px) {
+      :nth-child(6) {
+        visibility: visible;
+      }
+    }
+
+    @media (max-width: 1006px) {
       display: none;
       &.opened {
         display: flex;
@@ -34,18 +49,16 @@ nav {
       }
     }
   }
-
   .authLink {
     display: flex;
     align-items: center;
     gap: 15px;
-    // @media (max-width: 557px) {
-    //   &:has(a) {
-    //     :first-child {
-    //       visibility: hidden;
-    //     }
-    //   }
-    // }
+    @media (max-width: 557px) {
+      .signin {
+        visibility: hidden;
+      }
+    }
+
     ::ng-deep app-memoral-modal {
       background-color: #fff;
       height: 450px;
@@ -67,7 +80,7 @@ nav {
     align-items: center;
     justify-content: center;
     gap: 5px;
-    background: purple;
+    background: var(--primary);
     height: 42px;
     padding: 0 25px;
     border-radius: 100px;
@@ -77,6 +90,11 @@ nav {
     white-space: nowrap;
     cursor: pointer;
     font-size: 15px;
+    @media (max-width: 375px) {
+      font-size: 10px;
+      padding: 0 7px;
+      height: 34px;
+    }
   }
 
   a {
@@ -96,7 +114,7 @@ nav {
   z-index: 2000;
 }
 
-@media (max-width: 980px) {
+@media (max-width: 1006px) {
   .toggle {
     padding: 10px;
     cursor: pointer;
