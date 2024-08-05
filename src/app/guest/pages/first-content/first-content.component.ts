@@ -2,29 +2,29 @@ import { CommonModule, NgFor } from '@angular/common';
 import { Component, EventEmitter, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
+import { MemoralModalComponent } from '../../../shared/memoral-modal/memoral-modal.component';
 
 @Component({
   selector: 'app-first-content',
   standalone: true,
-  imports: [FormsModule, CommonModule],
+  imports: [FormsModule, CommonModule, MemoralModalComponent],
   templateUrl: './first-content.component.html',
   styleUrl: './first-content.component.scss',
 })
 export class FirstContentComponent {
   @Output() posts = new EventEmitter();
+
   filter: boolean = false;
   constructor(private route: Router) {}
 
   eachPost(id: number) {
-    for (let i of this.memorials) {
-      id = i.id;
-      this.route.navigateByUrl('/signIn'); // this will navigate to the same id of thr person clicked
-    }
+    this.route.navigateByUrl(`/memorial/${id}`);
   }
 
   keyword = '';
   get filteredMemorials() {
-    return this.memorials
+    const shuffled = this.shurffleMemeorial([...this.memorials]);
+    return shuffled
       .filter((m) =>
         `${m.year}|${m.titleText}|${m.context}`
           .toLowerCase()
@@ -106,12 +106,19 @@ export class FirstContentComponent {
   perPage: number = 2; // no of items to be displayed on the screen
   pages = [];
 
+  shurffleMemeorial(memorial) {
+    for (let i = memorial.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * i + 1);
+      [memorial[i], memorial[j]] = [memorial[j], memorial[i]];
+    }
+    return memorial;
+  }
+
   ngOnInit() {
     this.pages = Array(Math.ceil(this.totalPage / this.perPage))
       .fill(0)
       .map((x, i) => i + 1);
   }
-
   setPage(page: number) {
     this.pageIndex = page;
   }

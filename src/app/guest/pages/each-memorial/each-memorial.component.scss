@@ -1,0 +1,144 @@
+.fiohBackDisplay {
+  display: flex;
+  flex-direction: column;
+  height: 200px;
+  color: #ffffff;
+  :first-child {
+    margin-top: 20px;
+  }
+  span,
+  h2 {
+    text-align: center;
+  }
+}
+.container {
+  display: flex;
+  //   align-items: center;
+  .fiohTribute {
+    max-width: 697px;
+    border-radius: 15px;
+    padding: 20px;
+    background: #ffffff;
+
+    hr {
+      color: #a1a9c4;
+    }
+
+    .tributeText,
+    .tributeContent,
+    .cont {
+      text-align: left;
+    }
+    .tributeContent {
+      margin-bottom: 20px;
+    }
+    .cont {
+      margin-bottom: 40p;
+    }
+    .tributes {
+      button {
+        padding: 10px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        border-radius: 100px;
+        gap: 10px;
+        background-color: #ffffff !important;
+        border: 0.7px solid #bac0d4;
+      }
+    }
+    .tributes,
+    .eachTribute {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .eachTribute {
+      gap: 30px;
+    }
+    .tribute {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      flex-direction: column;
+      padding: 10px;
+      background: var(--tribute);
+      border-radius: 12px;
+    }
+    .tributeDob {
+      text-align: left !important;
+    }
+  }
+  .left {
+    margin-top: 20px;
+    ::ng-deep side-bars {
+      :nth-child(3) {
+        a {
+          color: var(--triout);
+          span {
+            fill: var(--triout);
+          }
+        }
+      }
+    }
+    form {
+      display: flex;
+      gap: 10px;
+      .donateInput {
+        width: 168px;
+        height: 32px;
+        border-radius: 100px;
+        border: 0.7px solid #bac0d4;
+      }
+      button {
+        height: 39px;
+        border-radius: 100px;
+        padding: 10px;
+        width: 97px;
+        background: var(--triout);
+        color: #ffffff;
+        border: var(--triout);
+      }
+    }
+    .contact {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .address {
+      display: flex;
+      gap: 10px;
+      :nth-child(2) {
+        width: 100px;
+      }
+      button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+        padding: 10px;
+        border-radius: 100px;
+
+        border: 1px solid #bac0d4;
+      }
+    }
+    .updates {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      .recentUpdate {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+      }
+      .flower {
+        background: #8c8989;
+        border-radius: 50%;
+        padding: 20px;
+        span {
+          fill: 1px solid black;
+        }
+      }
+    }
+  }
+}

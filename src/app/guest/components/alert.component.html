@@ -1,18 +1,3 @@
-<div class="subscription-container">
-  <div>
-    <ul>
-      <li [class.active]="Subscription == 'yearly'">
-        <a (click)="Subscription = 'yearly'">Yearly</a>
-      </li>
-      <li [class.active]="Subscription == 'lifeTime'">
-        <a (click)="sPlan()">LifeTime</a>
-        <p>{{ message }}</p>
-      </li>
-    </ul>
-  </div>
-</div>
-<div [ngSwitch]="Subscription" class="subscription">
-  <div *ngSwitchCase="'yearly'">yearly plan is good</div>
-  <div *ngSwitchCase="'lifeTime'">lifeTime</div>
-  <div *ngSwitchDefault></div>
+<div class="bigContainer">
+  <ng-content />
 </div>

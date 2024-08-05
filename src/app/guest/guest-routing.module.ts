@@ -7,7 +7,7 @@ import { LandingPageComponent } from './pages/landing-page/landing-page.componen
 import { PricingComponent } from './pages/pricing/pricing.component';
 import { AboutComponent } from './pages/about/about.component';
 import { ContactUsComponent } from './pages/contact-us/contact-us.component';
-import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { EachMemorialComponent } from './pages/each-memorial/each-memorial.component';
 
 const routes: Routes = [
   {
@@ -15,13 +15,18 @@ const routes: Routes = [
     component: GuestLayoutComponent,
     children: [
       { path: '', component: LandingPageComponent },
-      { path: 'memorial', component: FirstContentComponent },
+      {
+        path: 'memorial',
+        component: FirstContentComponent,
+        // children: [{ path: 'memorial/:id', component: EachMemorialComponent }],
+      },
       { path: 'pricing', component: PricingComponent },
       { path: 'about', component: AboutComponent },
       { path: 'contact-Us', component: ContactUsComponent },
     ],
   },
   { path: 'signIn', component: FiohSignInComponent },
+  { path: 'memorial/:id', component: EachMemorialComponent },
 ];
 
 @NgModule({

@@ -6,7 +6,6 @@ import {
   ViewChild,
 } from '@angular/core';
 import { Router } from '@angular/router';
-import EventEmitter from 'events';
 
 @Component({
   selector: 'app-memoral-modal',
@@ -20,6 +19,7 @@ export class MemoralModalComponent {
   @ViewChild('ModalParent') ModalParent: ElementRef;
   @Input() ref: Renderer2;
   openModal = false;
+  message: string = 'This ia a modal';
   showModal() {
     // let modal = document.querySelector('bigCont');
     // this.openModal = true;
@@ -33,6 +33,6 @@ export class MemoralModalComponent {
     return;
   }
   onClose() {
-    this.openModal = false;
+    this.message = null;
   }
 }
