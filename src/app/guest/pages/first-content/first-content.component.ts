@@ -1,8 +1,15 @@
-import { CommonModule, NgFor } from '@angular/common';
-import { Component, EventEmitter, Output } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import {
+  Component,
+  EventEmitter,
+  OnDestroy,
+  OnInit,
+  Output,
+} from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { MemoralModalComponent } from '../../../shared/memoral-modal/memoral-modal.component';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-first-content',
@@ -11,8 +18,9 @@ import { MemoralModalComponent } from '../../../shared/memoral-modal/memoral-mod
   templateUrl: './first-content.component.html',
   styleUrl: './first-content.component.scss',
 })
-export class FirstContentComponent {
+export class FirstContentComponent implements OnInit {
   @Output() posts = new EventEmitter();
+  memorialSub: Subscription;
 
   filter: boolean = false;
   constructor(private route: Router) {}

@@ -18,7 +18,7 @@ const routes: Routes = [
       {
         path: 'memorial',
         component: FirstContentComponent,
-        // children: [{ path: 'memorial/:id', component: EachMemorialComponent }],
+        // children: [{ path: ':id', component: EachMemorialComponent }],
       },
       { path: 'pricing', component: PricingComponent },
       { path: 'about', component: AboutComponent },

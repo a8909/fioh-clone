@@ -3,23 +3,38 @@
   flex-direction: column;
   height: 200px;
   color: #ffffff;
-  :first-child {
-    margin-top: 20px;
-  }
+  // :first-child {
+  //   margin-top: 20px;
+  // }
   span,
   h2 {
     text-align: center;
+  }
+  .tabs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .tabList {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      cursor: pointer;
+      padding: 10pxpx;
+      background: var(--triout);
+      // width: ;
+      li {
+        // background: #ffffff;
+        padding: 10px;
+      }
+    }
   }
 }
 .container {
   display: flex;
   //   align-items: center;
-  .fiohTribute {
-    max-width: 697px;
-    border-radius: 15px;
-    padding: 20px;
-    background: #ffffff;
-
+  ::ng-deep app-memorial-tabs {
     hr {
       color: #a1a9c4;
     }
@@ -68,7 +83,45 @@
     .tributeDob {
       text-align: left !important;
     }
+    .form {
+      background: 0.5px #dde0eb;
+      width: 594px;
+      border-radius: 20px;
+      margin-top: 40px;
+      form {
+        display: flex;
+        flex-direction: column;
+        padding: 0 20px 10px;
+        .formControl {
+          border-radius: 100px;
+          height: 50px;
+          margin-top: 29px;
+          margin-bottom: 15px;
+          border: 0.7px #bac0d4;
+          background: #ffffff;
+        }
+        #story {
+          border-radius: 15px;
+          margin-bottom: 20px;
+        }
+        .formControl,
+        #story {
+          border: 0.7px #bac0d4;
+          background: #ffffff;
+          padding: 0px 10px 0px;
+        }
+        button {
+          background: var(--primary);
+          color: #ffffff;
+          width: 107px;
+          border: var(--primary);
+          border-radius: 100px;
+          padding: 7px;
+        }
+      }
+    }
   }
+
   .left {
     margin-top: 20px;
     ::ng-deep side-bars {
@@ -132,7 +185,7 @@
         gap: 20px;
       }
       .flower {
-        background: #8c8989;
+        background: #f0f0f0;
         border-radius: 50%;
         padding: 20px;
         span {
@@ -140,5 +193,34 @@
         }
       }
     }
+    .formData {
+      display: flex;
+      flex-direction: column;
+      .leaveTribute {
+        button {
+          width: 165px;
+          border-radius: 100px;
+          padding: 10px;
+          display: flex;
+          gap: 5px;
+          border: 0.7px solid #bac0d4 !important ;
+          background: #ffffff;
+          color: var(--triout);
+        }
+      }
+      #note {
+        padding: 10px;
+        border-radius: 8px;
+        border: 0.7px solid #bac0d4;
+      }
+    }
+  }
+}
+::ng-deep app-footer {
+  .honor {
+    display: none !important;
+  }
+  .left {
+    margin-top: 50px !important;
   }
 }

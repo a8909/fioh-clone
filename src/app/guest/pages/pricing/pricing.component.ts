@@ -38,12 +38,12 @@ export class PricingComponent {
       {
         level: 'Standard',
         card: 'Most popular',
-        price: this.Subscription === 'yearly' ? '$40' : '$100',
+        price: this.Subscription == 'yearly' ? '$40' : '$100',
       },
       {
         level: 'Premium',
         card: 'Access to all features',
-        price: this.Subscription === 'yearly' ? '$80' : '$200',
+        price: this.Subscription == 'yearly' ? '$80' : '$200',
       },
     ];
   }

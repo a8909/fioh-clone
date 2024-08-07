@@ -5,67 +5,162 @@
   <h2 class="name">Ayodele Oluwunmi Olufunwa</h2>
   <span class="dob">(1940-2024)</span>
   <!-- <span>image</span> -->
+  <div class="tabs">
+    <ul class="tabList">
+      <li (click)="showTab('about')">About</li>
+      <li (click)="showTab('bio')">Bio</li>
+      <li (click)="showTab('gallery')">Gallery</li>
+      <li (click)="showTab('stories')">Stories</li>
+    </ul>
+  </div>
 </div>
 <div class="container">
-  <div class="right">
-    <div class="fiohTribute">
-      <h2 class="tributeText">
-        <span>''</span>
-        Lorem ipsum dolor sit amet consectetur. At maecenas euismod lobortis id
-        fusce. Tellus cursus amet ipsum semper. Commodo.
-        <span>''</span>
-      </h2>
-      <ul>
-        <li>51 year old</li>
-        <li>
-          Born on November 25, 1972 in San Francisco, California, United States
-        </li>
-        <li>
-          Passed away on January 28, 2024 in Baton Rouge, Louisiana, United
-          States
-        </li>
-      </ul>
-      <div class="tributeContent">
-        This memorial website was created in memory of our loved one, Carlos
-        Chavez, 51 years old, born on November 25, 1972, and passed away on
-        January 28, 2024. Carlos was a strong man of faith and went home to our
-        lord and savior Jesus Christ, whole and healed.
-      </div>
-      <div class="cont">
-        While Carlos did not want a formal service, we will host Celebration of
-        Life services in 3 locations. Please add the one you can make it to on
-        your calendar ASAP. We look forward to seeing you!
-      </div>
-      <div class="tributes">
-        <h2>Tributes</h2>
-        <button>
-          <span>
-            <img [src]="edit" alt="edit" />
-          </span>
-          Leave a tribute
-        </button>
-      </div>
-      <hr />
-      <div class="tribute">
-        <div class="eachTribute">
-          <span><img [src]="candle" alt="candle" /></span>
-          <div>
-            This is the worst news I've heard in a long while. Chief Abang was a
-            truly special man. He brought joy and peace to everyone who met him.
-            One of the best to play the round leather game, the Angels will be
-            delighted to play with him. The world has truly lost a gem but
-            heaven has gained something special. May God grant him eternal rest
-            and grant his family and Capital Sportiff Sports Club the fortitude
-            to bear the loss.
-          </div>
+  <app-memorial-tabs *ngIf="tabs == 'about'">
+    <h2 class="tributeText">
+      <span>''</span>
+      Lorem ipsum dolor sit amet consectetur. At maecenas euismod lobortis id
+      fusce. Tellus cursus amet ipsum semper. Commodo.
+      <span>''</span>
+    </h2>
+    <ul>
+      <li>51 year old</li>
+      <li>
+        Born on November 25, 1972 in San Francisco, California, United States
+      </li>
+      <li>
+        Passed away on January 28, 2024 in Baton Rouge, Louisiana, United States
+      </li>
+    </ul>
+    <div class="tributeContent">
+      This memorial website was created in memory of our loved one, Carlos
+      Chavez, 51 years old, born on November 25, 1972, and passed away on
+      January 28, 2024. Carlos was a strong man of faith and went home to our
+      lord and savior Jesus Christ, whole and healed.
+    </div>
+    <div class="cont">
+      While Carlos did not want a formal service, we will host Celebration of
+      Life services in 3 locations. Please add the one you can make it to on
+      your calendar ASAP. We look forward to seeing you!
+    </div>
+    <div class="tributes">
+      <h2>Tributes</h2>
+      <button>
+        <span>
+          <img [src]="edit" alt="edit" />
+        </span>
+        Leave a tribute
+      </button>
+    </div>
+    <hr />
+    <div class="tribute">
+      <div class="eachTribute">
+        <span><img [src]="candle" alt="candle" /></span>
+        <div>
+          This is the worst news I've heard in a long while. Chief Abang was a
+          truly special man. He brought joy and peace to everyone who met him.
+          One of the best to play the round leather game, the Angels will be
+          delighted to play with him. The world has truly lost a gem but heaven
+          has gained something special. May God grant him eternal rest and grant
+          his family and Capital Sportiff Sports Club the fortitude to bear the
+          loss.
         </div>
-        <div class="tributeDob">
-          <h2>Micheal Adenuga</h2>
-          <span>Yesterday</span>
-        </div>
+      </div>
+      <div class="tributeDob">
+        <h2>Micheal Adenuga</h2>
+        <span>Yesterday</span>
       </div>
     </div>
-  </div>
+  </app-memorial-tabs>
+  <app-memorial-tabs *ngIf="tabs == 'bio'">
+    <h2>Claudette Colvin</h2>
+    <p>
+      Claudette Colvin is an activist who was a pioneer in the civil rights
+      movement in Alabama during the 1950s. She refused to give up her seat on a
+      bus months before Rosa Parks' more famous protest.
+    </p>
+    <h2>Who Is Claudette Colvin?</h2>
+    <p>
+      Claudette Colvin is a civil rights activist who, before Rosa Parks,
+      refused to give up her bus seat to a white passenger. She was arrested and
+      became one of four plaintiffs in Browder v. Gayle, which ruled that
+      Montgomery's segregated bus system was unconstitutional. Colvin later
+      moved to New York City and worked as a nurse's aide. She retired in 2004.
+    </p>
+    <h2>Quick Facts</h2>
+    <p></p>
+    <h2>Early Life</h2>
+    <p>
+      Colvin was born on September 5, 1939, in Montgomery, Alabama. Growing up
+      in one of Montgomery's poorer neighborhoods, Colvin studied hard in
+      school. She earned mostly As in her classes and aspired to become
+      president one day.
+    </p>
+    <p>
+      On March 2, 1955, Colvin was riding home on a city bus after school when a
+      bus driver told her to give up her seat to a white passenger. She refused,
+      saying, "It's my constitutional right to sit here as much as that lady. I
+      paid my fare, it's my constitutional right." Colvin felt compelled to
+      stand her ground. "I felt like Sojourner Truth was pushing down on one
+      shoulder and Harriet Tubman was pushing down on the other—saying, 'Sit
+      down girl!' I was glued to my seat," she later told Newsweek.
+    </p>
+    <h2>Legacy and 'Claudette Colvin Goes to Work</h2>
+    <p>
+      Much of the writing on civil rights history in Montgomery has focused on
+      the arrest of Parks, another woman who refused to give up her seat on the
+      bus, nine months after Colvin. While Parks has been heralded as a civil
+      rights heroine, Colvin's story has received little notice. Some have tried
+      to change that. Rita Dove penned the poem "Claudette Colvin Goes to Work,"
+      which later became a song. Phillip Hoose also wrote about her in the young
+      adult biography Claudette Colvin: Twice Toward Justice.
+    </p>
+    <p>
+      While her role in the fight to end segregation in Montgomery may not be
+      widely recognized, Colvin helped advance civil rights efforts in the city.
+      "Claudette gave all of us moral courage. If she had not done what she did,
+      I am not sure that we would have been able to mount the support for Mrs.
+      Parks," her former attorney, Fred Gray, told Newsweek.
+    </p>
+    <h2>Quotes</h2>
+    <p>
+      “ I knew then and I know now that, when it comes to justice, there is no
+      easy way to get it. You can't sugarcoat it. You have to take a stand and
+      say, 'This is not right. ”
+    </p>
+    <p>
+      “ I knew then and I know now that, when it comes to justice, there is no
+      easy way to get it. You can't sugarcoat it. You have to take a stand and
+      say, 'This is not right. ”
+    </p>
+  </app-memorial-tabs>
+  <app-memorial-tabs *ngIf="tabs == 'gallery'"></app-memorial-tabs>
+  <app-memorial-tabs *ngIf="tabs == 'stories'">
+    <p>
+      You can create a detailed biography of your loved one's life, chapter by
+      chapter. By delving into Jonathan's journey, you can offer others a more
+      intimate understanding of who he was and enable them to momentarily
+      perceive the world through his perspective.
+    </p>
+    <div class="form">
+      <form>
+        <input
+          type="text"
+          placeholder="Title"
+          name="title"
+          formControlName="title"
+          class="formControl"
+        />
+        <textarea
+          name="story"
+          id="story"
+          placeholder="Your story..."
+          cols="30"
+          rows="10"
+        ></textarea>
+        <button type="submit">Publish</button>
+      </form>
+    </div>
+  </app-memorial-tabs>
   <div class="left">
     <side-bars>
       <div class="donation">
@@ -76,7 +171,7 @@
         </p>
       </div>
       <div>
-        <form>
+        <form (ngSubmit)="donate()" [formGroup]="onDonate">
           <input
             class="donateInput"
             type="text"
@@ -91,14 +186,14 @@
     <side-bars>
       <h2>253 Photos</h2>
       <div class="slider">
-        <img src="assets/images/donpic.png" alt="" />
+        <img class="imageslider" src="assets/images/donpic.png" alt="" />
       </div>
     </side-bars>
     <side-bars>
       <div class="address">
         <button>
           <span><img src="assets/images/user_plus.png" alt="" /></span>Invite
-          family $ friend
+          family & friend
         </button>
         <button>
           <span><img src="assets/images/share.png" alt="" /></span>share
@@ -118,19 +213,40 @@
     <side-bars>
       <h2>Recent Updates</h2>
       <hr />
-      <div class="updates">
+      <div class="updates" *ngFor="let r of recentUpdate">
         <div class="recentUpdate">
           <div class="flower">
-            <span><img src="assets/images/flower.png" alt="" /></span>
+            <span><img [src]="r.src" alt="" /></span>
           </div>
           <div>
-            <h2>Tiffany Simon</h2>
-            <p>left a tribute</p>
+            <h2>T{{ r.title }}</h2>
+            <p>{{ r.subTitle }}</p>
           </div>
         </div>
 
-        <div>5 minute ago</div>
+        <div>{{ r.year }}</div>
       </div>
+    </side-bars>
+    <side-bars>
+      <h2>Leave a Tribute</h2>
+      <form class="formData">
+        <div class="leaveTribute" *ngFor="let l of leaveTribute">
+          <button>
+            <span><img [src]="l.image" alt="" /></span>{{ l.note }}
+          </button>
+        </div>
+        <textarea
+          name="leaveNote"
+          id="note"
+          cols="50"
+          rows="10"
+          name="note"
+          formControlName="note"
+          [placeholder]="placeholder"
+        ></textarea>
+        <button class="post" type="submit">Post</button>
+      </form>
     </side-bars>
   </div>
 </div>
+<app-footer />
