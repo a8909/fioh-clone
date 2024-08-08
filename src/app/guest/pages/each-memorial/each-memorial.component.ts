@@ -1,6 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { FirstContentComponent } from '../first-content/first-content.component';
+import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { AlertComponent } from '../../components/alert.component';
 import { FooterComponent } from '../../components/footer/footer.component';
@@ -9,9 +8,11 @@ import { MemorialTabsComponent } from '../../../shared/components/memorial-tabs/
 import {
   FormControl,
   FormGroup,
+  FormsModule,
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
+import { MemoralModalComponent } from '../../../shared/memoral-modal/memoral-modal.component';
 
 @Component({
   selector: 'app-each-memorial',
@@ -22,13 +23,14 @@ import {
     FooterComponent,
     NavbarComponent,
     MemorialTabsComponent,
+    FormsModule,
     ReactiveFormsModule,
+    MemoralModalComponent,
   ],
   templateUrl: './each-memorial.component.html',
   styleUrl: './each-memorial.component.scss',
 })
 export class EachMemorialComponent implements OnInit {
-  @ViewChild(FirstContentComponent) memorialPosts: FirstContentComponent;
   fn: string;
   dob: any;
   onDonate: FormGroup;
@@ -53,9 +55,9 @@ export class EachMemorialComponent implements OnInit {
   ];
 
   leaveTribute = [
-    { image: '', note: 'Light a candle' },
+    { image: 'assets/images/light.png', note: 'Light a candle' },
     { image: 'assets/images/flower.png', note: 'Lay a flower' },
-    { image: 'assets/images/', note: 'Leave a note' },
+    { image: 'assets/images/note.png', note: 'Leave a note' },
   ];
 
   recentUpdate = [
@@ -90,12 +92,31 @@ export class EachMemorialComponent implements OnInit {
       year: '5 minute ago',
     },
   ];
+  photos = [
+    { grid: 'assets/images/grid1.png' },
+    { grid: 'assets/images/grid2.png' },
+    { grid: 'assets/images/grid3.png' },
+    { grid: 'assets/images/grid4.png' },
+    { grid: 'assets/images/grid5.png' },
+    { grid: 'assets/images/grid6.png' },
+    { grid: 'assets/images/grid7.png' },
+    { grid: 'assets/images/grid8.png' },
+    { grid: 'assets/images/grid9.png' },
+    { grid: 'assets/images/grid10.png' },
+    { grid: 'assets/images/grid11.png' },
+    { grid: 'assets/images/grid12.png' },
+    { grid: 'assets/images/grid13.png' },
+    { grid: 'assets/images/grid14.png' },
+  ];
   donate() {
     if (this.onDonate.invalid || localStorage.getItem('authData') == null) {
+      console.log('modal');
       this.donation = false; // aslo show a modal
+      this.onDonate.reset();
       return;
     } else {
       this.onDonate.get('amount').value;
+      this.onDonate.reset();
       this.donation = true; //finally submit to endpoint
     }
   }

@@ -7,10 +7,14 @@
   <!-- <span>image</span> -->
   <div class="tabs">
     <ul class="tabList">
-      <li (click)="showTab('about')">About</li>
-      <li (click)="showTab('bio')">Bio</li>
-      <li (click)="showTab('gallery')">Gallery</li>
-      <li (click)="showTab('stories')">Stories</li>
+      <li [class.active]="tabs == 'about'" (click)="showTab('about')">About</li>
+      <li [class.active]="tabs == 'bio'" (click)="showTab('bio')">Bio</li>
+      <li [class.active]="tabs == 'gallery'" (click)="showTab('gallery')">
+        Gallery
+      </li>
+      <li [class.active]="tabs == 'stories'" (click)="showTab('stories')">
+        Stories
+      </li>
     </ul>
   </div>
 </div>
@@ -133,32 +137,60 @@
       say, 'This is not right. ”
     </p>
   </app-memorial-tabs>
-  <app-memorial-tabs *ngIf="tabs == 'gallery'"></app-memorial-tabs>
+  <app-memorial-tabs *ngIf="tabs == 'gallery'" class="gallery">
+    <div class="photos">
+      <div><img src="assets/images/grid1.png" alt="" /></div>
+      <div><img src="assets/images/grid2.png" alt="" /></div>
+      <div><img src="assets/images/grid3.png" alt="" /></div>
+      <div><img src="assets/images/grid4.png" alt="" /></div>
+      <div><img src="assets/images/grid5.png" alt="" /></div>
+      <div><img src="assets/images/grid6.png" alt="" /></div>
+      <div><img src="assets/images/grid7.png" alt="" /></div>
+      <div><img src="assets/images/grid8.png" alt="" /></div>
+      <div><img src="assets/images/grid9.png" alt="" /></div>
+      <div><img src="assets/images/grid10.png" alt="" /></div>
+      <div><img src="assets/images/grid11.png" alt="" /></div>
+      <div><img src="assets/images/grid12.png" alt="" /></div>
+      <div><img src="assets/images/grid13.png" alt="" /></div>
+      <div><img src="assets/images/grid14.png" alt="" /></div>
+      <div><img src="assets/images/grid14.png" alt="" /></div>
+    </div>
+    <div class="nextPrev">
+      <button class="prevs">
+        <span><img src="assets/images/arrow-left.png" alt="" /></span>Previous
+      </button>
+      <button class="prevs">
+        Next<span><img src="assets/images/arrow-right.png" alt="" /></span>
+      </button>
+    </div>
+  </app-memorial-tabs>
   <app-memorial-tabs *ngIf="tabs == 'stories'">
-    <p>
-      You can create a detailed biography of your loved one's life, chapter by
-      chapter. By delving into Jonathan's journey, you can offer others a more
-      intimate understanding of who he was and enable them to momentarily
-      perceive the world through his perspective.
-    </p>
-    <div class="form">
-      <form>
-        <input
-          type="text"
-          placeholder="Title"
-          name="title"
-          formControlName="title"
-          class="formControl"
-        />
-        <textarea
-          name="story"
-          id="story"
-          placeholder="Your story..."
-          cols="30"
-          rows="10"
-        ></textarea>
-        <button type="submit">Publish</button>
-      </form>
+    <div class="stories">
+      <p>
+        You can create a detailed biography of your loved one's life, chapter by
+        chapter. By delving into Jonathan's journey, you can offer others a more
+        intimate understanding of who he was and enable them to momentarily
+        perceive the world through his perspective.
+      </p>
+      <div class="form">
+        <form>
+          <input
+            type="text"
+            placeholder="Title"
+            name="title"
+            formControlName="title"
+            class="formControl"
+          />
+          <textarea
+            name="story"
+            id="story"
+            placeholder="Your story..."
+            cols="30"
+            rows="10"
+          ></textarea>
+          <button type="submit">Publish</button>
+        </form>
+      </div>
     </div>
   </app-memorial-tabs>
   <div class="left">
@@ -170,6 +202,7 @@
           Mat
         </p>
       </div>
+
       <div>
         <form (ngSubmit)="donate()" [formGroup]="onDonate">
           <input
@@ -178,6 +211,7 @@
             required
             name="amount"
             formControlName="amount"
+            placeholder="$"
           />
           <button type="submit">Donate</button>
         </form>
