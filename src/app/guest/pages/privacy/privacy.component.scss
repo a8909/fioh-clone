@@ -1,0 +1,42 @@
+section {
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+  .fioPrivacy {
+    text-align: center;
+    margin-bottom: 50px;
+    :first-child {
+      font-size: 12px;
+      font-weight: 400;
+      color: var(--primary);
+      margin-top: 95px;
+      line-height: 0px;
+    }
+    :nth-child(2) {
+      font-weight: 600;
+      font-size: 50px;
+      color: #171717;
+      margin: 0px;
+    }
+    :nth-child(3) {
+      color: var(--policy);
+      font-weight: 400;
+      font-size: 16px;
+    }
+  }
+  .fiohInfo {
+    margin-bottom: 219px;
+    h2 {
+      font-size: 24px;
+      font-weight: 400px;
+      color: #171717;
+      margin-bottom: 20px;
+    }
+    p {
+      font-size: 16px;
+      font-weight: 400;
+      color: var(--policy);
+      margin-bottom: 40px;
+    }
+  }
+}

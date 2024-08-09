@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { NavigationEnd, Router, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -8,6 +8,15 @@ import { RouterModule } from '@angular/router';
   styleUrl: './app.component.scss',
   imports: [RouterModule],
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'fioh';
+  currentRoute: string;
+
+  constructor(private route: Router) {}
+
+  ngOnInit() {
+    this.route.events.subscribe((event) => {
+      if (event instanceof NavigationEnd) this.currentRoute = event.url;
+    });
+  }
 }

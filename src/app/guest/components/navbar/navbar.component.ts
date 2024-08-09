@@ -1,8 +1,8 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { ModalDirective } from '../../../shared/modal.directive';
 import { MemoralModalComponent } from '../../../shared/memoral-modal/memoral-modal.component';
-import { RequestService } from '../../../services.service';
+
 import { Router } from '@angular/router';
 
 @Component({
@@ -18,10 +18,12 @@ export class NavbarComponent implements OnInit {
   open: boolean = false;
   validate() {
     if (localStorage.getItem('authData')) {
+      this.route.navigateByUrl(`user/Micheal/create-memorial`);
+    } else {
       this.route.navigateByUrl('/signIn');
       return;
     }
-    this.m.showModal();
+    // this.m.showModal();
   }
 
   ngOnInit() {

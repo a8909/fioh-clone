@@ -35,7 +35,12 @@
         ></textarea>
         <cus-check-box idn="remember">
           You agree to our friendly
-          <a target="" href="/privacy" routerLink="/privacy">privacy policy</a>
+          <a
+            target="_self"
+            href="/contact-Us/privacy"
+            routerLink="/contact-us/privacy"
+            >privacy policy</a
+          >
         </cus-check-box>
         <button class="contBtn" type="submit" [disabled]="!formField.valid">
           {{ submit ? "..." : "Continue" }}

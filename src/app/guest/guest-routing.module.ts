@@ -8,6 +8,8 @@ import { PricingComponent } from './pages/pricing/pricing.component';
 import { AboutComponent } from './pages/about/about.component';
 import { ContactUsComponent } from './pages/contact-us/contact-us.component';
 import { EachMemorialComponent } from './pages/each-memorial/each-memorial.component';
+import { PrivacyComponent } from './pages/privacy/privacy.component';
+import { CreateMemorialComponent } from './pages/create-memorial/create-memorial.component';
 
 const routes: Routes = [
   {
@@ -15,18 +17,16 @@ const routes: Routes = [
     component: GuestLayoutComponent,
     children: [
       { path: '', component: LandingPageComponent },
-      {
-        path: 'memorial',
-        component: FirstContentComponent,
-        // children: [{ path: ':id', component: EachMemorialComponent }],
-      },
+      { path: 'memorial', component: FirstContentComponent },
+      { path: 'memorial/:id', component: EachMemorialComponent },
       { path: 'pricing', component: PricingComponent },
       { path: 'about', component: AboutComponent },
       { path: 'contact-Us', component: ContactUsComponent },
+      { path: 'contact-Us/privacy', component: PrivacyComponent },
     ],
   },
   { path: 'signIn', component: FiohSignInComponent },
-  { path: 'memorial/:id', component: EachMemorialComponent },
+  { path: 'user/:name/create-memorial', component: CreateMemorialComponent },
 ];
 
 @NgModule({

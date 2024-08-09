@@ -11,5 +11,6 @@ export const activate = (): CanActivateFn => {
     }
     router.navigateByUrl('/signIn');
     return false;
+    //return user to signUp
   };
 };

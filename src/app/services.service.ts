@@ -46,7 +46,7 @@ export class RequestService {
             +res.expiresIn
           );
           // this.storeAuth(response);
-          this.route.navigateByUrl('/user/dashboard');
+          this.route.navigateByUrl(`/user/Micheal/dashboard`);
         }),
         catchError(this.handleError)
       );

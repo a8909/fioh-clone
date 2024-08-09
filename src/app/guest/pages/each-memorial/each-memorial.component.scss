@@ -1,19 +1,35 @@
 .fiohBackDisplay {
+  padding: 0 20px 0;
   display: flex;
   flex-direction: column;
   height: 200px;
   color: #ffffff;
-  // :first-child {
-  //   margin-top: 20px;
-  // }
+  img {
+    width: 100%;
+  }
+  h2 {
+    margin-top: -280px;
+    margin-bottom: 0px;
+    font-size: 45px;
+  }
+  span {
+    font-size: 35px;
+  }
   span,
   h2 {
     text-align: center;
+    font-weight: 600;
   }
   .tabs {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
+    gap: 256px;
+    padding: 0 10px 0;
+    margin-bottom: 20px;
+    span {
+      margin-left: 102px;
+    }
     .tabList {
       list-style: none;
       display: flex;
@@ -41,6 +57,7 @@
   max-width: 1100px;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 250px;
   @media (max-width: 682px) {
     flex-wrap: wrap;
   }
@@ -293,4 +310,8 @@
   .left {
     margin-top: 50px !important;
   }
+}
+
+.container > ::ng-deep app-memorial-tabs {
+  margin-top: 16px;
 }

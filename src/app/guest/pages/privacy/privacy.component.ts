@@ -5,8 +5,8 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [],
   templateUrl: './privacy.component.html',
-  styleUrl: './privacy.component.css'
+  styleUrl: './privacy.component.scss',
 })
 export class PrivacyComponent {
-
+  cu = new Date();
 }

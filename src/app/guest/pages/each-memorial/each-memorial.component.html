@@ -1,11 +1,10 @@
-<div
-  class="fiohBackDisplay"
-  style="background-image: url(assets/images/rectangle1.png); width: 100%"
->
+<div class="fiohBackDisplay">
+  <<img src="assets/images/rectangle1.png" alt="" />
   <h2 class="name">Ayodele Oluwunmi Olufunwa</h2>
-  <span class="dob">(1940-2024)</span>
-  <!-- <span>image</span> -->
+  <span class="dob">1940-2024</span>
+
   <div class="tabs">
+    <span><img src="assets/images/person1.png" alt="" /></span>
     <ul class="tabList">
       <li [class.active]="tabs == 'about'" (click)="showTab('about')">About</li>
       <li [class.active]="tabs == 'bio'" (click)="showTab('bio')">Bio</li>
@@ -283,4 +282,3 @@
     </side-bars>
   </div>
 </div>
-<app-footer />
