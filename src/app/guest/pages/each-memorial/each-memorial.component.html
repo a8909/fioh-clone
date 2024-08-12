@@ -1,5 +1,5 @@
 <div class="fiohBackDisplay">
-  <<img src="assets/images/rectangle1.png" alt="" />
+  <img src="assets/images/rectangle1.png" alt="" />
   <h2 class="name">Ayodele Oluwunmi Olufunwa</h2>
   <span class="dob">1940-2024</span>
 
@@ -155,10 +155,10 @@
       <div><img src="assets/images/grid14.png" alt="" /></div>
     </div>
     <div class="nextPrev">
-      <button class="prevs">
+      <button class="prevs" [disabled]="currentPage == 1">
         <span><img src="assets/images/arrow-left.png" alt="" /></span>Previous
       </button>
-      <button class="prevs">
+      <button class="prevs" [disabled]="">
         Next<span><img src="assets/images/arrow-right.png" alt="" /></span>
       </button>
     </div>

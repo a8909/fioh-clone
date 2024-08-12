@@ -36,6 +36,8 @@ export class EachMemorialComponent implements OnInit {
   onDonate: FormGroup;
   postSub: Subscription;
   donation: boolean = false;
+  currentPage: number = 1;
+  gallery = [];
   edit: string = 'assets/images/edit.png';
   candle: string = 'assets/images/candle.png';
   placeholder: string = 'Add your tribute text here...';
@@ -119,6 +121,10 @@ export class EachMemorialComponent implements OnInit {
       this.onDonate.reset();
       this.donation = true; //finally submit to endpoint
     }
+  }
+
+  onPage(page: number) {
+    this.currentPage = page;
   }
 
   ngOnInit(): void {

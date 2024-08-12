@@ -1,1 +1,16 @@
-<p>create-memorial works!</p>
+<div class="memorial">
+  <div class="topTabs">
+    <ul>
+      <li>About memorial</li>
+    </ul>
+  </div>
+  <div class="memorialDetail">
+    <h2>Memorials details</h2>
+    <p>This memorial is dedicated to:</p>
+    <form>
+      <input type="text" />
+      <input type="text" dropDown (click)="isOpen = !isOpen" />
+      <div [class.open]="isOpen"></div>
+    </form>
+  </div>
+</div>
