@@ -1,8 +1,9 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input, OnDestroy, OnInit } from '@angular/core';
+import { Component, Input, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { RequestService } from '../../../services.service';
 import { HttpClientModule } from '@angular/common/http';
 import { Subscription } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
@@ -12,12 +13,19 @@ import { Subscription } from 'rxjs';
   styleUrl: './dashboard.component.scss',
 })
 export class DashboardComponent implements OnInit, OnDestroy {
-  constructor(private service: RequestService) {}
+  constructor(private service: RequestService, private route: Router) {}
   @Input() users;
   @Input() persons;
   private userSub: Subscription;
   isAuthenticated: boolean = false;
   error = null;
+  memCheck: boolean = false;
+
+  isMemorial() {
+    this.route.navigateByUrl('user/Micheal/create-memorial');
+    this.memCheck = true;
+  }
+
   categories = [
     { cat: 'Memorials', price: '0' },
     { cat: 'Memorial Visitors', price: '0' },

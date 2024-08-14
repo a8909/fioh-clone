@@ -1,0 +1,115 @@
+.memorial {
+  max-width: 1040px;
+  margin: 53px auto 0px;
+  padding: 0 10px 0px;
+  .topTabs {
+    ul {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding-left: 0px;
+      cursor: pointer;
+      li {
+        color: #9797a5;
+        &.active {
+          color: var(--primary);
+        }
+      }
+    }
+    @media (max-width: 400px) {
+      overflow-x: scroll;
+      text-wrap: nowrap;
+    }
+  }
+  .memorialDetail {
+    max-width: 916px;
+    background: #ffffff;
+    border-radius: 12px;
+    margin-top: 48px;
+    h2 {
+      font-weight: 600;
+      font-size: 18px;
+    }
+    p {
+      font-weight: 400;
+      font-size: 14px;
+    }
+    form {
+      .formControls {
+        display: inline-grid;
+        grid-template-columns: auto auto;
+        gap: 10px;
+        .dropdownMenu {
+          display: none;
+          cursor: pointer;
+          &.open {
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            top: 30%;
+            left: 28%;
+            z-index: 100;
+          }
+        }
+      }
+
+      .profile {
+        margin-top: 40px;
+
+        .buttons {
+          display: flex;
+          gap: 7px;
+          :first-child {
+            border: 0.7px solid #bac0d4b3;
+            color: var(--policy);
+          }
+          :nth-child(2) {
+            background: var(--primary);
+            border: var(--primary);
+            color: #ffffff;
+          }
+          button {
+            width: 173px;
+            border-radius: 100px;
+            padding: 13px;
+            font-size: 14px;
+            font-weight: 600;
+          }
+        }
+        .profileImage {
+          border: 0.7px solid #bac0d4b3;
+          border-radius: 12px;
+          width: 360px;
+          margin-bottom: 50px;
+          display: flex;
+          align-items: center;
+          flex-direction: column;
+          padding: 10px;
+          @media (max-width: 400px) {
+            max-width: 333px;
+          }
+          span {
+            font-size: 12px;
+            font-weight: 400;
+            color: var(--policy);
+            img {
+              margin: 16px 0 12px;
+            }
+          }
+          h3 {
+            font-weight: 400;
+            font-size: 14px;
+            color: var(--primary);
+          }
+        }
+      }
+    }
+  }
+}
+h2 {
+  margin-bottom: 0px;
+}
+p {
+  margin-top: 0px;
+}

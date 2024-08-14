@@ -9,7 +9,7 @@ import { AboutComponent } from './pages/about/about.component';
 import { ContactUsComponent } from './pages/contact-us/contact-us.component';
 import { EachMemorialComponent } from './pages/each-memorial/each-memorial.component';
 import { PrivacyComponent } from './pages/privacy/privacy.component';
-import { CreateMemorialComponent } from './pages/create-memorial/create-memorial.component';
+import { CreateMemorialComponent } from '../user/pages/create-memorial/create-memorial.component';
 
 const routes: Routes = [
   {

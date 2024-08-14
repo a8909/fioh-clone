@@ -1,0 +1,60 @@
+<div class="memorial">
+  <div class="topTabs">
+    <ul>
+      <li [class.active]="ct == 'about'" (click)="bars('about')">
+        About Memorial >
+      </li>
+      <li [class.active]="ct == 'pass'" (click)="bars('pass')">
+        Passed away >
+      </li>
+      <li [class.active]="ct == 'privacy'" (click)="bars('privacy')">
+        Privacy option >
+      </li>
+      <li [class.active]>Theme ></li>
+      <li [class.active]>Choose plan</li>
+    </ul>
+  </div>
+  <div class="memorialDetail" *ngIf="ct == 'about'">
+    <h2>Memorials details</h2>
+    <p>This memorial is dedicated to:</p>
+    <form>
+      <div class="formControls">
+        <input type="text" />
+        <input type="text" />
+        <input type="text" />
+
+        <input type="text" placeholder="Gender" (click)="isOpen = !isOpen" />
+        <div class="dropdownMenu" [class.open]="isOpen">
+          <div>Male</div>
+          <div>Female</div>
+          <div>Rather not to say</div>
+        </div>
+      </div>
+
+      <div class="profile">
+        <h2>Profile image</h2>
+        <p>This image will e displayed as memorial profile picture</p>
+        <div class="profileImage">
+          <span><img src="assets/images/upload.png" alt="" /></span>
+          <h3>Click to upload <span>or drag and drop</span></h3>
+          <span>SVG, PNG, JPG or GIF (max. 800x400px)</span>
+        </div>
+        <div class="buttons">
+          <button>Cancel</button> <button>Continue</button>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="memorialDetail" *ngIf="ct == 'pass'">
+    <h2>Passed away</h2>
+    <p>This Memorial happens on:</p>
+    <h2>Quotes</h2>
+    <p>Add your favourite goobye quote</p>
+  </div>
+  <div class="memorialDetail" *ngIf="ct == 'privacy'">
+    <h2>Privacy option</h2>
+    <p>Set your memorial preference option</p>
+    <h2>Quotes</h2>
+    <p>Add your favourite goobye quote</p>
+  </div>
+</div>
