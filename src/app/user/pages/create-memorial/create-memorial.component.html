@@ -31,16 +31,32 @@
         </div>
       </div>
 
-      <div class="profile">
+      <div
+        class="profile"
+        (drop)="onDrop($event)"
+        (dragleave)="onDragOver($event)"
+        (dragover)="onDragOver($event)"
+      >
         <h2>Profile image</h2>
         <p>This image will e displayed as memorial profile picture</p>
-        <div class="profileImage">
+        <span *ngIf="selectedFile != null"
+          ><img [src]="imageUrl" alt=""
+        /></span>
+        <div
+          class="profileImage"
+          *ngIf="selectedFile == null || disable == true"
+        >
           <span><img src="assets/images/upload.png" alt="" /></span>
+
+          <label for="" type="file"> upload</label>
           <h3>Click to upload <span>or drag and drop</span></h3>
           <span>SVG, PNG, JPG or GIF (max. 800x400px)</span>
+          <input type="file" [accept]="accept" (change)="onSelected($event)" />
         </div>
+        <span *ngIf="disable == true">{{ errorMessage }}</span>
         <div class="buttons">
-          <button>Cancel</button> <button>Continue</button>
+          <button (click)="onCancel()">Cancel</button>
+          <button>Continue</button>
         </div>
       </div>
     </form>

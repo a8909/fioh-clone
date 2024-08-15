@@ -56,4 +56,14 @@
     </tr>
   </table>
 </section>
-<!-- <div #wlcmodalOpener>{{Modal}}</div> -->
+
+<app-modal *ngIf="memCheck == true" (closeModal)="close = $event">
+  <div class="modalContent">
+    <span><img src="assets/images/fiohBird.png" alt="" /></span>
+    <h2>Welcome to FIOH</h2>
+    <p>
+      {{ modalMessage }}
+    </p>
+    <button (click)="goToCreate()">Create your first memorial</button>
+  </div>
+</app-modal>

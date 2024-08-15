@@ -16,7 +16,7 @@ export class UserLayoutComponent implements OnInit {
   mem: boolean = false;
   constructor(private service: RequestService, private route: Router) {}
   checkers() {
-    this.mem = this.dash.memCheck;
+    // this.mem = this.dash.memCheck;
     console.log(this.mem);
   }
   ngOnInit() {

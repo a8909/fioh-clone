@@ -124,3 +124,41 @@ tr {
     }
   }
 }
+
+::ng-deep app-modal {
+  .modalContent {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    padding: 10px;
+    span {
+      background: #ebd5d3;
+      margin-bottom: 10px;
+      img {
+        z-index: 100;
+      }
+    }
+    h2 {
+      font-weight: 700;
+      font-size: 22px;
+      margin-bottom: 0px;
+    }
+    p {
+      margin-bottom: 20px;
+      max-width: 313px;
+      text-align: center;
+      font-size: 14px;
+      font-weight: 400;
+    }
+    button {
+      border-radius: 100px;
+      padding: 11px;
+      background: var(--primary);
+      border: var(--primary);
+      color: #ffffff;
+      margin-bottom: 31px;
+      cursor: pointer;
+    }
+  }
+}

@@ -4,11 +4,12 @@ import { RequestService } from '../../../services.service';
 import { HttpClientModule } from '@angular/common/http';
 import { Subscription } from 'rxjs';
 import { Router } from '@angular/router';
+import { ModalComponent } from '../../../shared/components/modal/modal.component';
 
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [CommonModule, HttpClientModule],
+  imports: [CommonModule, HttpClientModule, ModalComponent],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.scss',
 })
@@ -16,14 +17,24 @@ export class DashboardComponent implements OnInit, OnDestroy {
   constructor(private service: RequestService, private route: Router) {}
   @Input() users;
   @Input() persons;
+  modalMessage: string =
+    ' Create and share memories of your love one’s, add events, photos, videos, donations and more.';
   private userSub: Subscription;
   isAuthenticated: boolean = false;
   error = null;
   memCheck: boolean = false;
 
   isMemorial() {
-    this.route.navigateByUrl('user/Micheal/create-memorial');
     this.memCheck = true;
+    console.log('here i am');
+  }
+  close() {
+    this.modalMessage = null;
+  }
+
+  goToCreate() {
+    this.route.navigateByUrl('user/Micheal/create-memorial');
+    return;
   }
 
   categories = [

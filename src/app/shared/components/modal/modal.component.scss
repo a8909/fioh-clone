@@ -1,0 +1,18 @@
+.modal {
+  width: 100vw;
+  height: 100vh;
+  z-index: 50;
+  position: fixed;
+  top: 0;
+  left: 0;
+  .modalBody {
+    width: 400px;
+    top: 30vh;
+    left: 33%;
+    border-radius: 12px;
+    z-index: 100;
+    margin: auto;
+    background: #ffffff;
+    position: fixed;
+  }
+}

@@ -2,19 +2,13 @@ import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
-import { MemoralModalComponent } from '../../../shared/memoral-modal/memoral-modal.component';
 import { Subscription } from 'rxjs';
 import { EachMemorialComponent } from '../each-memorial/each-memorial.component';
 
 @Component({
   selector: 'app-first-content',
   standalone: true,
-  imports: [
-    FormsModule,
-    CommonModule,
-    MemoralModalComponent,
-    EachMemorialComponent,
-  ],
+  imports: [FormsModule, CommonModule, EachMemorialComponent],
   templateUrl: './first-content.component.html',
   styleUrl: './first-content.component.scss',
 })

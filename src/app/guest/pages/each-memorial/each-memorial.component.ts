@@ -1,7 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { AlertComponent } from '../../components/alert.component';
 import { FooterComponent } from '../../components/footer/footer.component';
 import { NavbarComponent } from '../../components/navbar/navbar.component';
 import { MemorialTabsComponent } from '../../../shared/components/memorial-tabs/memorial-tabs.component';
@@ -12,20 +11,19 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
-import { MemoralModalComponent } from '../../../shared/memoral-modal/memoral-modal.component';
+import { AlertComponent } from '../../components/alert.component';
 
 @Component({
   selector: 'app-each-memorial',
   standalone: true,
   imports: [
     CommonModule,
-    AlertComponent,
     FooterComponent,
     NavbarComponent,
     MemorialTabsComponent,
     FormsModule,
     ReactiveFormsModule,
-    MemoralModalComponent,
+    AlertComponent,
   ],
   templateUrl: './each-memorial.component.html',
   styleUrl: './each-memorial.component.scss',
