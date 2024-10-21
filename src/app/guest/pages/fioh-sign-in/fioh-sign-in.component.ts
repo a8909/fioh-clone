@@ -92,6 +92,9 @@ export class FiohSignInComponent implements OnInit {
         .subscribe({
           complete: () => {
             this.error = null;
+            this.isLoggedIn = false;
+            this.submitted = false;
+            this.signUpForm.reset();
           },
           error: (err) => {
             this.error = err;
