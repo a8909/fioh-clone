@@ -89,7 +89,7 @@ export class RequestService {
     const expirationDate = new Date(new Date().getTime() + expire * 1000);
     const user = new Users(email, id, token, expirationDate);
     this.user.next(user);
-    this.storeAuth(user);
+    // this.storeAuth(user);
   }
 
   private handleError(errorRes: HttpErrorResponse) {
@@ -124,9 +124,9 @@ export class RequestService {
     });
   }
 
-  storeAuth(response) {
-    localStorage.setItem('authData', JSON.stringify(response));
-  }
+  // storeAuth(response) {
+  //   localStorage.setItem('authData', JSON.stringify(response));
+  // }
 
   getAuth() {
     return JSON.parse(localStorage.getItem('authData'));
