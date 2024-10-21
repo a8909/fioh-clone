@@ -16,12 +16,12 @@ export class NavbarComponent implements OnInit {
   open: boolean = false;
   storage: any;
   validate() {
-    // if (localStorage.getItem('authData')) {
-    //   this.route.navigateByUrl(`user/Micheal/create-memorial`);
-    // } else {
-    //   this.route.navigateByUrl('/signIn');
-    //   return;
-    // }
+    if (localStorage.getItem('authData')) {
+      this.route.navigateByUrl(`user/Micheal/create-memorial`);
+    } else {
+      this.route.navigateByUrl('/signIn');
+      return;
+    }
     // this.m.showModal();
   }
 
