@@ -15,6 +15,7 @@ export class CreateMemorialComponent {
   isOpen: boolean = false;
   ct: string = 'about';
   accept = 'images/.svg, .png, .gif, .jpg';
+  gen: string = '';
   selectedFile: File;
   imageUrl: string | ArrayBuffer;
   disable: boolean = false;
@@ -66,5 +67,20 @@ export class CreateMemorialComponent {
 
   onCancel() {
     this.selectedFile = null;
+  }
+
+  genderSelected(sex: string) {
+    switch (sex) {
+      case this.Gender[0]:
+        this.gen = sex;
+        break;
+      case this.Gender[1]:
+        this.gen = sex;
+        break;
+      case this.Gender[2]:
+        this.gen = sex;
+        break;
+    }
+    return this.gen;
   }
 }

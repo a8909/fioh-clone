@@ -33,7 +33,8 @@ export class DashboardComponent implements OnInit, OnDestroy {
   }
 
   goToCreate() {
-    this.route.navigateByUrl('user/Micheal/create-memorial');
+    this.memCheck = false;
+    this.route.navigateByUrl('user/Micheal/memorial-creation');
     return;
   }
 

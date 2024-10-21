@@ -14,6 +14,7 @@ export class NavbarComponent implements OnInit {
   // @ViewChild(MemoralModalComponent) m: MemoralModalComponent;
   constructor(private route: Router) {}
   open: boolean = false;
+  storage: any;
   validate() {
     if (localStorage.getItem('authData')) {
       this.route.navigateByUrl(`user/Micheal/create-memorial`);
@@ -24,7 +25,5 @@ export class NavbarComponent implements OnInit {
     // this.m.showModal();
   }
 
-  ngOnInit() {
-    localStorage.getItem('authData');
-  }
+  ngOnInit() {}
 }

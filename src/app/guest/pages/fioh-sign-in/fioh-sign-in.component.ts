@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { AuthLayoutComponent } from '../../components/auth-layout/auth-layout.component';
 import { CusCheckBoxComponent } from '../../../shared/components/cus-check-box/cus-check-box.component';
 import { CommonModule } from '@angular/common';
-import { FbgComponent } from '../../../shared/components/fbg/fbg.component';
 import {
   FormControl,
   FormGroup,
@@ -14,6 +13,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { RequestService } from '../../../services.service';
 import { Subscription } from 'rxjs';
+import { FbgComponent } from '../../../shared/components/fbg/fbg.component';
 
 @Component({
   selector: 'app-fioh-sign-in',
@@ -28,6 +28,7 @@ import { Subscription } from 'rxjs';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    FbgComponent,
   ],
 })
 export class FiohSignInComponent implements OnInit {

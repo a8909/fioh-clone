@@ -12,7 +12,7 @@ const routes: Routes = [
     component: UserLayoutComponent,
     children: [
       { path: ':name/dashboard', component: DashboardComponent },
-      { path: ':name/create-memorial', component: CreateMemorialComponent },
+      { path: ':name/memorial-creation', component: CreateMemorialComponent },
       { path: ':name/online-memorial', component: FiohMemorialComponent },
     ],
   },

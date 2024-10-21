@@ -23,11 +23,18 @@
         <input type="text" />
         <input type="text" />
 
-        <input type="text" placeholder="Gender" (click)="isOpen = !isOpen" />
+        <input
+          type="text"
+          placeholder="Gender"
+          [value]="gen"
+          (click)="isOpen = !isOpen"
+        />
         <div class="dropdownMenu" [class.open]="isOpen">
-          <div>Male</div>
-          <div>Female</div>
-          <div>Rather not to say</div>
+          <div (click)="genderSelected('Male')">Male</div>
+          <div (click)="genderSelected('Female')">Female</div>
+          <div (click)="genderSelected('Rather not to say')">
+            Rather not to say
+          </div>
         </div>
       </div>
 
