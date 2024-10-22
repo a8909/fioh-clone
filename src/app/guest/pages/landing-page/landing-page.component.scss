@@ -10,10 +10,14 @@ img {
 
 .fioh-beginning {
   font-size: 70px;
+  padding: 0px 10px 0px;
   em {
     font-family: "Tiempos Headline";
     font-style: italic;
-    color: rgba(157, 28, 185, 1) !important;
+    color: var(--primary) !important;
+  }
+  @media (max-width: 390px) {
+    font-size: 24px;
   }
 }
 .sub {
@@ -29,19 +33,23 @@ img {
   font-size: 20px;
   border-radius: 30px;
   background-color: rgba(157, 28, 185, 0.08);
-  color: rgba(157, 28, 185, 1);
+  color: var(--primary);
   margin-bottom: 15px;
   align-items: center;
+  text-wrap: nowrap;
   .side-arrow {
     background-color: rgb(157, 28, 185);
-    padding: 5px;
+    padding: 3px 0px 3px;
     border-radius: 46%;
+  }
+  @media (max-width: 390px) {
+    font-size: 12px;
   }
 }
 
 .create-memorial {
   border-radius: 30px;
-  background-color: rgba(157, 28, 185, 1);
+  background-color: var(--primary);
   margin-top: 20px;
   margin-bottom: 20px;
   color: #ffffff;
@@ -65,10 +73,42 @@ img {
     color: rgba(67, 67, 69, 1);
   }
 }
-
-form {
-  margin-right: -300px;
+.formContainer {
+  form {
+    margin-right: -300px;
+    @media (max-width: 1002px) {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 45px;
+      input {
+        width: 100%;
+        height: 10px;
+        @media (max-width: 390px) {
+          width: 50%;
+          height: 0px;
+        }
+      }
+      @media (max-width: 390px) {
+        width: 284px;
+        gap: 0px;
+      }
+    }
+  }
+  button {
+    @media (max-width: 390px) {
+      width: 42%;
+      text-wrap: nowrap;
+      height: 38px;
+      padding: 0px 10px 0px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 10px;
+    }
+  }
 }
+
 
 .patner {
   padding-right: 30px;
@@ -89,7 +129,7 @@ form {
 
 .mem-text {
   text-align: left;
-  background-color: rgba(157, 28, 185, 1);
+  background-color: var(--primary);
   color: rgba(255, 255, 255, 1);
   margin: 20px 20px;
   max-width: 318px;
@@ -112,17 +152,49 @@ form {
 }
 
 .mem-container {
-  width: 70%;
-  background-color: rgba(157, 28, 185, 0.85);
+  width: 80%;
+  background-color: var(--appClr);
   padding: 40px;
   position: absolute;
-  top: 50%;
-  left: 200px;
-  margin-bottom: 0px;
+  top: 55%;
+  left: 9%;
+  margin: 0px auto 0px;
+  overflow-x: hidden;
   border-radius: 10px;
   flex-wrap: wrap;
   display: flex;
   flex-direction: column;
+  @media (max-width: 1394px) {
+    top: 45%;
+  }
+  @media (max-width: 1348px) {
+    top: 40%;
+  }
+  @media (max-width: 1227px) {
+    top: 35%;
+  }
+  @media (max-width: 1140px) {
+    top: 30%;
+  }
+  @media (max-width: 1060px) {
+    top: 25%;
+  }
+  @media (max-width: 1002px) {
+    width: 600px;
+    top: 25%;
+    left: 20px;
+  }
+  @media (max-width: 390px) {
+    width: 286px;
+    left: 53px;
+    top: 20%;
+    padding: 0px 10px 15px;
+  }
+  .mems {
+    @media (max-width: 390px) {
+      padding-top: 10px;
+    }
+  }
 }
 
 .memorial-form {
@@ -140,10 +212,19 @@ form {
   line-height: 1.2;
   font-size: 25px;
   font-weight: 700;
+  @media (max-width: 390px) {
+    text-wrap: nowrap;
+    margin: 0px;
+    font-size: 15px;
+  }
 }
 .mems-content2 {
   color: rgba(255, 255, 255, 1);
   line-height: 2.5;
+  @media (max-width: 390px) {
+    margin: 0px;
+    font-size: 10px;
+  }
 }
 .mem-but {
   width: 15%;
@@ -173,7 +254,7 @@ form {
 }
 
 .preview {
-  background-color: rgba(157, 28, 185, 1);
+  background-color: var(--primary);
   height: 300px;
   border-radius: 10px;
   width: 750px;
@@ -196,7 +277,7 @@ form {
 
 .action-button {
   padding: 15px;
-  background-color: rgba(157, 28, 185, 1);
+  background-color: var(--primary);
   border-color: #ffffff;
   color: #ffffff;
   border-radius: 30px;
@@ -236,11 +317,11 @@ form {
 }
 
 .get-started {
-  background-color: rgba(157, 28, 185, 1);
+  background-color: var(--primary);
   padding: 20px;
   border-radius: 40px;
   color: #ffffff;
-  border-color: rgba(157, 28, 185, 1);
+  border-color: var(--primary);
   font-size: 20px;
 }
 

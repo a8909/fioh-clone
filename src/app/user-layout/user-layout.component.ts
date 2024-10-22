@@ -12,7 +12,7 @@ import { DashboardComponent } from '../guest/components/dashboard/dashboard.comp
 })
 export class UserLayoutComponent implements OnInit, DoCheck {
   @ViewChild(DashboardComponent) dash: DashboardComponent;
-  @Input() fname;
+  fname : any;
   // mem: any = 'Settings';
   change: boolean = false;
   constructor(private service: RequestService, private route: Router) {}

@@ -45,7 +45,6 @@ export class RequestService {
             res.idtoken,
             +res.expiresIn
           );
-          // this.storeAuth(response);
           this.route.navigateByUrl(`/user/Micheal/dashboard`);
         }),
         catchError(this.handleError)
@@ -94,10 +93,10 @@ export class RequestService {
 
   private handleError(errorRes: HttpErrorResponse) {
     let err = 'An unknown error occured';
-    if (errorRes.status == 0) {
-      console.log(errorRes.error); //network issues
+    if (errorRes.status == 400) {
+      err = 'Network failure' //network issues
     }
-    switch (errorRes.error.error.message) {
+    switch (errorRes.error.Error.message) {
       case 'EMAIL_EXISTS':
         err = 'Email already exist';
         break;

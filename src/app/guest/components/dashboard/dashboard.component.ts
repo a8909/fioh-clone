@@ -22,18 +22,15 @@ export class DashboardComponent implements OnInit, OnDestroy {
   private userSub: Subscription;
   isAuthenticated: boolean = false;
   error = null;
-  memCheck: boolean = false;
+  modalCheck: boolean = false;
 
-  isMemorial() {
-    this.memCheck = true;
-    console.log('here i am');
+  modalOpen(event: boolean) {
+    this.modalCheck = event;
   }
-  close() {
-    this.modalMessage = null;
-  }
+  
 
   goToCreate() {
-    this.memCheck = false;
+    this.modalCheck = false;
     this.route.navigateByUrl('user/Micheal/memorial-creation');
     return;
   }

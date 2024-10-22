@@ -1,11 +1,11 @@
-<section id="fiohDashBoard">
+<section id="fiohDashBoard" #dashboard>
   <div class="dash">
     <div class="left">
       <h2>Welcome, {{ users[0].first_name }}</h2>
       <p>Manage and share Memorial of love ones</p>
     </div>
     <div class="right">
-      <a class="primbtn" (click)="isMemorial()">Create memorials</a>
+      <a class="primbtn" (click)="modalOpen(true)">Create memorials</a>
     </div>
   </div>
 </section>
@@ -23,19 +23,20 @@
 </section>
 <section id="fiohUsr">
   <table>
-    <tr>
+    <thead><tr>
       <th id="recent" colspan="5">Recent memorial</th>
       <th>see all</th>
-    </tr>
-    <tr>
+    </tr></thead>
+    <tbody>
+      <tr>
       <th>Details</th>
       <th>Status</th>
       <th>Created</th>
       <th>Visitor</th>
       <th colspan="2">Link</th>
     </tr>
-    <tr *ngFor="let u of users">
-      <th class="details">
+      <tr *ngFor="let u of users">
+      <td class="details">
         <div>
           <span><img [src]="u.avatar" alt="" /></span>
         </div>
@@ -43,27 +44,26 @@
           <span>{{ u.first_name }} {{ u.last_name }}</span>
           <span>{{ persons.details.from }} - {{ persons.details.to }}</span>
         </div>
-      </th>
-      <th class="status">
+      </td>
+      <td class="status">
         <span>{{ persons.status }}</span>
-      </th>
-      <th class="status">
+      </td>
+      <td class="status">
         {{ persons.createdAt | date : "fullDate" }}
-      </th>
-      <th class="status">{{ persons.visitor }}</th>
-      <th class="status">{{ persons.link }}</th>
-      <th class="status">{{ persons.icon }}</th>
+      </td>
+      <td class="status">{{ persons.visitor }}</td>
+      <td class="status">{{ persons.link }}</td>
+      <td class="status">{{ persons.icon }}</td>
     </tr>
+    </tbody>
   </table>
 </section>
 
-<app-modal *ngIf="memCheck == true" (closeModal)="close = $event">
+<app-modal *ngIf="modalCheck" (dismiss)="modalOpen(false)">
   <div class="modalContent">
-    <span><img src="assets/images/fiohBird.png" alt="" /></span>
+    <span><img src="assets/images/fiohBird.png" alt="fioh logo" /></span>
     <h2>Welcome to FIOH</h2>
-    <p>
-      {{ modalMessage }}
-    </p>
+    <p>{{ modalMessage }}</p>
     <button (click)="goToCreate()">Create your first memorial</button>
   </div>
 </app-modal>

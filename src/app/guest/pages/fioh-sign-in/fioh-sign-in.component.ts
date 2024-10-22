@@ -91,13 +91,15 @@ export class FiohSignInComponent implements OnInit {
         .onLogin(email, password)
         .subscribe({
           complete: () => {
-            this.error = null;
             this.isLoggedIn = false;
             this.submitted = false;
             this.signUpForm.reset();
           },
           error: (err) => {
             this.error = err;
+            setInterval(()=>{
+              this.error = ""
+            }, 2000)
           },
         })
         .add(() => {

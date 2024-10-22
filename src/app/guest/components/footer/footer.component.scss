@@ -14,6 +14,13 @@
     font-family: "Tiempos Headline";
     font-weight: normal;
   }
+  .h2 {
+    color: #ffffff;
+    font-size: 60px;
+    @media(max-width: 390px){
+      font-size: 30px;
+    }
+  }
 }
 
 #honor {
@@ -99,7 +106,6 @@
 .right {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
   padding: 10px;
   .each {
     flex: 1 200px;

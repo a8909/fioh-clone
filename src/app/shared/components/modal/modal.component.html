@@ -1,5 +1,7 @@
-<div class="modal">
-  <div class="modalBody">
-    <ng-content />
+<div class="modal" >
+  <div class="backDrop" (click)="modalClose()">
+    <div class="modalBody">
+      <ng-content />
+    </div>
   </div>
 </div>
