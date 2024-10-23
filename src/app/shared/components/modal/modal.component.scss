@@ -17,6 +17,9 @@
       margin-right: auto;
       background: #ffffff;
       position: fixed;
+      transform: translateY(0) scale(1);
+      opacity: 1;
+      transition: tranform 0.3s ease-in-out, opacity 0.3s ease-in-out;
     }
   }
 }

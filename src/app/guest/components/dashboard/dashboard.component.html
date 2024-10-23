@@ -35,6 +35,8 @@
       <th>Visitor</th>
       <th colspan="2">Link</th>
     </tr>
+    <div *ngIf="isLoading"> loading...</div>
+    <div *ngIf="!isLoading && users?.length == 0"> No record found</div>
       <tr *ngFor="let u of users">
       <td class="details">
         <div>

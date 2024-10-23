@@ -15,8 +15,9 @@ import { ModalComponent } from '../../../shared/components/modal/modal.component
 })
 export class DashboardComponent implements OnInit, OnDestroy {
   constructor(private service: RequestService, private route: Router) {}
-  @Input() users;
+  users :any;
   @Input() persons;
+  isLoading : boolean = true;
   modalMessage: string =
     ' Create and share memories of your love one’s, add events, photos, videos, donations and more.';
   private userSub: Subscription;
@@ -69,13 +70,15 @@ export class DashboardComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    this.userSub = this.service.user.subscribe((usr) => {
+    this.userSub = this.service.userSubject.subscribe((usr) => {
       this.isAuthenticated = !!usr; // if usr ? true : false;
     });
 
     this.service.Users().subscribe((user: any) => {
+      this.isLoading = true
       this.users = user.data;
       console.log(this.users);
+      this.isLoading = false;
     });
     this.getPersons();
   }

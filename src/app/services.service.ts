@@ -25,7 +25,7 @@ export class RequestService {
   auth = new BehaviorSubject(null);
   error: string;
   constructor(private http: HttpClient, private route: Router) {}
-  user = new Subject<Users>();
+  userSubject = new Subject<Users>();
 
   onLogin(email: string, password: string) {
     return this.http
@@ -87,7 +87,7 @@ export class RequestService {
   ) {
     const expirationDate = new Date(new Date().getTime() + expire * 1000);
     const user = new Users(email, id, token, expirationDate);
-    this.user.next(user);
+    this.userSubject.next(user);
     this.storeAuth(user);
   }
 
@@ -96,7 +96,7 @@ export class RequestService {
     if (errorRes.status == 400) {
       err = 'Network failure' //network issues
     }
-    switch (errorRes.error.Error.message) {
+    switch (errorRes.error.message) {
       case 'EMAIL_EXISTS':
         err = 'Email already exist';
         break;

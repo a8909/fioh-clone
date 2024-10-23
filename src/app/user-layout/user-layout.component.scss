@@ -41,6 +41,7 @@
   .right {
     display: flex;
     gap: 8px;
+    cursor: pointer;
     @media (max-width: 396px) {
     }
 
@@ -55,8 +56,13 @@
     .person {
       position: relative;
       display: inline-block;
+      cursor: pointer;
       &:hover .logout {
         display: block;
+        div:hover{
+          transition: all 0.3s ease-in-out;
+          font-weight: bold;
+        }
       }
     }
     .logout {
@@ -70,6 +76,12 @@
       top: 100%;
       right: 0;
       cursor: pointer;
+      div{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 3px
+      }
     }
   }
 }

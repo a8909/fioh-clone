@@ -97,6 +97,7 @@ export class FiohSignInComponent implements OnInit {
           },
           error: (err) => {
             this.error = err;
+            console.log(`error : ${this.error}`)
             setInterval(()=>{
               this.error = ""
             }, 2000)

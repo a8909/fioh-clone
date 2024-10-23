@@ -15,7 +15,7 @@
         href="/user/Micheal/online-memorial"
         routerLink="/user/Micheal/online-memorial"
       >
-        {{ change ? "Settings" : "Online Memorials" }}
+        {{ isAuthenticated ? "Settings" : "Online Memorials" }}
       </a>
     </div>
   </div>
@@ -24,9 +24,11 @@
     <div class="person">
       <span class="drop"
         >{{ fname[0].first_name }}<img src="assets/images/drop.png" alt="" />
-        <div class="logout" (click)="LogOut()">
+        <div class="logout">
           <div><img src="assets/images/setting.png" alt="" /> settings</div>
-          <div><img src="assets/images/logout.png" alt="" /> logout</div>
+          <div (click)="LogOut()">
+            <img src="assets/images/logout.png" alt="" /> logout
+          </div>
         </div>
       </span>
     </div>
