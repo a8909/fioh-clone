@@ -29,7 +29,7 @@ import { FbgComponent } from '../../../shared/components/fbg/fbg.component';
     ReactiveFormsModule,
     HttpClientModule,
     FbgComponent,
-  ],
+],
 })
 export class FiohSignInComponent implements OnInit {
   signUpForm: FormGroup;

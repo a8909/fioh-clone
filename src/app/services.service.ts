@@ -96,7 +96,7 @@ export class RequestService {
     if (errorRes.status == 400) {
       err = 'Network failure' //network issues
     }
-    switch (errorRes.error.message) {
+    switch (errorRes.error.error.message) {
       case 'EMAIL_EXISTS':
         err = 'Email already exist';
         break;

@@ -59,6 +59,7 @@
       cursor: pointer;
       &:hover .logout {
         display: block;
+        transition: all 0.3s ease-in-out;
         div:hover{
           transition: all 0.3s ease-in-out;
           font-weight: bold;

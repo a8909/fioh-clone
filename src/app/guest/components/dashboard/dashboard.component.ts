@@ -5,19 +5,20 @@ import { HttpClientModule } from '@angular/common/http';
 import { Subscription } from 'rxjs';
 import { Router } from '@angular/router';
 import { ModalComponent } from '../../../shared/components/modal/modal.component';
+import { AlertComponent } from "../../../shared/components/loading-spinner.component";
 
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [CommonModule, HttpClientModule, ModalComponent],
+  imports: [CommonModule, HttpClientModule, ModalComponent, AlertComponent],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.scss',
 })
 export class DashboardComponent implements OnInit, OnDestroy {
   constructor(private service: RequestService, private route: Router) {}
-  users :any;
+  users: any;
   @Input() persons;
-  isLoading : boolean = true;
+  isLoading: boolean = true;
   modalMessage: string =
     ' Create and share memories of your love one’s, add events, photos, videos, donations and more.';
   private userSub: Subscription;
@@ -28,7 +29,6 @@ export class DashboardComponent implements OnInit, OnDestroy {
   modalOpen(event: boolean) {
     this.modalCheck = event;
   }
-  
 
   goToCreate() {
     this.modalCheck = false;
@@ -69,17 +69,20 @@ export class DashboardComponent implements OnInit, OnDestroy {
     return this.persons;
   }
 
+  getUser(){
+      this.service.Users().subscribe((user: any) => {
+        this.users = user.data;
+        this.isLoading = false;
+      });
+  }
+
   ngOnInit(): void {
     this.userSub = this.service.userSubject.subscribe((usr) => {
       this.isAuthenticated = !!usr; // if usr ? true : false;
     });
+    this.getUser();
 
-    this.service.Users().subscribe((user: any) => {
-      this.isLoading = true
-      this.users = user.data;
-      console.log(this.users);
-      this.isLoading = false;
-    });
+  
     this.getPersons();
   }
 

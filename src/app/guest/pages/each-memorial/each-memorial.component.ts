@@ -11,7 +11,7 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
-import { AlertComponent } from '../../components/alert.component';
+import { AlertComponent } from "../../../shared/components/loading-spinner.component";
 
 @Component({
   selector: 'app-each-memorial',
@@ -23,8 +23,8 @@ import { AlertComponent } from '../../components/alert.component';
     MemorialTabsComponent,
     FormsModule,
     ReactiveFormsModule,
-    AlertComponent,
-  ],
+    AlertComponent
+],
   templateUrl: './each-memorial.component.html',
   styleUrl: './each-memorial.component.scss',
 })

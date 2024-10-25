@@ -6,7 +6,6 @@ import {
   NgSwitchDefault,
 } from '@angular/common';
 import { Component, Input } from '@angular/core';
-import { AlertComponent } from '../../components/alert.component';
 import { PlansComponent } from '../../../shared/components/plans/plans.component';
 import { RadioCheckComponent } from '../../../shared/components/radio-check/radio-check.component';
 @Component({
@@ -19,7 +18,6 @@ import { RadioCheckComponent } from '../../../shared/components/radio-check/radi
     NgSwitchCase,
     NgSwitchDefault,
     CommonModule,
-    AlertComponent,
     PlansComponent,
     RadioCheckComponent,
   ],
