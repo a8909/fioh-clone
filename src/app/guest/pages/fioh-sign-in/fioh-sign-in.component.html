@@ -1,6 +1,7 @@
 <app-auth-layout>
   <h2 class="signIntxt">Login</h2>
   <div></div>
+  <div class="loading-spinner" *ngIf="isLoggedIn"><side-bars /></div>
 
   <form (ngSubmit)="onSubmit()" [formGroup]="signUpForm">
     <div class="formField">
@@ -52,7 +53,7 @@
     </div>
   </fieldset>
 
-  <div class="caution" *ngIf="error">
+  <div class="caution" *ngIf="error && isError" [ngClass]="{'visible': error && isError}" >
     <span>{{ error }}</span>
   </div>
 </app-auth-layout>

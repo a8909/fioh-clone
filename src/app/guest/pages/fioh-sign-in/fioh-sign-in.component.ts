@@ -14,6 +14,7 @@ import { Router } from '@angular/router';
 import { RequestService } from '../../../services.service';
 import { Subscription } from 'rxjs';
 import { FbgComponent } from '../../../shared/components/fbg/fbg.component';
+import { AlertComponent } from '../../../shared/components/loading-spinner.component';
 
 @Component({
   selector: 'app-fioh-sign-in',
@@ -29,13 +30,15 @@ import { FbgComponent } from '../../../shared/components/fbg/fbg.component';
     ReactiveFormsModule,
     HttpClientModule,
     FbgComponent,
-],
+    AlertComponent,
+  ],
 })
 export class FiohSignInComponent implements OnInit {
   signUpForm: FormGroup;
   logs = [];
   submitted: boolean = false;
   isLoggedIn: boolean = false;
+  isError: boolean = false;
   error: string = null;
   sub: Subscription;
 
@@ -69,17 +72,27 @@ export class FiohSignInComponent implements OnInit {
       pwd: new FormControl(null, Validators.required),
     });
   }
+
+  onResetError(errorMessage){
+     setTimeout(() => {
+       errorMessage = null;
+       this.isError = false;
+     }, 2000);
+  }
   // reactive form approach
   onSubmit() {
     if (this.signUpForm.invalid) return;
     const email = this.signUpForm.get('email').value;
     const password = this.signUpForm.get('pwd').value;
+    this.isLoggedIn = true;
     if (this.isLoggedIn) {
       this.request
         .onSignUp(email, password)
         .subscribe({
           error: (err) => {
             this.error = err;
+            this.isError = true;
+            this.onResetError(this.error)
           },
         })
         .add(() => {
@@ -96,11 +109,9 @@ export class FiohSignInComponent implements OnInit {
             this.signUpForm.reset();
           },
           error: (err) => {
+            this.isError =true;
             this.error = err;
-            console.log(`error : ${this.error}`)
-            setInterval(()=>{
-              this.error = ""
-            }, 2000)
+            this.onResetError(this.error);
           },
         })
         .add(() => {

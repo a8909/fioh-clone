@@ -35,7 +35,7 @@
       <th>Visitor</th>
       <th colspan="2">Link</th>
     </tr>
-    <div class="loading-spinner" *ngIf="isLoading"><side-bars/></div>
+    <div class="loading-spinner" *ngIf="isLoading" role="isLoading"><side-bars/></div>
     <div *ngIf="!isLoading && users?.length == 0"> No record found</div>
       <tr *ngFor="let u of users">
       <td class="details">
