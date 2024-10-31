@@ -15,6 +15,7 @@ import { EachMemorialComponent } from '../each-memorial/each-memorial.component'
 export class FirstContentComponent implements OnInit {
   @Output() posts = new EventEmitter();
   memorialSub: Subscription;
+  IsSearchInvalid : boolean = false;
 
   filter: boolean = false;
   constructor(private route: Router) {}
@@ -30,7 +31,8 @@ export class FirstContentComponent implements OnInit {
       .filter((m) =>
         `${m.year}|${m.titleText}|${m.context}`
           .toLowerCase()
-          .includes(this.keyword.toLowerCase())
+          .includes(this.keyword.toLowerCase()),
+          this.IsSearchInvalid = true
       )
       .slice(
         (this.pageIndex - 1) * this.perPage,

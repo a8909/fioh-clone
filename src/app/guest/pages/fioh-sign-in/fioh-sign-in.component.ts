@@ -41,7 +41,6 @@ export class FiohSignInComponent implements OnInit {
   isError: boolean = false;
   error: string = null;
   sub: Subscription;
-
   constructor(private route: Router, private request: RequestService) {}
 
   // This is a template driven approach
@@ -72,19 +71,18 @@ export class FiohSignInComponent implements OnInit {
       pwd: new FormControl(null, Validators.required),
     });
   }
-
-  onResetError(errorMessage){
-     setTimeout(() => {
-       errorMessage = null;
-       this.isError = false;
-     }, 2000);
+  
+  onResetError(errorMessage) {
+    setTimeout(() => {
+      errorMessage = null;
+      this.isError = false;
+    }, 2000);
   }
   // reactive form approach
   onSubmit() {
     if (this.signUpForm.invalid) return;
     const email = this.signUpForm.get('email').value;
     const password = this.signUpForm.get('pwd').value;
-    this.isLoggedIn = true;
     if (this.isLoggedIn) {
       this.request
         .onSignUp(email, password)
@@ -92,7 +90,7 @@ export class FiohSignInComponent implements OnInit {
           error: (err) => {
             this.error = err;
             this.isError = true;
-            this.onResetError(this.error)
+            this.onResetError(this.error);
           },
         })
         .add(() => {
@@ -109,13 +107,12 @@ export class FiohSignInComponent implements OnInit {
             this.signUpForm.reset();
           },
           error: (err) => {
-            this.isError =true;
+            this.isError = true;
             this.error = err;
             this.onResetError(this.error);
           },
         })
         .add(() => {
-          this.signUpForm.reset();
           this.submitted = false;
           this.isLoggedIn = true;
         });

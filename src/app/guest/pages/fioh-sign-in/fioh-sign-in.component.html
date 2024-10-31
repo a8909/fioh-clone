@@ -1,7 +1,6 @@
 <app-auth-layout>
   <h2 class="signIntxt">Login</h2>
-  <div></div>
-  <div class="loading-spinner" *ngIf="isLoggedIn"><side-bars /></div>
+  <!-- <div class="loading-spinner" *ngIf="isLoggedIn"><side-bars /></div> -->
 
   <form (ngSubmit)="onSubmit()" [formGroup]="signUpForm">
     <div class="formField">
@@ -20,10 +19,11 @@
         id="fiohPassword"
         type="password"
         name="pwd"
+        appPasswordAsterik
         formControlName="pwd"
       />
+      <i class="bi pass-icon position-absolute"></i>
     </div>
-
     <div class="checkBoxcontainer">
       <cus-check-box idn="remember"> Remember me </cus-check-box>
       <a href="" class="fioh-forgotPassword">Forgot password?</a>
@@ -53,7 +53,11 @@
     </div>
   </fieldset>
 
-  <div class="caution" *ngIf="error && isError" [ngClass]="{'visible': error && isError}" >
+  <div
+    class="caution"
+    *ngIf="error && isError"
+    [ngClass]="{ visible: error && isError }"
+  >
     <span>{{ error }}</span>
   </div>
 </app-auth-layout>

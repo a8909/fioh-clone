@@ -11,11 +11,15 @@ nav {
     width: 400px;
     height: calc(100vh - 78px);
     object-fit: cover;
+    @media(max-width: 990px){
+      display: none;
+    }
   }
   .formPar {
     display: flex;
     background: #ffffff;
     flex-direction: column;
-    margin-left: 340px;
+    margin: auto;
+    max-width: 450px;
   }
 }
