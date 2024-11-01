@@ -3,13 +3,25 @@
   font-weight: 700;
 }
 
+.show {
+  position: relative;
+  right: 40px;
+}
+
 .fiohSignupContainer {
   display: flex;
   justify-content: center;
   gap: 5px;
   margin-top: 8px;
+  align-items: center;
+  .acc {
+    font-weight: 400;
+    font-size: 14px;
+    color: var(--txtClr);
+  }
   .fiohSignup {
     color: var(--primary);
+    font-weight: 700;
   }
 }
 
@@ -86,18 +98,20 @@ button {
   border: #cc2125;
   color: #ffff;
   border-radius: 100px;
-  transform: translateY(100%) scale(0) ;
+  transform: translateY(100%) scale(0);
   transition: transform 0.3s ease-out, opacity 0.3s ease-out;
   opacity: 0;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-left: 11px;
-  &.visible{
+  &.visible {
     transform: translateY(20%) scaleY(1);
     transition: transform 0.3s ease-in, opacity 0.3s ease-in;
     opacity: 1;
   }
 }
 
-
+.social {
+  border: 0.7px solid #bac0d4b3;
+}

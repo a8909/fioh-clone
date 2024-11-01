@@ -39,6 +39,7 @@ export class FiohSignInComponent implements OnInit {
   submitted: boolean = false;
   isLoggedIn: boolean = false;
   isError: boolean = false;
+  passwordVisibility: boolean = false;
   error: string = null;
   sub: Subscription;
   constructor(private route: Router, private request: RequestService) {}
@@ -65,13 +66,14 @@ export class FiohSignInComponent implements OnInit {
     this.isLoggedIn = !this.isLoggedIn;
   }
 
+  
   ngOnInit() {
     this.signUpForm = new FormGroup({
       email: new FormControl(null, [Validators.required, Validators.email]),
       pwd: new FormControl(null, Validators.required),
     });
   }
-  
+
   onResetError(errorMessage) {
     setTimeout(() => {
       errorMessage = null;

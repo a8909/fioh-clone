@@ -17,12 +17,13 @@
       <input
         placeholder="Enter your password"
         id="fiohPassword"
-        type="password"
+        [type]="  passwordVisibility  ? 'text' : 'password'"
         name="pwd"
-        appPasswordAsterik
         formControlName="pwd"
       />
-      <i class="bi pass-icon position-absolute"></i>
+      <span class="show" (click)="passwordVisibility = !passwordVisibility">
+        <img  [src]=" passwordVisibility ? 'assets/images/show.png' : 'assets/images/hide.png' " alt="" />
+      </span>
     </div>
     <div class="checkBoxcontainer">
       <cus-check-box idn="remember"> Remember me </cus-check-box>
@@ -38,7 +39,7 @@
   <fieldset class="fieldset">
     <legend class="fioh-legend">OR</legend>
     <fbg *ngFor="let f of fiohBtns; let i = index">
-      <button (click)="signFbg(i)">
+      <button class="social" (click)="signFbg(i)">
         <span class="displayImg">
           <img [src]="f.imageSrc" alt="fbg img"
         /></span>
