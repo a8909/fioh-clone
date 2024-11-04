@@ -9,12 +9,13 @@ import {
   Validators,
   ReactiveFormsModule,
 } from '@angular/forms';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClient, HttpClientModule } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { RequestService } from '../../../services.service';
 import { Subscription } from 'rxjs';
 import { FbgComponent } from '../../../shared/components/fbg/fbg.component';
 import { AlertComponent } from '../../../shared/components/loading-spinner.component';
+import { AuthInterceptor } from '../auth.interceptor';
 
 @Component({
   selector: 'app-fioh-sign-in',
@@ -32,6 +33,7 @@ import { AlertComponent } from '../../../shared/components/loading-spinner.compo
     FbgComponent,
     AlertComponent,
   ],
+  providers: [{ provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor}],
 })
 export class FiohSignInComponent implements OnInit {
   signUpForm: FormGroup;
@@ -66,7 +68,6 @@ export class FiohSignInComponent implements OnInit {
     this.isLoggedIn = !this.isLoggedIn;
   }
 
-  
   ngOnInit() {
     this.signUpForm = new FormGroup({
       email: new FormControl(null, [Validators.required, Validators.email]),

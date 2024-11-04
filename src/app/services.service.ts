@@ -39,7 +39,7 @@ export class RequestService {
       )
       .pipe(
         tap((res) => {
-          this.handleAuthentication(
+           this.handleAuthentication(
             res.email,
             res.localId,
             res.idtoken,
@@ -89,6 +89,7 @@ export class RequestService {
     const user = new Users(email, id, token, expirationDate);
     this.userSubject.next(user);
     this.storeAuth(user);
+    this.storeToken(user.userId);
   }
 
   private handleError(errorRes: HttpErrorResponse) {
@@ -123,9 +124,19 @@ export class RequestService {
     });
   }
 
-  storeAuth(response) {
+  storeAuth(response: any) {
     localStorage.setItem('authData', JSON.stringify(response));
   }
+
+  storeToken(tokenValue : string){
+    return localStorage.setItem('token', tokenValue)
+  }
+
+  getToken(token : string){
+    return localStorage.getItem(token);
+  }
+    
+  
 
   getAuth() {
     return JSON.parse(localStorage.getItem('authData'));
