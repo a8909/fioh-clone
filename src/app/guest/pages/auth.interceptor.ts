@@ -28,12 +28,13 @@ export class AuthInterceptor implements HttpInterceptor {
         const userToken = this.userModel.token;
         const req = request.clone({
           headers: new HttpHeaders({
-            Authorization: 'Bearer' + userToken,
+            Authorization: 'Bearer ' + userToken,
           }),
         });
         return next.handle(req);
       }
     }
+    console.log('request sent successfully');
     return next.handle(request);
   }
 }

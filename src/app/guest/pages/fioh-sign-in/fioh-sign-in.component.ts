@@ -9,13 +9,12 @@ import {
   Validators,
   ReactiveFormsModule,
 } from '@angular/forms';
-import { HTTP_INTERCEPTORS, HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { RequestService } from '../../../services.service';
 import { Subscription } from 'rxjs';
 import { FbgComponent } from '../../../shared/components/fbg/fbg.component';
 import { AlertComponent } from '../../../shared/components/loading-spinner.component';
-import { AuthInterceptor } from '../auth.interceptor';
 
 @Component({
   selector: 'app-fioh-sign-in',
@@ -33,7 +32,6 @@ import { AuthInterceptor } from '../auth.interceptor';
     FbgComponent,
     AlertComponent,
   ],
-  providers: [{ provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor}],
 })
 export class FiohSignInComponent implements OnInit {
   signUpForm: FormGroup;
@@ -75,7 +73,7 @@ export class FiohSignInComponent implements OnInit {
     });
   }
 
-  onResetError(errorMessage) {
+  onResetError(errorMessage: string) {
     setTimeout(() => {
       errorMessage = null;
       this.isError = false;
